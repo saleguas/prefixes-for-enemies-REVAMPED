@@ -22,7 +22,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 0.2;
+      return roll1 <= 0.25;
 		}
 
 
@@ -34,7 +34,7 @@ namespace prefixtest.Common.GlobalNPCs
         switch (roll2){
 
           case 1:
-            prefix = "Healthy";
+            prefix = "Tough";
             npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
             break;
           case 2:
@@ -146,8 +146,6 @@ namespace prefixtest.Common.GlobalNPCs
 						npc.defense = (int) (npc.defense * roll3);
 						npc.knockBackResist = roll3;
 						break;
-					case 20:
-						prefix = ""
 		//
         }
         npc.value *= 2f;

@@ -60,9 +60,10 @@ namespace prefixtest.Common.GlobalNPCs
 
 		public override void DrawEffects(NPC npc, ref Color drawColor)
 		{
-
-				Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
-				int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 10, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+				if(Main.rand.Next(5) == 1){
+					Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+					int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 204, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+			}
 		}
 		public override bool PreAI(NPC npc){
 			if (prefix.Contains("Rare") && npc.value == 0f && npc.npcSlots == 0f)
