@@ -34,7 +34,7 @@ namespace prefixtest.Common.GlobalNPCs
         switch (roll2){
 
           case 1:
-            prefix = "Tough";
+            prefix = "Healthy";
             npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
             break;
           case 2:
@@ -89,6 +89,14 @@ namespace prefixtest.Common.GlobalNPCs
             npc.value *= 10f;
             npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.Coins, 0);
             break;
+					case 12:
+ 	    			prefix = "Mythical";
+ 	    			npc.takenDamageMultiplier *= .75f
+            npc.value *= 4f;
+            npc.damage = (int) (npc.damage * 1.5);
+            npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
+						npc.defense = (int) (npc.defense * 1.5);
+					break;
 		//
         }
         npc.value *= 2f;
