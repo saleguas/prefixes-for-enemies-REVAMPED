@@ -22,7 +22,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 0.2;
+      return roll1 <= 0.25;
 		}
 
 
@@ -30,11 +30,11 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
         Random random = new Random();
-        int roll2 = random.Next(12, 13); // creates a number from 1 to n-1
+        int roll2 = random.Next(11, 12); // creates a number from 1 to n-1
         switch (roll2){
 
           case 1:
-            prefix = "Healthy";
+            prefix = "Tough";
             npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
             break;
           case 2:
@@ -88,65 +88,6 @@ namespace prefixtest.Common.GlobalNPCs
             prefix = "Wealthy";
             npc.value *= 10f;
             break;
-					case 12:
- 	    			prefix = "Mythical";
- 	    			npc.takenDamageMultiplier *= .75f;
-            npc.value *= 4f;
-            npc.damage = (int) (npc.damage * 1.5);
-            npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
-						npc.defense = (int) (npc.defense * 1.5);
-						npc.knockBackResist = .9f;
-					  break;
-					case 14:
-						prefix = "Cool";
-						npc.value *= 5f;
-					  break;
-					case 15:
-						prefix = "Sus";
-						sizeRoll = random.Next(1, 8) * 0.1f;
-            npc.scale *= sizeRoll;
-						npc.damage = (int) (npc.damage * 1.4);
-						npc.life = npc.lifeMax = (int) (npc.lifeMax * .6);
-						npc.value *= 1.5f;
-						npc.knockBackResist = 1.5f;
-						break;
-					case 16:
-						prefix = "Sluggish";
-						npc.takenDamageMultiplier *= 1.2f;
-						npc.damage = (int) (npc.damage * .8);
-						npc.knockBackResist = 1.3f;
-						break;
-					case 17:
-						prefix = "Juggernaut";
-						npc.takenDamageMultiplier *= .6f;
-						npc.damage = (int) (npc.damage * .3);
-						npc.knockBackResist = 0f;
-						npc.value *= 2.2f;
-						npc.defense = (int) (npc.defense * 1.5);
-						npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
-						break;
-					case 18:
-						prefix = "Deranged";
-						npc.knockBackResist = 0.2f;
-						npc.damage = (int) (npc.damage * 1.3);
-						npc.defense = (int) (npc.defense * .6);
-						break;
-					case 19:
-						prefix = "Placid";
-						npc.damage = (int) (npc.damage * .2);
-						npc.life = npc.lifeMax = (int) (npc.lifeMax * 2.5);
-						break;
-					case 20:
-						prefix = "???";
-						float roll3 = random.Next(1, 20)*.1f;
-						npc.takenDamageMultiplier *= roll3;
-            npc.value *= roll3;
-            npc.damage = (int) (npc.damage * roll3);
-            npc.life = npc.lifeMax = (int) (npc.lifeMax * roll3);
-						npc.defense = (int) (npc.defense * roll3);
-						npc.knockBackResist = roll3;
-						break;
-		//
         }
         npc.value *= 2f;
 
