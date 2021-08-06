@@ -30,7 +30,7 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
         Random random = new Random();
-        int roll2 = random.Next(18, 19); // creates a number from 1 to n-1
+        int roll2 = random.Next(19, 20); // creates a number from 1 to n-1
         switch (roll2){
 
           case 1:
@@ -139,7 +139,7 @@ namespace prefixtest.Common.GlobalNPCs
 						break;
 					case 19:
 						prefix = "???";
-						float roll3 = random.Next(1, 20)*.1f;
+						float roll3 = random.Next(1, 19)*.1f;
 						npc.takenDamageMultiplier *= roll3;
             npc.value *= roll3;
             npc.damage = (int) (npc.damage * roll3);
