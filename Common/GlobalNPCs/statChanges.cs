@@ -146,6 +146,7 @@ namespace prefixtest.Common.GlobalNPCs
             npc.life = npc.lifeMax = (int) (npc.lifeMax * roll3);
 						npc.defense = (int) (npc.defense * roll3);
 						npc.knockBackResist = roll3;
+						npc.scale *= roll3;
 						break;
 		//
         }
