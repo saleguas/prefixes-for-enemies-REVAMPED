@@ -97,11 +97,11 @@ namespace prefixtest.Common.GlobalNPCs
 						npc.defense = (int) (npc.defense * 1.5);
 						npc.knockBackResist = .9f;
 					  break;
-					case 14:
+					case 13:
 						prefix = "Cool";
 						npc.value *= 5f;
 					  break;
-					case 15:
+					case 14:
 						prefix = "Sus";
 						sizeRoll = random.Next(1, 8) * 0.1f;
             npc.scale *= sizeRoll;
@@ -110,13 +110,13 @@ namespace prefixtest.Common.GlobalNPCs
 						npc.value *= 1.5f;
 						npc.knockBackResist = 1.5f;
 						break;
-					case 16:
+					case 15:
 						prefix = "Sluggish";
 						npc.takenDamageMultiplier *= 1.2f;
 						npc.damage = (int) (npc.damage * .8);
 						npc.knockBackResist = 1.3f;
 						break;
-					case 17:
+					case 16:
 						prefix = "Juggernaut";
 						npc.takenDamageMultiplier *= .6f;
 						npc.damage = (int) (npc.damage * .3);
@@ -125,18 +125,18 @@ namespace prefixtest.Common.GlobalNPCs
 						npc.defense = (int) (npc.defense * 1.5);
 						npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
 						break;
-					case 18:
+					case 17:
 						prefix = "Deranged";
 						npc.knockBackResist = 0.2f;
 						npc.damage = (int) (npc.damage * 1.3);
 						npc.defense = (int) (npc.defense * .6);
 						break;
-					case 19:
+					case 18:
 						prefix = "Placid";
 						npc.damage = (int) (npc.damage * .2);
 						npc.life = npc.lifeMax = (int) (npc.lifeMax * 2.5);
 						break;
-					case 20:
+					case 19:
 						prefix = "???";
 						float roll3 = random.Next(1, 20)*.1f;
 						npc.takenDamageMultiplier *= roll3;
@@ -146,6 +146,8 @@ namespace prefixtest.Common.GlobalNPCs
 						npc.defense = (int) (npc.defense * roll3);
 						npc.knockBackResist = roll3;
 						break;
+					case 20:
+						prefix = ""
 		//
         }
         npc.value *= 2f;
