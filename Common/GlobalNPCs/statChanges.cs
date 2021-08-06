@@ -89,6 +89,7 @@ namespace prefixtest.Common.GlobalNPCs
             npc.value *= 10f;
             npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.Coins, 0);
             break;
+		//
         }
         npc.value *= 2f;
 
