@@ -30,7 +30,7 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
         Random random = new Random();
-        int roll2 = random.Next(11, 12); // creates a number from 1 to n-1
+        int roll2 = random.Next(1, 18); // creates a number from 1 to n-1
         switch (roll2){
 
           case 1:
@@ -90,12 +90,49 @@ namespace prefixtest.Common.GlobalNPCs
             break;
 					case 12:
  	    			prefix = "Mythical";
- 	    			npc.takenDamageMultiplier *= .75f
+ 	    			npc.takenDamageMultiplier *= .75f;
             npc.value *= 4f;
             npc.damage = (int) (npc.damage * 1.5);
             npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
 						npc.defense = (int) (npc.defense * 1.5);
-					break;
+						npc.knockBackResist = .9f;
+					  break;
+					case 14:
+						prefix = ""
+					  break;
+					case 15:
+						prefix = "Sus";
+						sizeRoll = random.Next(1, 8) * 0.1f;
+            npc.scale *= sizeRoll;
+						npc.damage = (int) (npc.damage * 1.4);
+						npc.life = npc.lifeMax = (int) (npc.lifeMax * .6);
+						npc.value *= 1.5f;
+						npc.knockBackResist = 1.5f;
+						break;
+					case 16:
+						prefix = "Sluggish";
+						npc.takenDamageMultiplier *= 1.2f;
+						npc.damage *= .8f;
+						npc.knockBackResist = 1.3f;
+						break;
+					case 17:
+						prefix = "Juggernaut";
+						npc.takenDamageMultiplier *= .6f;
+						npc.damage *= .3f;
+						npc.knockBackResist = 0f;
+						npc.value *= 2.2f;
+						npc.defense = (int) (npc.defense * 1.5);
+						npc.life = npc.lifeMax = (int) (npc.lifeMax * .1.5);
+						break;
+					case 18:
+						prefix = "";
+						break;
+					case 19:
+						prefix = "";
+						break;
+					case 20:
+						prefix = "";
+						break;
 		//
         }
         npc.value *= 2f;
