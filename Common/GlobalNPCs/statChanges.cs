@@ -30,7 +30,7 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
         Random random = new Random();
-        int roll2 = random.Next(1, 8); // creates a number from 1 to n-1
+        int roll2 = random.Next(11, 12); // creates a number from 1 to n-1
         switch (roll2){
 
           case 1:
@@ -62,18 +62,35 @@ namespace prefixtest.Common.GlobalNPCs
             sizeRoll = random.Next(1, 5) * 0.1f;
             npc.scale *= sizeRoll;
             npc.damage = (int) (npc.damage * sizeRoll);
+            npc.life = npc.lifeMax = (int) (npc.lifeMax * sizeRoll);
+
             break;
           case 7:
             prefix = "Colossal";
             sizeRoll = random.Next(16, 25) * 0.1f;
             npc.scale *= sizeRoll;
             npc.damage = (int) (npc.damage * sizeRoll);
+            npc.life = npc.lifeMax = (int) (npc.lifeMax * sizeRoll);
             break;
-
-
-
-
+          case 8:
+            prefix = "Toughened";
+            npc.defense = (int) (npc.defense * 2.5);
+            break;
+          case 9:
+            prefix = "Enduring";
+            npc.takenDamageMultiplier *= .8f;
+            break;
+          case 10:
+            prefix = "Steadfast";
+            npc.knockBackResist = 0f;
+            break;
+          case 11:
+            prefix = "Wealthy";
+            npc.value *= 10f;
+            npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.Coins, 0);
+            break;
         }
+        npc.value *= 2f;
 
 
 		}
