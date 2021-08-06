@@ -22,7 +22,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 1;
+      return roll1 <= 0.16;
 		}
 
 
