@@ -87,7 +87,6 @@ namespace prefixtest.Common.GlobalNPCs
           case 11:
             prefix = "Wealthy";
             npc.value *= 10f;
-            npc.HitSound = new Terraria.Audio.LegacySoundStyle(SoundID.Coins, 0);
             break;
 					case 12:
  	    			prefix = "Mythical";

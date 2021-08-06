@@ -30,7 +30,7 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
         Random random = new Random();
-        int roll2 = random.Next(24, 26); // creates a number from 1 to n-1
+        int roll2 = random.Next(1, 26); // creates a number from 1 to n-1
         switch (roll2){
 
           case 1:
@@ -47,6 +47,8 @@ namespace prefixtest.Common.GlobalNPCs
             break;
           case 5:
             prefix = "Breaker";
+            npc.scale = 1.5f;
+            npc.color = new Color(156, 133, 132, 50);
             break;
           case 6:
             prefix = "Dark";
@@ -65,12 +67,14 @@ namespace prefixtest.Common.GlobalNPCs
             break;
           case 11:
             prefix = "Petrifying";
+            npc.color = new Color(173, 168, 168, 100);
             break;
           case 12:
             prefix = "Martyr";
             break;
           case 13:
             prefix = "Vampiric";
+            npc.color = new Color(194, 29, 29, 30);
             break;
           case 14:
             prefix = "Magebane";
@@ -267,9 +271,130 @@ namespace prefixtest.Common.GlobalNPCs
                 Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
                 if (Main.rand.Next(20) == 0)
                 {
-                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 127, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 6, 0, 0, 100, default(Color), 2f);
                 }
             }
+            if (prefix.Contains("Hellfire"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 75, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Frozen"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 67, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Electrified"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 226, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Dark"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 37, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            } // 1
+            if (prefix.Contains("Trickster"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 217, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Hexing"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 186, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Slowing"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 103, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Venomous"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 2, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Regenerating"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 12, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Martyr"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 43, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Magebane"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 160, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Voodoo"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 186, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Vengeful"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 14, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Mutilator"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 38, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+            if (prefix.Contains("Cutpurse"))
+            {
+                Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
+                if (Main.rand.Next(20) == 0)
+                {
+                    int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 43, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+                }
+            }
+
           }
 		public override void AI(NPC npc) {
 			//Make the guide giant and green.
