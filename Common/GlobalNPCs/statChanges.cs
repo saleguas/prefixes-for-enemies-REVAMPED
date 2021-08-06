@@ -30,7 +30,7 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
         Random random = new Random();
-        int roll2 = random.Next(12, 13); // creates a number from 1 to n-1
+        int roll2 = random.Next(13, 14); // creates a number from 1 to n-1
         switch (roll2){
 
           case 1:
