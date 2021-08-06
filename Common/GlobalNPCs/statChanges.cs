@@ -30,7 +30,7 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
         Random random = new Random();
-        int roll2 = random.Next(15, 16); // creates a number from 1 to n-1
+        int roll2 = random.Next(16, 17); // creates a number from 1 to n-1
         switch (roll2){
 
           case 1:
@@ -124,6 +124,7 @@ namespace prefixtest.Common.GlobalNPCs
 						npc.value *= 2.2f;
 						npc.defense = (int) (npc.defense * 1.5);
 						npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
+						npc.scale *= 2.5;
 						break;
 					case 17:
 						prefix = "Deranged";
