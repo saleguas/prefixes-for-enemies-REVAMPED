@@ -124,7 +124,7 @@ namespace prefixtest.Common.GlobalNPCs
 						npc.value *= 2.2f;
 						npc.defense = (int) (npc.defense * 1.5);
 						npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
-						npc.scale *= 2.5;
+						npc.scale *= 2.5f;
 						break;
 					case 17:
 						prefix = "Deranged";
