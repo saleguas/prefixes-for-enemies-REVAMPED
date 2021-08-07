@@ -30,7 +30,7 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
         Random random = new Random();
-        int roll2 = random.Next(19, 20); // creates a number from 1 to n-1
+        int roll2 = random.Next(1, 26); // creates a number from 1 to n-1
         switch (roll2){
 
           case 1:
@@ -409,10 +409,9 @@ namespace prefixtest.Common.GlobalNPCs
 
 		public override void OnKill(NPC npc) {
 
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
 			if (prefix.Contains("Splitter"))
             {
-                int x = 2 + Main.rand.Next(0, 3);
+                int x = 2 + Main.rand.Next(0, 9);
                 for (int i = 0; i < x; i++)
                 {
                     int n = NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, npc.type);
