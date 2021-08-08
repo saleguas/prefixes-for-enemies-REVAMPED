@@ -63,7 +63,6 @@ namespace prefixtest.Common.GlobalNPCs
             npc.scale *= sizeRoll;
             npc.damage = (int) (npc.damage * sizeRoll);
             npc.life = npc.lifeMax = (int) (npc.lifeMax * sizeRoll);
-
             break;
           case 7:
             prefix = "Colossal";
