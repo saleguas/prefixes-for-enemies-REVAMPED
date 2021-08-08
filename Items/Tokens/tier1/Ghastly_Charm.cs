@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace prefixtest.Items
 {
-	public class BasicSword2 : ModItem
+	public class Ghastly_Charm : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
