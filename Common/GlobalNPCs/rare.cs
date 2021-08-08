@@ -24,7 +24,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 1; // 0.02
+      return roll1 <= 0.02; // 0.02
 		}
 
 

@@ -32,7 +32,7 @@ namespace prefixtest.Items.Tokens.tier1 {
       Item.value = Item.buyPrice(gold: 5);
       Item.rare = ItemRarityID.Pink;
       Item.staff[Item.type] = true;
-			Item.scale = 2.5f;
+			Item.scale = 1.5f;
 
     }
     // This method gets called when firing your weapon/sword.
