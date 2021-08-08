@@ -10,7 +10,7 @@ namespace prefixtest.Items.Tokens.tier4 {
   public class blazereap4: ModItem {
     public override void SetStaticDefaults() {
       DisplayName.SetDefault("Blaze Reap"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-      Tooltip.SetDefault("Left click to swing. Right click to fire a bullet. \nThe gun requires one use to switch between modes.");
+      Tooltip.SetDefault("Uses explosive powder as ammunition");
     }
 
     public override void SetDefaults() {
