@@ -9,7 +9,7 @@ using System;
 namespace prefixtest.Items.Tokens.tier1 {
   public class gunblade1: ModItem {
     public override void SetStaticDefaults() {
-      DisplayName.SetDefault("GunBlade"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+      DisplayName.SetDefault("Gun Blade"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
       Tooltip.SetDefault("Left click to swing. Right click to fire a bullet. \nThe gun requires one use to switch between modes.");
     }
 
