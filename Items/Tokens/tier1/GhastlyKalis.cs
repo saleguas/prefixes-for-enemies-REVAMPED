@@ -19,8 +19,8 @@ namespace prefixtest.Items.Tokens.tier1 {
       Item.scale *= 1.5f;
 
       Item.useStyle = 3;
-      Item.useTime = 13;
-      Item.useAnimation = 20;
+      Item.useTime = 4;
+      Item.useAnimation = 8;
       Item.autoReuse = true;
       Item.noMelee = false;
 
