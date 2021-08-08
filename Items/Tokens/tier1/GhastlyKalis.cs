@@ -19,8 +19,8 @@ namespace prefixtest.Items.Tokens.tier1 {
       Item.scale *= 1.5f;
 
       Item.useStyle = 3;
-      Item.useTime = 3;
-      Item.useAnimation = 4;
+      Item.useTime = 4;
+      Item.useAnimation = 5;
       Item.autoReuse = true;
 
       Item.DamageType = DamageClass.Melee;
