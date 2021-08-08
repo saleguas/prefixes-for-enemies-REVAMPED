@@ -15,8 +15,8 @@ namespace prefixtest.Items.Tokens.tier1
 		}
 
 		public override void SetDefaults() {
-			Item.width = 40;
-			Item.height = 40;
+			Item.width = 32;
+			Item.height = 32;
 			Item.accessory = true;
 		}
 

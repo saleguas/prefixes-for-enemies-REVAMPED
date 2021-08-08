@@ -14,8 +14,8 @@ namespace prefixtest.Items.Tokens.tier1 {
     }
 
     public override void SetDefaults() {
-      Item.width = 24;
-      Item.height = 12;
+      Item.width = 32;
+      Item.height = 32;
       Item.scale *= 1.5f;
 
       Item.useStyle = 3;
