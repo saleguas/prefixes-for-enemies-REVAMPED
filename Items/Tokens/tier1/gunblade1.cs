@@ -14,39 +14,37 @@ namespace prefixtest.Items.Tokens.tier1 {
     }
 
     public override void SetDefaults() {
-      Item.width = 30;
-      Item.height = 30;
+      Item.width = 48;
+      Item.height = 48;
+      Item.scale *= 1.5f;
 
       Item.useStyle = ItemUseStyleID.Swing;
       Item.useTime = 20;
       Item.useAnimation = 20;
-      Item.UseSound = SoundID.Item1;
-      Item.shoot = ProjectileID.None;
+      Item.autoReuse = true;
+      Item.noMelee = false;
 
       Item.DamageType = DamageClass.Melee;
-      Item.damage = 19;
+      Item.damage = 14;
       Item.knockBack = 6;
-      Item.crit = 6;
-      Item.autoReuse = true;
+      Item.crit = 12;
 
       Item.value = Item.buyPrice(gold: 5);
       Item.rare = ItemRarityID.Pink;
-      Item.staff[Item.type] = true;
-			Item.scale = 2.5f;
+      Item.UseSound = SoundID.Item11;
+      Item.useAmmo = AmmoID.Bullet;
 
+
+      Item.shoot = ProjectileID.Bullet; // ID of the projectiles the sword will shoot
+      Item.shootSpeed = 8f; // Speed of the projectiles the sword will shoot
     }
     // This method gets called when firing your weapon/sword.
-    public override bool AltFunctionUse(Player player) {
-      return true;
-    }
 
 
     public override bool ConsumeAmmo(Player player) {
-      if (player.altFunctionUse == 2) {
-        return true;
-      }
-      return false;
+      return true;
     }
+
 
 
   }
