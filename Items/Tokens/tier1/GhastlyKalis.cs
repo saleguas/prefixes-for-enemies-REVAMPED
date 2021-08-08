@@ -31,7 +31,8 @@ namespace prefixtest.Items.Tokens.tier1 {
     }
     // This method gets called when firing your weapon/sword.
     public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit) {
-         player.AddBuff(BuffID.OnFire, 60);
+         player.AddBuff(BuffID.Invisibility, 300);
+         player.AddBuff(BuffID.ShadowDodge, 300);
     }
 
 
