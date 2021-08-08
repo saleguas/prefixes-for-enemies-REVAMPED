@@ -33,10 +33,10 @@ namespace prefixtest.Items
 
 			// GetCrit, similarly to GetDamage, returns a reference to the specified damage class' crit chance.
 			// In this case, we're adding 10% crit chance, but only for the melee DamageClass (as such, only melee weapons will receive this bonus).
-			if(OnHitNPC == true){
+			if(OnHitNPC){
 				player.AddBuff(BuffID.Regenerating, 200);
 			}
-			if(OnHitNPCWithProj == true){
+			if(OnHitNPCWithProj){
 				player.AddBuff(BuffID.Regenerating, 200);
 			}
 
