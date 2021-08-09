@@ -1,15 +1,17 @@
+using prefixtest.Projectiles;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
+
 namespace prefixtest.Items.Tokens.tier2
 {
 	public class ludensecho : ModItem
 	{
 		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("Luden's Pulse"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+      DisplayName.SetDefault("Luden's Echo"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 			Tooltip.SetDefault("Shoots a volley of arrows.");
 		}
 
@@ -28,12 +30,12 @@ namespace prefixtest.Items.Tokens.tier2
 
 			// Weapon Properties
 			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 4; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
 
 			// Gun Properties
-			Item.shoot = 27; // For some reason, all the guns in the vanilla source have this.
+			Item.shoot = ModContent.ProjectileType<Projectiles.ludensechoproj>(); // For some reason, all the guns in the vanilla source have this.
 			Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
 		}
 
@@ -44,21 +46,6 @@ namespace prefixtest.Items.Tokens.tier2
 		// 	return new Vector2(2f, -2f);
 		// }
 
-		public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
-			// Vector2 perturbedSpeed = new Vector2(0, velocity.Y);
-			// position.X += 200f;
-			Vector2 newVelocity = new Vector2(velocity.X * 0.1f, velocity.Y * 0.1f);
-
-
-			int a = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-			for(int i = 0; i < 10; i++){
-				Vector2 pos = Main.projectile[a].position;
-				Vector2 newVelocity2 = new Vector2(Main.rand.NextFloat(-10f, 10f), Main.rand.NextFloat(-10f, -10f));
-				Projectile.NewProjectile(source, pos, newVelocity2, 207, damage, knockback, player.whoAmI);
-			}
-
-			return false;
-		}
 
 
 		// public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {

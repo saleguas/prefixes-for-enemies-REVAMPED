@@ -67,6 +67,8 @@ namespace prefixtest.Items.Tokens.tier2
 
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit) {
 			player.AddBuff(ModContent.BuffType<buffs.infinitymight>(), 300);
+			player.AddBuff(BuffID.OnFire, 300);
+
     }
 
 
