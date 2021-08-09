@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
+using prefixtest.buffs;
 
 namespace prefixtest.Items.Tokens.tier2
 {
@@ -63,6 +64,10 @@ namespace prefixtest.Items.Tokens.tier2
 
 			return false;
 		}
+
+		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit) {
+			player.AddBuff(ModContent.BuffType<buffs.infinitymight>(), 300);
+    }
 
 
 		// public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {

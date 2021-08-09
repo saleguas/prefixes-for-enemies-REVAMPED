@@ -1,7 +1,10 @@
+using System;
 using Microsoft.Xna.Framework;
-using Terraria.DataStructures;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
+using prefixtest.buffs;
 
 namespace prefixtest.Items.Tokens.tier4
 {
@@ -28,23 +31,88 @@ namespace prefixtest.Items.Tokens.tier4
 			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 
 			// Weapon Properties
-			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
+			Item.DamageType = DamageClass.Melee; // Sets the damage type to ranged.
 			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
+      Item.shoot = 116; // For some reason, all the guns in the vanilla source have this.
+      Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
 
 			// Gun Properties
-			Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
-			Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
-			Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
+
 		}
+
+    public override bool AltFunctionUse(Player player) {
+      return true;
+    }
+
+    public override bool CanUseItem(Player player) {
+      if (player.altFunctionUse == 2) {
+        Item.shoot = 116; // For some reason, all the guns in the vanilla source have this.
+  			Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
+        Item.useTime = 20; // The item's use time in ticks (60 ticks == 1 second.)
+        Item.useAnimation = 20; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+        Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+        Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
+        Item.scale = 1.5f;
+        Item.damage = 18;
+
+      } else {
+        Item.useStyle = ItemUseStyleID.Swing;
+        Item.useTime = 20;
+        Item.useAnimation = 20;
+        Item.UseSound = SoundID.Item1;
+        Item.scale = 2.5f;
+        Item.damage = 19;
+
+
+
+      }
+      return base.CanUseItem(player);
+    }
+
+
+    public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+      // Vector2 perturbedSpeed = new Vector2(0, velocity.Y);
+      // position.X += 200f;
+
+      if (player.altFunctionUse == 2){
+        for(int i = 0; i < 50; i++){
+          Vector2 upLeftSword = new Vector2(position.X - 50f - (30f * i), position.Y + 600f + (30f * i));
+          Vector2 downLeftSword = new Vector2(position.X - 50f - (30f * i), position.Y -600f - (30f * i));
+          Vector2 upRightSword = new Vector2(position.X + 50f + (30f * i), position.Y + 600f + (30f * i));
+          Vector2 downRightSword = new Vector2(position.X + 50f + (30f * i), position.Y -600f - (30f * i));
+          Vector2 goingUp = new Vector2(0, -25f);
+          Vector2 goingDown = new Vector2(0, 25f);
+
+          Projectile.NewProjectile(source, upLeftSword, goingUp, type, damage, knockback, player.whoAmI);
+          Projectile.NewProjectile(source, upRightSword, goingUp, type, damage, knockback, player.whoAmI);
+          Projectile.NewProjectile(source, downLeftSword, goingDown, type, damage, knockback, player.whoAmI);
+          Projectile.NewProjectile(source, downRightSword, goingDown, type, damage, knockback, player.whoAmI);
+
+        }
+        return false;
+
+      }
+      else{
+        return true;
+      }
+      // 	int a = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
+
+
+    }
+
+    public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit) {
+         player.AddBuff(ModContent.BuffType<buffs.infinitymight>(), 300);
+    }
+
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 
 		// This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
-		public override Vector2? HoldoutOffset() {
-			return new Vector2(2f, -2f);
-		}
+		// public override Vector2? HoldoutOffset() {
+		// 	return new Vector2(2f, -2f);
+		// }
 
 		/*
 		* Feel free to uncomment any of the examples below to see what they do

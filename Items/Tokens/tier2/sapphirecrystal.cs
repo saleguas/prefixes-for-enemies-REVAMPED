@@ -6,10 +6,10 @@ using Terraria.ModLoader;
 
 namespace prefixtest.Items.Tokens.tier2
 {
-	public class ludensecho : ModItem
+	public class sapphirecrystal : ModItem
 	{
 		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("Luden's Pulse"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+      DisplayName.SetDefault("Sapphire Crystal"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 			Tooltip.SetDefault("Shoots a volley of arrows.");
 		}
 
@@ -33,8 +33,8 @@ namespace prefixtest.Items.Tokens.tier2
 			Item.noMelee = true; // So the item's animation doesn't do damage.
 
 			// Gun Properties
-			Item.shoot = 27; // For some reason, all the guns in the vanilla source have this.
-			Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
+			Item.shoot = 174; // For some reason, all the guns in the vanilla source have this.
+			Item.shootSpeed = 4f; // The speed of the projectile (measured in pixels per frame.)
 		}
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
@@ -47,15 +47,16 @@ namespace prefixtest.Items.Tokens.tier2
 		public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
 			// Vector2 perturbedSpeed = new Vector2(0, velocity.Y);
 			// position.X += 200f;
-			Vector2 newVelocity = new Vector2(velocity.X * 0.1f, velocity.Y * 0.1f);
 
+      for(int i = 0; i < 4; i++){
+        Vector2 summonPosition = new Vector2(position.X + Main.rand.NextFloat(-100, 100), position.Y - 50f - Main.rand.NextFloat(-50, 50));
+        Vector2 target =  Main.MouseWorld - summonPosition;
 
-			int a = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-			for(int i = 0; i < 10; i++){
-				Vector2 pos = Main.projectile[a].position;
-				Vector2 newVelocity2 = new Vector2(Main.rand.NextFloat(-10f, 10f), Main.rand.NextFloat(-10f, -10f));
-				Projectile.NewProjectile(source, pos, newVelocity2, 207, damage, knockback, player.whoAmI);
-			}
+        int a = Projectile.NewProjectile(source, summonPosition, target, type, damage, knockback, player.whoAmI);
+        Main.projectile[a].friendly = true;
+        Main.projectile[a].hostile = false;
+
+      }
 
 			return false;
 		}

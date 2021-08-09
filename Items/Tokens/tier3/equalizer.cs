@@ -4,19 +4,20 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace prefixtest.Items.Tokens.tier2
+namespace prefixtest.Items.Tokens.tier3
 {
-	public class ludensecho : ModItem
+	public class equalizer : ModItem
 	{
 		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("Luden's Pulse"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Shoots a volley of arrows.");
+      DisplayName.SetDefault("The Equalizer"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("This is a modded gun.");
 		}
 
 		public override void SetDefaults() {
 			// Common Properties
-			Item.width = 16; // Hitbox width of the item.
+			Item.width = 62; // Hitbox width of the item.
 			Item.height = 32; // Hitbox height of the item.
+			Item.scale = 0.75f;
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
@@ -33,40 +34,14 @@ namespace prefixtest.Items.Tokens.tier2
 			Item.noMelee = true; // So the item's animation doesn't do damage.
 
 			// Gun Properties
-			Item.shoot = 27; // For some reason, all the guns in the vanilla source have this.
+			Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
 			Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
+			Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
 		}
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-
 		// This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
-		// public override Vector2? HoldoutOffset() {
-		// 	return new Vector2(2f, -2f);
-		// }
 
-		public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
-			// Vector2 perturbedSpeed = new Vector2(0, velocity.Y);
-			// position.X += 200f;
-			Vector2 newVelocity = new Vector2(velocity.X * 0.1f, velocity.Y * 0.1f);
-
-
-			int a = Projectile.NewProjectile(source, position, newVelocity, type, damage, knockback, player.whoAmI);
-			for(int i = 0; i < 10; i++){
-				Vector2 pos = Main.projectile[a].position;
-				Vector2 newVelocity2 = new Vector2(Main.rand.NextFloat(-10f, 10f), Main.rand.NextFloat(-10f, -10f));
-				Projectile.NewProjectile(source, pos, newVelocity2, 207, damage, knockback, player.whoAmI);
-			}
-
-			return false;
-		}
-
-
-		// public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
-		// 	int a = Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
-		// 		Main.projectile[a].friendly = true;
-		// 		Main.projectile[a].hostile = false;
-		// 	return false;
-		// }
 
 		/*
 		* Feel free to uncomment any of the examples below to see what they do
@@ -74,11 +49,11 @@ namespace prefixtest.Items.Tokens.tier2
 
 		// What if I wanted it to work like Uzi, replacing regular bullets with High Velocity Bullets?
 		// Uzi/Molten Fury style: Replace normal Bullets with High Velocity
-		/*public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
+	public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
 			if (type == ProjectileID.Bullet) { // or ProjectileID.WoodenArrowFriendly
-				type = ProjectileID.BulletHighVelocity; // or ProjectileID.FireArrow;
+				type = 207; // or ProjectileID.FireArrow;
 			}
-		}*/
+		}
 
 		// What if I wanted multiple projectiles in a even spread? (Vampire Knives)
 		// Even Arc style: Multiple Projectile, Even Spread
