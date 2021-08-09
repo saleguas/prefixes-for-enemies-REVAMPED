@@ -14,7 +14,7 @@ namespace prefixtest.Common.GlobalProjectiles
 
 
       public override void SetDefaults(Projectile projectile) {
-        projectile.penetrate = -1;
+        projectile.penetrate = 3;
         projectile.tileCollide = false;
         			projectile.timeLeft = 180;          //The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
   		}
