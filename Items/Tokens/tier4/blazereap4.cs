@@ -4,7 +4,6 @@ using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using System;
-using prefixtest.Projectiles;
 
 namespace prefixtest.Items.Tokens.tier4 {
   public class blazereap4: ModItem {
