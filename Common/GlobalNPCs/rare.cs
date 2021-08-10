@@ -61,8 +61,8 @@ namespace prefixtest.Common.GlobalNPCs
 		public override void DrawEffects(NPC npc, ref Color drawColor)
 		{
 				if(Main.rand.Next(5) == 1){
-					Lighting.AddLight(npc.position, 0.415f, 0.343f, 0.108f);
-					int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 204, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 2f);
+					Lighting.AddLight(npc.position, 0.410f, 0.340f, 0.100f);
+					int dust = Dust.NewDust(npc.position, npc.width+5, npc.height+5, 204, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 1.89f);
 			}
 		}
 		public override bool PreAI(NPC npc){
