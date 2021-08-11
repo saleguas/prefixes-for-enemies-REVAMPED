@@ -4,7 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace prefixtest.Items.Tokens.tier1{
+namespace prefixtest.Items.Tokens.tier2{
 	public class tuningfork : ModItem{
 
     private int charges = 0;

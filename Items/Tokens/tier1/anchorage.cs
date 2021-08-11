@@ -15,8 +15,8 @@ namespace prefixtest.Items.Tokens.tier1
 
 		public override void SetDefaults() {
 			// Common Properties
-			Item.width = 16; // Hitbox width of the item.
-			Item.height = 32; // Hitbox height of the item.
+			Item.width = 32; // Hitbox width of the item.
+			Item.height = 37; // Hitbox height of the item.
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
@@ -29,7 +29,7 @@ namespace prefixtest.Items.Tokens.tier1
 			// Weapon Properties
 			Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
 			Item.damage = 38; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+			Item.knockBack = 18f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
 
 			// Gun Properties

@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework;
 using System;
 
 
-namespace prefixtest.Items.Tokens.tier1 {
+namespace prefixtest.Items.Tokens.tier2 {
   public class GhastlyKalis: ModItem {
     public override void SetStaticDefaults() {
       DisplayName.SetDefault("Ghastly Kalis"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
@@ -14,8 +14,8 @@ namespace prefixtest.Items.Tokens.tier1 {
     }
 
     public override void SetDefaults() {
-      Item.width = 32;
-      Item.height = 32;
+      Item.width = 16;
+      Item.height = 14;
       Item.scale *= 3.0f;
 
       Item.useStyle = 3;

@@ -5,7 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
 
-namespace prefixtest.Items.Tokens.tier3
+namespace prefixtest.Items.Tokens.tier1
 {
 	public class omnirang : ModItem
 	{

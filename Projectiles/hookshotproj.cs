@@ -22,24 +22,24 @@ class hookshotproj : ModProjectile
       Projectile.hostile = false; // Can the projectile deal damage to the player?
       Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?
       Projectile.light = 1f; // How much light emit around the projectile
-      Projectile.tileCollide = false; // Can the projectile collide with tiles?
+      Projectile.tileCollide = true; // Can the projectile collide with tiles?
       Projectile.timeLeft = 300; //The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
       Projectile.penetrate = 2;
 
     }
 
     public override void AI() {
-			float maxDetectRadius = 400f; // The maximum radius at which a projectile can detect a target
-			float projSpeed = 5f; // The speed at which the projectile moves towards the target
+			float maxDetectRadius = 800; // The maximum radius at which a projectile can detect a target
+			float projSpeed = 10f; // The speed at which the projectile moves towards the target
 
 			// Trying to find NPC closest to the projectile
 			NPC closestNPC = FindClosestNPC(maxDetectRadius);
 			if (closestNPC == null)
 				return;
 
-      if (Math.Abs(Projectile.position.X - closestNPC.position.X) <= 10f)
+      if (Math.Abs(Projectile.position.X - closestNPC.position.X) <= 2f)
       {
-        Vector2 newVelocity =  new Vector2(0, 20f);
+        Vector2 newVelocity =  new Vector2(0, 25f);
         Projectile.velocity = newVelocity;
       }
 

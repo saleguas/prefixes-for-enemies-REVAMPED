@@ -4,31 +4,30 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace prefixtest.Items.Tokens.tier3
+namespace prefixtest.Items.Tokens.tier2
 {
-	public class equalizer : ModItem
+	public class seatofcommand : ModItem
 	{
 		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("The Equalizer"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("This is a modded gun.");
+      DisplayName.SetDefault("Seat of command"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("Rain hell upon them.");
 		}
 
 		public override void SetDefaults() {
 			// Common Properties
-			Item.width = 62; // Hitbox width of the item.
+			Item.width = 16; // Hitbox width of the item.
 			Item.height = 32; // Hitbox height of the item.
-			Item.scale = 0.75f;
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
-			Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
-			Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-			Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+			Item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)
+			Item.useAnimation = 180; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+			Item.useStyle = 4; // How you use the item (swinging, holding out, etc.)
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 
 			// Weapon Properties
-			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
+			Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
 			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -36,12 +35,45 @@ namespace prefixtest.Items.Tokens.tier3
 			// Gun Properties
 			Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
 			Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
-			Item.useAmmo = AmmoID.Bullet; // The "ammo Id" of the ammo item that this weapon uses. Ammo IDs are magic numbers that usually correspond to the item id of one item that most commonly represent the ammo type.
+      Item.shoot = 1;
 		}
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-		// This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
 
+		// This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
+		public override Vector2? HoldoutOffset() {
+			return new Vector2(2f, -2f);
+		}
+
+    public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+      Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+      float ceilingLimit = target.Y;
+      if (ceilingLimit > player.Center.Y - 200f) {
+        ceilingLimit = player.Center.Y - 200f;
+      }
+      // Loop these functions 3 times.
+      for (int i = 0; i < 15; i++) {
+        position = player.Center - new Vector2(Main.rand.NextFloat(401) * player.direction, 600f);
+        position.Y -= 100 * i;
+        Vector2 heading = target - position;
+
+        if (heading.Y < 0f) {
+          heading.Y *= -1f;
+        }
+
+        if (heading.Y < 20f) {
+          heading.Y = 20f;
+        }
+
+        heading.Normalize();
+        heading *= velocity.Length();
+        heading.Y += Main.rand.Next(-40, 41) * 1f;
+        heading.X += Main.rand.Next(-40, 41) * 1f;
+        Projectile.NewProjectile(source, position, heading, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
+      }
+
+      return false;
+    }
 
 		/*
 		* Feel free to uncomment any of the examples below to see what they do
@@ -49,11 +81,11 @@ namespace prefixtest.Items.Tokens.tier3
 
 		// What if I wanted it to work like Uzi, replacing regular bullets with High Velocity Bullets?
 		// Uzi/Molten Fury style: Replace normal Bullets with High Velocity
-	public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
+		/*public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
 			if (type == ProjectileID.Bullet) { // or ProjectileID.WoodenArrowFriendly
-				type = 207; // or ProjectileID.FireArrow;
+				type = ProjectileID.BulletHighVelocity; // or ProjectileID.FireArrow;
 			}
-		}
+		}*/
 
 		// What if I wanted multiple projectiles in a even spread? (Vampire Knives)
 		// Even Arc style: Multiple Projectile, Even Spread
