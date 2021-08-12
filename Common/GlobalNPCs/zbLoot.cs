@@ -117,7 +117,7 @@ namespace prefixtest.Common.GlobalNPCs
       }
 			if(prefix.Contains("Stealthy")){
         if(Main.rand.Next(2) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.InvisiilityPotion, Main.rand.Next(1, 4));
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.InvisibilityPotion, Main.rand.Next(1, 4));
       }
 			if(prefix.Contains("Magebane")){
         if(Main.rand.Next(3) == 0)
