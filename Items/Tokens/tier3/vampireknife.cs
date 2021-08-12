@@ -17,7 +17,7 @@ namespace prefixtest.Items.Tokens.tier3
 			// Common Properties
 			Item.width = 14; // Hitbox width of the item.
 			Item.height = 30; // Hitbox height of the item.
-			Item.scale = 2f;
+			Item.scale = 0.001f;
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
@@ -29,9 +29,10 @@ namespace prefixtest.Items.Tokens.tier3
 
 			// Weapon Properties
 			Item.DamageType = DamageClass.Melee; // Sets the damage type to ranged.
-			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 9; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
+			Item.crit = 8;
 
 			// Gun Properties
 			Item.shoot = 304; // For some reason, all the guns in the vanilla source have this.
