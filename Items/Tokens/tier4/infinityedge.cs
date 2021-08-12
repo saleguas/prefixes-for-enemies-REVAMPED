@@ -13,7 +13,7 @@ namespace prefixtest.Items.Tokens.tier4
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Infinity Edge"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 
-			Tooltip.SetDefault("This is a modded gun.");
+			Tooltip.SetDefault("Crits are cool right?");
 		}
 
 		public override void SetDefaults() {
@@ -56,7 +56,7 @@ namespace prefixtest.Items.Tokens.tier4
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
         Item.scale = 1.5f;
-        Item.damage = 18;
+        Item.damage = 350;
 
       } else {
         Item.useStyle = ItemUseStyleID.Swing;
