@@ -4,15 +4,15 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using prefixtest.Common.GlobalNPCs;
 
 namespace prefixtest.Common.GlobalNPCs
 {
-	public class statChanges : GlobalNPC
+	public class aStatChanges : GlobalNPC
 	{
 
-		public bool nameChanged = false;
 		public override bool InstancePerEntity => true;
-    private string prefix;
+    public string prefix = "";
 
 
 		public override bool AppliesToEntity(NPC npc, bool lateInstatiation) {
@@ -22,7 +22,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 0.25;
+      return roll1 <= 10.25;
 		}
 
 
@@ -30,7 +30,7 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
         Random random = new Random();
-        int roll2 = random.Next(11, 12); // creates a number from 1 to n-1
+        int roll2 = random.Next(1, 12); // creates a number from 1 to n-1
         switch (roll2){
 
           case 1:
@@ -95,21 +95,18 @@ namespace prefixtest.Common.GlobalNPCs
 
 		public override void AI(NPC npc) {
 			//Make the guide giant and green.
-			if (!nameChanged){
-				npc.GivenName = prefix + " " + npc.FullName;
-				nameChanged = true;
-			}
+
 			// npc.scale = 1.5f;
 			// npc.color = Color.ForestGreen;
 
 		}
 
-		public override void OnKill(NPC npc) {
-
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
-
-			//TODO: Add the rest of the vanilla drop rules!!
-		}
+		// public override void OnKill(NPC npc) {
+		//
+		// 	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
+		//
+		// 	//TODO: Add the rest of the vanilla drop rules!!
+		// }
 
 
 	}

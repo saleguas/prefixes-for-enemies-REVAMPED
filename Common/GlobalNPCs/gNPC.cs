@@ -29,7 +29,6 @@ namespace prefixtest.Common.GlobalNPCs
 		public override void AI(NPC npc) {
 			//Make the guide giant and green.
 			// if (!nameChanged){
-			// 	npc.GivenName = "gay " + npc.FullName;
 			// 	nameChanged = true;
 			// }
 			// npc.scale = 1.5f;
@@ -37,12 +36,12 @@ namespace prefixtest.Common.GlobalNPCs
 
 		}
 
-		public override void OnKill(NPC npc) {
-
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
-
-			//TODO: Add the rest of the vanilla drop rules!!
-		}
+		// public override void OnKill(NPC npc) {
+		//
+		// 	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
+		//
+		// 	//TODO: Add the rest of the vanilla drop rules!!
+		// }
 
 
 	}

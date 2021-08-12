@@ -28,6 +28,7 @@ namespace prefixtest.Items.Ammo
 
       Item.ammo = AmmoID.Bullet;
       Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible.
+			Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
 
 		}
 

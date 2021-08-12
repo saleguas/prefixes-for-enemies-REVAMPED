@@ -37,7 +37,7 @@ class hookshotproj : ModProjectile
 			if (closestNPC == null)
 				return;
 
-      if (Math.Abs(Projectile.position.X - closestNPC.position.X) <= 2f)
+      if (Math.Abs(Projectile.position.X - closestNPC.position.X) <= 4f)
       {
         Vector2 newVelocity =  new Vector2(0, 25f);
         Projectile.velocity = newVelocity;
