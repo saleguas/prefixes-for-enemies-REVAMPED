@@ -28,7 +28,7 @@ namespace prefixtest.Items.Tokens.tier3
 			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 
 			// Weapon Properties
-			Item.DamageType = DamageClass.melee; // Sets the damage type to ranged.
+			Item.DamageType = DamageClass.Melee; // Sets the damage type to ranged.
 			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
