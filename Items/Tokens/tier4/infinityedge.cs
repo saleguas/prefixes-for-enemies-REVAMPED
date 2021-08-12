@@ -18,8 +18,8 @@ namespace prefixtest.Items.Tokens.tier4
 
 		public override void SetDefaults() {
 			// Common Properties
-			Item.width = 62; // Hitbox width of the item.
-			Item.height = 32; // Hitbox height of the item.
+			Item.width = 45; // Hitbox width of the item.
+			Item.height = 28; // Hitbox height of the item.
 			Item.scale = 0.75f;
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
@@ -56,7 +56,8 @@ namespace prefixtest.Items.Tokens.tier4
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
         Item.scale = 1.5f;
-        Item.damage = 350;
+        Item.damage = 250;
+				Item.crit = 100;
 
       } else {
         Item.useStyle = ItemUseStyleID.Swing;
