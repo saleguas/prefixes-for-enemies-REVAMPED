@@ -48,7 +48,14 @@ namespace prefixtest.Common.GlobalNPCs
       if (prefix == "")
         return;
 
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
+      if(prefix.Contains("Burning")){
+        if(Main.rand.Next(4) == 0) // 1 in 5 chance, 20% drop chance
+          // don't touch any parameters besides the last 2
+          // ItemID.Hellstone means to drop Hellstone, find list of IDS here https://terraria.fandom.com/wiki/Item_IDs
+          // Math.rand.Next(1, 10) means that to drop 1-9 hellstne, Math.rand.Next gives a number between(n, n-1)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Hellstone, Main.rand.Next(1, 10));
+      }
+
 
 			//TODO: Add the rest of the vanilla drop rules!!
 		}
