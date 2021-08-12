@@ -36,7 +36,7 @@ namespace prefixtest.Items.Tokens.tier1
 
 			// Gun Properties
 			Item.shoot = 6; // For some reason, all the guns in the vanilla source have this.
-			Item.shootSpeed = 40f; // The speed of the projectile (measured in pixels per frame.)
+			Item.shootSpeed = 80f; // The speed of the projectile (measured in pixels per frame.)
 		}
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
