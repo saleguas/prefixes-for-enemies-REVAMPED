@@ -12,7 +12,8 @@ namespace prefixtest.Common.GlobalNPCs
 	{
 
 		public override bool InstancePerEntity => true;
-    public string prefix = "";
+    private string prefix1 = "";
+		private bool nameChanged = false;
 
 
 		public override bool AppliesToEntity(NPC npc, bool lateInstatiation) {
@@ -22,7 +23,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 10.25;
+      return roll1 <= 10.025;
 		}
 
 
@@ -34,57 +35,57 @@ namespace prefixtest.Common.GlobalNPCs
         switch (roll2){
 
           case 1:
-            prefix = "Tough";
+            prefix1 = "Tough";
             npc.life = npc.lifeMax = (int) (npc.lifeMax * 1.5);
             break;
           case 2:
-            prefix = "Dangerous";
+            prefix1 = "Dangerous";
             npc.damage = (int) (npc.damage * 1.4);
             break;
           case 3:
-            prefix = "Armored";
+            prefix1 = "Armored";
             npc.defense = (int) (npc.defense * 1.5 + 4);
             break;
           case 4:
-            prefix = "Small";
+            prefix1 = "Small";
             float sizeRoll = random.Next(5, 8) * 0.1f;
             npc.scale *= sizeRoll;
             npc.damage = (int) (npc.damage * sizeRoll);
             break;
           case 5:
-            prefix = "Large";
+            prefix1 = "Large";
             sizeRoll = random.Next(11, 15) * 0.1f;
             npc.scale *= sizeRoll;
             npc.damage = (int) (npc.damage * sizeRoll);
             break;
           case 6:
-            prefix = "Miniature";
+            prefix1 = "Miniature";
             sizeRoll = random.Next(1, 5) * 0.1f;
             npc.scale *= sizeRoll;
             npc.damage = (int) (npc.damage * sizeRoll);
             npc.life = npc.lifeMax = (int) (npc.lifeMax * sizeRoll);
             break;
           case 7:
-            prefix = "Colossal";
+            prefix1 = "Colossal";
             sizeRoll = random.Next(16, 25) * 0.1f;
             npc.scale *= sizeRoll;
             npc.damage = (int) (npc.damage * sizeRoll);
             npc.life = npc.lifeMax = (int) (npc.lifeMax * sizeRoll);
             break;
           case 8:
-            prefix = "Toughened";
+            prefix1 = "Toughened";
             npc.defense = (int) (npc.defense * 2.5);
             break;
           case 9:
-            prefix = "Enduring";
+            prefix1 = "Enduring";
             npc.takenDamageMultiplier *= .8f;
             break;
           case 10:
-            prefix = "Steadfast";
+            prefix1 = "Steadfast";
             npc.knockBackResist = 0f;
             break;
           case 11:
-            prefix = "Wealthy";
+            prefix1 = "Wealthy";
             npc.value *= 10f;
             break;
         }
@@ -98,7 +99,10 @@ namespace prefixtest.Common.GlobalNPCs
 
 			// npc.scale = 1.5f;
 			// npc.color = Color.ForestGreen;
-
+				if(!nameChanged){
+				npc.GetGlobalNPC<prefixString>().prefix = npc.GetGlobalNPC<prefixString>().prefix + " " + prefix1;
+				nameChanged = true;
+			}
 		}
 
 		// public override void OnKill(NPC npc) {

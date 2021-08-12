@@ -21,7 +21,7 @@ namespace prefixtest.Common.GlobalNPCs {
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 1.00;
+      return roll1 <= 10.00;
     }
 
     public override void SetDefaults(NPC npc) {
@@ -282,9 +282,9 @@ namespace prefixtest.Common.GlobalNPCs {
         }
       }
       if(!nameChanged){
-        npc.GetGlobalNPC<aStatChanges>().prefix = npc.GetGlobalNPC<aStatChanges>().prefix + " " + prefix3;
-			  nameChanged = true;
-		}
+        npc.GetGlobalNPC<prefixString>().prefix = npc.GetGlobalNPC<prefixString>().prefix + " " + prefix3;
+        nameChanged = true;
+    }
 
 
 

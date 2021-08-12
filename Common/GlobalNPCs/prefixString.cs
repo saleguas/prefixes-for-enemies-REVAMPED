@@ -7,11 +7,11 @@ using Terraria.Localization;
 
 namespace prefixtest.Common.GlobalNPCs
 {
-	public class gNPC : GlobalNPC
+	public class prefixString : GlobalNPC
 	{
-
-		public bool nameChanged = false;
+		public string prefix = "";
 		public override bool InstancePerEntity => true;
+
 		public override bool AppliesToEntity(NPC npc, bool lateInstatiation) {
 			if (npc.townNPC == true)
 				return false;

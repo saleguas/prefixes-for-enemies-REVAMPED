@@ -25,7 +25,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 10.16;
+      return roll1 <= 100.16;
 		}
 
 
@@ -298,7 +298,7 @@ namespace prefixtest.Common.GlobalNPCs
 			// 	}
 			// }
 			if(!nameChanged){
-			npc.GetGlobalNPC<aStatChanges>().prefix = npc.GetGlobalNPC<aStatChanges>().prefix + " " + prefix2;
+			npc.GetGlobalNPC<prefixString>().prefix = npc.GetGlobalNPC<prefixString>().prefix + " " + prefix2;
 			nameChanged = true;
 		}
 
