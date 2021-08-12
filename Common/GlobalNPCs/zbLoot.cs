@@ -111,9 +111,30 @@ namespace prefixtest.Common.GlobalNPCs
         if(Main.rand.Next(2) == 0)
         	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.FlaskofVenom, Main.rand.Next(1, 4));
       }
+			if(prefix.Contains("Trickster")){
+        if(Main.rand.Next(3) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.RodofDiscord, 1);
+      }
+			if(prefix.Contains("Stealthy")){
+        if(Main.rand.Next(2) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.InvisiilityPotion, Main.rand.Next(1, 4));
+      }
+			if(prefix.Contains("Magebane")){
+        if(Main.rand.Next(3) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MoonLordLegs, 1);
+      }
+			if(prefix.Contains("Voodoo")){
+        if(Main.rand.Next(3) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GuideVoodooDoll, 1);
+      }
+			if(prefix.Contains("Rare")){
+        if(Main.rand.Next(5) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DiscountCard, 1);
+				if(Main.rand.Next(5) == 0)
+	        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LuckyCoin, 1);
+      }
 
 
-			
 
 
 			//TODO: Add the rest of the vanilla drop rules!!
