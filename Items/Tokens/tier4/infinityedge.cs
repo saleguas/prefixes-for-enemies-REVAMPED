@@ -13,7 +13,7 @@ namespace prefixtest.Items.Tokens.tier4
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Infinity Edge"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 
-			Tooltip.SetDefault("Crits are cool right?");
+			Tooltip.SetDefault("Crits are cool right? The right click agrees!");
 		}
 
 		public override void SetDefaults() {
