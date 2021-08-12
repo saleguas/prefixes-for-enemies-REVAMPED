@@ -37,6 +37,7 @@ namespace prefixtest.Items.Tokens.tier4
 			Item.noMelee = false; // So the item's animation doesn't do damage.
       Item.shoot = 116; // For some reason, all the guns in the vanilla source have this.
       Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
+			Item.crit = 100;
 
 			// Gun Properties
 
