@@ -10,7 +10,7 @@ namespace prefixtest.Items.Tokens.tier2
 	{
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Sapphire Crystal"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Shoots a volley of arrows.");
+			Tooltip.SetDefault("Shoots a volley of crystals.");
 		}
 
 		public override void SetDefaults() {
@@ -27,10 +27,12 @@ namespace prefixtest.Items.Tokens.tier2
 			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 
 			// Weapon Properties
-			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
+			Item.damage = 22; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
+			Item.mana = 7;
+			Item.crit = 34;
 
 			// Gun Properties
 			Item.shoot = 174; // For some reason, all the guns in the vanilla source have this.

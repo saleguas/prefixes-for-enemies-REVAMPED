@@ -12,7 +12,7 @@ namespace prefixtest.Items.Tokens.tier2
 	{
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Dream Shatter"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Judgement from above.");
+			Tooltip.SetDefault("Judgement from below.");
 		}
 
 		public override void SetDefaults() {
