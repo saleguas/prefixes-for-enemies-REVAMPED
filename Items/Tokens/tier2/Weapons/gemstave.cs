@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 
-namespace prefixtest.Items.Testing
+namespace prefixtest.Items.Tokens.tier2.Weapons
 {
 	public class gemstave : ModItem
 	{

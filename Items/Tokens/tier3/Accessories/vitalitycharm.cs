@@ -5,7 +5,7 @@ using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 
-namespace prefixtest.Items.Tokens.tier2.Accessories
+namespace prefixtest.Items.Tokens.tier3.Accessories
 {
 	public class vitalitycharm : ModItem
 	{
