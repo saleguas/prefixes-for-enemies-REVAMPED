@@ -4,7 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace prefixtest.Items.Tokens.tier2 {
+namespace prefixtest.Items.MobDrops {
   public class peddlersplea: ModItem {
     public override void SetStaticDefaults() {
       DisplayName.SetDefault("Peddler's Plea"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
