@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 
 
-namespace prefixtest.Items.Testing
+namespace prefixtest.Items.Tokens.tier5
 {
 	public class unstableelement : ModItem
 	{
@@ -19,14 +19,14 @@ namespace prefixtest.Items.Testing
 
 		public override void SetDefaults() {
 			// Common Properties
-			Item.width = 16; // Hitbox width of the item.
-			Item.height = 32; // Hitbox height of the item.
+			Item.width = 26; // Hitbox width of the item.
+			Item.height = 24; // Hitbox height of the item.
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
 			Item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)
 			Item.useAnimation = 4; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-			Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+			Item.useStyle = 4; // How you use the item (swinging, holding out, etc.)
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 
@@ -59,7 +59,7 @@ namespace prefixtest.Items.Testing
 				Vector2 summonPosition = new Vector2(position.X + Main.rand.NextFloat(-100, 100), position.Y - 50f - Main.rand.NextFloat(-50, 50));
 				Vector2 target =  new Vector2(Main.rand.NextFloat(-50f, 50f), Main.rand.NextFloat(-50f, 50f));
 
-				int a = Projectile.NewProjectile(source, summonPosition, target, type2, Main.rand.NextFloat(200, 2000), knockback, player.whoAmI);
+				int a = Projectile.NewProjectile(source, summonPosition, target, type2, Main.rand.Next(200, 2000), knockback, player.whoAmI);
 				Main.projectile[a].friendly = true;
 				Main.projectile[a].hostile = false;
 

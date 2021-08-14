@@ -399,7 +399,7 @@ namespace prefixtest.Common.GlobalNPCs
       }
 			if(prefix.Contains("Floral")){
         if(Main.rand.Next(3) == 0  && Main.hardMode)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.OrichalumOre, Main.rand.Next(1,19));
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.OrichalcumOre, Main.rand.Next(1,19));
       }
 			if(prefix.Contains("Hemomancer")){
         if(Main.rand.Next(3) == 0  && Main.hardMode)

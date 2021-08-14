@@ -326,7 +326,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
         }
       }
-      if (prefix4.Contains("Floral")) {
+      if (prefix3.Contains("Floral")) {
         if (AITimer % 120 == 0) {
           int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 221, npc.damage, 2f); //bullet
           Main.projectile[a].hostile = true;
@@ -334,7 +334,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
         }
       }
-      if (prefix4.Contains("Ballistician")) {
+      if (prefix3.Contains("Ballistician")) {
         if (AITimer % 120 == 0) {
           int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 680, npc.damage, 2f); //bullet
           Main.projectile[a].hostile = true;
@@ -342,7 +342,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
         }
       }
-      if (prefix4.Contains("Hemomancer")) {
+      if (prefix3.Contains("Hemomancer")) {
         if (AITimer % 120 == 0) {
           int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 756, npc.damage, 2f); //bullet
           Main.projectile[a].hostile = true;
@@ -350,7 +350,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
         }
       }
-      if (prefix4.Contains("Ninja")) {
+      if (prefix3.Contains("Ninja")) {
         if (AITimer % 120 == 0) {
           int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 3, npc.damage, 2f); //bullet
           Main.projectile[a].hostile = true;

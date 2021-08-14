@@ -18,15 +18,15 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 
 		public override void SetDefaults() {
 			// Common Properties
-			Item.width = 45; // Hitbox width of the item.
-			Item.height = 28; // Hitbox height of the item.
+			Item.width = 44; // Hitbox width of the item.
+			Item.height = 70; // Hitbox height of the item.
 			Item.scale = 0.75f;
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
 			Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
 			Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-			Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+			Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 

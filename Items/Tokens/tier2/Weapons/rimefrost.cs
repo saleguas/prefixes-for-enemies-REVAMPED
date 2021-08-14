@@ -1,43 +1,42 @@
-using prefixtest.Projectiles;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-
-namespace prefixtest.Items.Tokens.tier4.Weapons
+namespace prefixtest.Items.Tokens.tier2.Weapons
 {
-	public class ludensecho : ModItem
+	public class rimefrost : ModItem
 	{
 		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("The Echo"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Shoots a volley of arrows.");
+      DisplayName.SetDefault("Rimefrost"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("Shoots a volley of crystals.");
 		}
 
 		public override void SetDefaults() {
 			// Common Properties
-			Item.width = 16; // Hitbox width of the item.
-			Item.height = 32; // Hitbox height of the item.
+			Item.width = 18; // Hitbox width of the item.
+			Item.height = 18; // Hitbox height of the item.
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
 			Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
 			Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-			Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+			Item.useStyle = ItemUseStyleID.HoldUp; // How you use the item (swinging, holding out, etc.)
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 
 			// Weapon Properties
-			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-			Item.damage = 67; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
+			Item.damage = 22; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
-			Item.crit = 8;
+			Item.mana = 7;
+			Item.crit = 34;
 
 			// Gun Properties
-			Item.shoot = ModContent.ProjectileType<Projectiles.ludensechoproj>(); // For some reason, all the guns in the vanilla source have this.
-			Item.shootSpeed = 25f; // The speed of the projectile (measured in pixels per frame.)
+			Item.shoot = 174; // For some reason, all the guns in the vanilla source have this.
+			Item.shootSpeed = 4f; // The speed of the projectile (measured in pixels per frame.)
 		}
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
@@ -47,6 +46,22 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 		// 	return new Vector2(2f, -2f);
 		// }
 
+		public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+			// Vector2 perturbedSpeed = new Vector2(0, velocity.Y);
+			// position.X += 200f;
+
+      for(int i = 0; i < 4; i++){
+        Vector2 summonPosition = new Vector2(position.X + Main.rand.NextFloat(-100, 100), position.Y - 50f - Main.rand.NextFloat(-50, 50));
+        Vector2 target =  Main.MouseWorld - summonPosition;
+
+        int a = Projectile.NewProjectile(source, summonPosition, target, type, damage, knockback, player.whoAmI);
+        Main.projectile[a].friendly = true;
+        Main.projectile[a].hostile = false;
+
+      }
+
+			return false;
+		}
 
 
 		// public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {

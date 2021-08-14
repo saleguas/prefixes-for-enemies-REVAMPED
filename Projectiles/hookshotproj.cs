@@ -13,8 +13,8 @@ class hookshotproj : ModProjectile
 	{
 
     public override void SetDefaults() {
-      Projectile.width = 8; // The width of projectile hitbox
-      Projectile.height = 8; // The height of projectile hitbox
+      Projectile.width = 2; // The width of projectile hitbox
+      Projectile.height = 20; // The height of projectile hitbox
 
       Projectile.aiStyle = 0; // The ai style of the projectile (0 means custom AI). For more please reference the source code of Terraria
       Projectile.DamageType = DamageClass.Ranged; // What type of damage does this projectile affect?

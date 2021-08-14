@@ -13,8 +13,8 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
     }
 
     public override void SetDefaults() {
-      Item.width = 50; //The item texture's width.
-      Item.height = 46; //The item texture's height.
+      Item.width = 56; //The item texture's width.
+      Item.height = 24; //The item texture's height.
 
       Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
       Item.useTime = 20; // The time span of using the weapon. Remember in terraria, 60 frames is a second.

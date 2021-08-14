@@ -14,7 +14,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
     }
 
     public override void SetDefaults() {
-      Item.width = 30;
+      Item.width = 67;
       Item.height = 30;
 
       Item.useStyle = ItemUseStyleID.Swing;
@@ -32,7 +32,6 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
       Item.value = Item.buyPrice(gold: 5);
       Item.rare = ItemRarityID.Pink;
       Item.staff[Item.type] = true;
-			Item.scale = 1.5f;
 
     }
     // This method gets called when firing your weapon/sword.

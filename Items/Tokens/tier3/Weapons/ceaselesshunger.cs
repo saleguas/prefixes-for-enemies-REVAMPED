@@ -13,10 +13,10 @@ namespace prefixtest.Items.Tokens.tier3.Weapons {
     }
 
     public override void SetDefaults() {
-      Item.width = 50; //The item texture's width.
-      Item.height = 46; //The item texture's height.
+      Item.width = 32; //The item texture's width.
+      Item.height = 32; //The item texture's height.
 
-      Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+      Item.useStyle = 5; // How you use the item (swinging, holding out, etc.)
       Item.useTime = 20; // The time span of using the weapon. Remember in terraria, 60 frames is a second.
       Item.useAnimation = 20; // The time span of the using animation of the weapon, suggest setting it the same as useTime.
       Item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button.

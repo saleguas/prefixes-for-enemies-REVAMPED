@@ -14,8 +14,8 @@ namespace prefixtest.Items.Tokens.tier3.Weapons{
 		}
 
 		public override void SetDefaults() {
-			Item.width = 40;
-			Item.height = 40;
+			Item.width = 120;
+			Item.height = 120;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.useTime = 13;
 			Item.useAnimation = 13;
