@@ -225,10 +225,8 @@ namespace prefixtest.Common.GlobalNPCs
 
 
       if(prefix.Contains("Petrifying")){
-				if(Main.hardMode){
-        	if(Main.rand.Next(6) == 0)
-        		Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MedusaHead, 1);
-				}
+      	if(Main.rand.Next(6) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MedusaHead, 1);
         if(Main.rand.Next(2) == 0)
         	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Marble, Main.rand.Next(10, 30));
 
@@ -371,8 +369,6 @@ namespace prefixtest.Common.GlobalNPCs
           Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.JungleGrassSeeds, Main.rand.Next(2, 5));
         if(Main.rand.Next(4) == 0)
           Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.HallowedSeeds, Main.rand.Next(2, 5));
-				if(Main.rand.Next(3) == 0)
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<rake>(), 1);
 
       }
 			if(prefix.Contains("Peddler")){
@@ -381,7 +377,44 @@ namespace prefixtest.Common.GlobalNPCs
         if(Main.rand.Next(2) == 0)
           Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<peddlersplea>(), 1);
       }
-
+			if(prefix.Contains("Demonic")){
+        if(Main.rand.Next(3) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DemonScythe, 1);
+      }
+			if(prefix.Contains("Fungal")){
+        if(Main.rand.Next(3) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GlowingMushroom, Main.rand.Next(1, 8));
+				if(Main.rand.Next(3) == 0 && Main.hardMode)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.TruffleWorm, 1);
+      }
+			if(prefix.Contains("Fishy")){
+        if(Main.rand.Next(3) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MasterBait, Main.rand.Next(1,3));
+				if(Main.rand.Next(3) == 0)
+	       	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.CratePotion, Main.rand.Next(1,3));
+				if(Main.rand.Next(3) == 0)
+	       	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SonarPotion, Main.rand.Next(1,3));
+				if(Main.rand.Next(3) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.FishingPotion, Main.rand.Next(1,3));
+      }
+			if(prefix.Contains("Floral")){
+        if(Main.rand.Next(3) == 0  && Main.hardMode)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.OrichalumOre, Main.rand.Next(1,19));
+      }
+			if(prefix.Contains("Hemomancer")){
+        if(Main.rand.Next(3) == 0  && Main.hardMode)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SharpTears, 1);
+      }
+			if(prefix.Contains("Ninja")){
+        if(Main.rand.Next(3) == 0)
+        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.ClimbingClaws, 1);
+				if(Main.rand.Next(3) == 0)
+	       	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.ShoeSpikes, 1);
+				if(Main.rand.Next(3) == 0)
+	       	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Tabi, 1);
+				if(Main.rand.Next(3) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BlackBelt, 1);
+      }
 
       // general loot
 
