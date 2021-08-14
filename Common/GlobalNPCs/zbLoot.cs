@@ -225,8 +225,10 @@ namespace prefixtest.Common.GlobalNPCs
 
 
       if(prefix.Contains("Petrifying")){
-        if(Main.rand.Next(6) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MedusaHead, 1);
+				if(Main.hardMode){
+        	if(Main.rand.Next(6) == 0)
+        		Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MedusaHead, 1);
+				}
         if(Main.rand.Next(2) == 0)
         	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Marble, Main.rand.Next(10, 30));
 
