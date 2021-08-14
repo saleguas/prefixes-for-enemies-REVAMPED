@@ -5,7 +5,7 @@ using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using System;
 
-namespace prefixtest.Items.Testing {
+namespace prefixtest.Items.Tokens.tier3.Weapons {
   public class ceaselesshunger: ModItem {
     public override void SetStaticDefaults() {
       DisplayName.SetDefault("Ceaseless Hunger"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.

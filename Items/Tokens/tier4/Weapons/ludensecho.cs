@@ -11,7 +11,7 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 	public class ludensecho : ModItem
 	{
 		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("Luden's Echo"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+      DisplayName.SetDefault("The Echo"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 			Tooltip.SetDefault("Shoots a volley of arrows.");
 		}
 

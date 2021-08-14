@@ -59,7 +59,7 @@ namespace prefixtest.Items.Testing
 				Vector2 summonPosition = new Vector2(position.X + Main.rand.NextFloat(-100, 100), position.Y - 50f - Main.rand.NextFloat(-50, 50));
 				Vector2 target =  new Vector2(Main.rand.NextFloat(-50f, 50f), Main.rand.NextFloat(-50f, 50f));
 
-				int a = Projectile.NewProjectile(source, summonPosition, target, type2, damage, knockback, player.whoAmI);
+				int a = Projectile.NewProjectile(source, summonPosition, target, type2, Main.rand.NextFloat(200, 2000), knockback, player.whoAmI);
 				Main.projectile[a].friendly = true;
 				Main.projectile[a].hostile = false;
 

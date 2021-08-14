@@ -15,12 +15,13 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Gem Stave"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 			Tooltip.SetDefault("Shoots a volley of arrows.");
-		}
+
+			}
 
 		public override void SetDefaults() {
 			// Common Properties
-			Item.width = 16; // Hitbox width of the item.
-			Item.height = 32; // Hitbox height of the item.
+			Item.width = 42; // Hitbox width of the item.
+			Item.height = 40; // Hitbox height of the item.
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
@@ -50,6 +51,8 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
 		// public override Vector2? HoldoutOffset() {
 		// 	return new Vector2(2f, -2f);
 		// }
+
+
 
     public override bool AltFunctionUse(Player player) {
       return true;

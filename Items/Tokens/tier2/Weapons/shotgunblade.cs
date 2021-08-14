@@ -6,10 +6,10 @@ using Microsoft.Xna.Framework;
 using System;
 
 
-namespace prefixtest.Items.Testing {
+namespace prefixtest.Items.Tokens.tier2.Weapons {
   public class shotgunblade: ModItem {
     public override void SetStaticDefaults() {
-      DisplayName.SetDefault("Hybrid Blade"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+      DisplayName.SetDefault("Shotgun Blade"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
       Tooltip.SetDefault("Left click to swing. Right click to fire a bullet. \nThe gun requires one use to switch between modes.");
     }
 
@@ -68,6 +68,23 @@ namespace prefixtest.Items.Testing {
 
       }
       return base.CanUseItem(player);
+    }
+
+    public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+      const int NumProjectiles = 4; //The humber of projectiles that this gun will shoot.
+
+      for (int i = 0; i < NumProjectiles; i++) {
+        // Rotate the velocity randomly by 30 degrees at max.
+        Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(15));
+
+        // Decrease velocity randomly for nicer visuals.
+        newVelocity *= 1f - Main.rand.NextFloat(0.3f);
+
+        //Create a projectile.
+        Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+      }
+
+      return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
     public override bool ConsumeAmmo(Player player) {

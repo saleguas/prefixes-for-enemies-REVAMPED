@@ -11,7 +11,7 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 	public class infinityedge : ModItem
 	{
 		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("Infinity Edge"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+      DisplayName.SetDefault("Infinite Edge"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 
 			Tooltip.SetDefault("Crits are cool right? The right click agrees!");
 		}
