@@ -310,7 +310,7 @@ namespace prefixtest.Common.GlobalNPCs
           if(Main.rand.Next(4) == 0)
           	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.NightOwlPotion, 3);
           if(Main.rand.Next(4) == 0)
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Stynger, 1);
+            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.StyngerBolt, 1);
           // if(Main.rand.Next(4) == 0)
           //   Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BandofStarpower, 1);
       }

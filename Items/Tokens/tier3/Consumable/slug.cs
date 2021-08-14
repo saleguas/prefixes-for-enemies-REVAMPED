@@ -21,7 +21,7 @@ namespace prefixtest.Items.Tokens.tier3.Consumable
 			Item.width = 14; // The width of item hitbox
 			Item.height = 14; // The height of item hitbox
 
-			Item.damage = 8; // The damage for projectiles isn't actually 8, it actually is the damage combined with the projectile and the item together
+			Item.damage = 25; // The damage for projectiles isn't actually 8, it actually is the damage combined with the projectile and the item together
 			Item.DamageType = DamageClass.Ranged; // What type of damage does this ammo affect?
 
 			Item.maxStack = 999; // The maximum number of items that can be contained within a single stack

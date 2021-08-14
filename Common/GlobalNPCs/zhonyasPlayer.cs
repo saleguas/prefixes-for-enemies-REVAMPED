@@ -23,7 +23,7 @@ namespace prefixtest.Common.GlobalNPCs {
         Player.AddBuff(BuffID.Stoned, 5);
         Player.AddBuff(BuffID.ShadowDodge, 5);
         if(zhonyasTimer == 1)
-          zhonyasCooldown = 600;
+          zhonyasCooldown = 6000;
           zhonyasTimer = 0;
       }
     }

@@ -57,6 +57,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
         int a = Projectile.NewProjectile(source, summonPosition, target, type, damage, knockback, player.whoAmI);
         Main.projectile[a].friendly = true;
         Main.projectile[a].hostile = false;
+				Main.projectile[a].penetrate = 1;
 
       }
 

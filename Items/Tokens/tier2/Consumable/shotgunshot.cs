@@ -14,7 +14,7 @@ namespace prefixtest.Items.Tokens.tier2.Consumable
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Shotgun Shot"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 
-			Tooltip.SetDefault("If an enemy is directly below, this bullet will drop onto them."); // The item's description, can be set to whatever you want.
+			Tooltip.SetDefault("Shoots multiple bullets in a shotgun-like spread."); // The item's description, can be set to whatever you want.
 		}
 
 		public override void SetDefaults() {

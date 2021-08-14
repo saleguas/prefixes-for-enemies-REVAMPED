@@ -14,7 +14,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
     private int shootStyle = 0;
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Gem Stave"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Shoots a volley of arrows.");
+			Tooltip.SetDefault("Right click to switch modes. \nChannel the power of gems.");
 			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 
 			}
@@ -33,7 +33,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
 			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 
 			// Weapon Properties
-			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
+			Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
 			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
@@ -42,7 +42,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
 			// Gun Properties
 			Item.shoot = 121; // For some reason, all the guns in the vanilla source have this.
 			Item.shootSpeed = 8f; // The speed of the projectile (measured in pixels per frame.)
-      Item.mana = 2;
+      Item.mana = 5;
 
 		}
 
@@ -74,8 +74,8 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
 			if (shootStyle == 0){
         Item.shoot = 121;
         Item.damage = 23;
-        Item.shootSpeed = 8f; // The speed of the projectile (measured in pixels per frame.)
-        Item.mana = 2;
+        Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
+        Item.mana = 5;
         Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
   			Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
         return true;
@@ -84,7 +84,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
         Item.shoot = 122;
         Item.damage = 25;
         Item.shootSpeed = 20f; // The speed of the projectile (measured in pixels per frame.)
-        Item.mana = 4;
+        Item.mana = 10;
 
         float numberProjectiles = 3; // 3, 4, or 5 shots
   			float rotation = MathHelper.ToRadians(45);
@@ -99,8 +99,8 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
       else if (shootStyle == 2){
         Item.shoot = 123;
         Item.damage = 28;
-        Item.shootSpeed = 20f; // The speed of the projectile (measured in pixels per frame.)
-        Item.mana = 16;
+        Item.shootSpeed = 10f; // The speed of the projectile (measured in pixels per frame.)
+        Item.mana = 10;
 
         float numberProjectiles = 5; // 3, 4, or 5 shots
         float rotation = MathHelper.ToRadians(45);
@@ -129,7 +129,9 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
         Item.shoot = 125;
         Item.damage = 35;
         Item.shootSpeed = 20f; //
-        Item.mana = 32;
+        Item.mana = 20;
+				Item.useTime = 45; // The item's use time in ticks (60 ticks == 1 second.)
+				Item.useAnimation = 45;
 
         for(int i = 0; i < 10; i++){
           Vector2 downLeftSword = new Vector2(position.X - 50f - (30f * i), position.Y -600f - (30f * i));

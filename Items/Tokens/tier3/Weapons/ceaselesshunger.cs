@@ -9,7 +9,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons {
   public class ceaselesshunger: ModItem {
     public override void SetStaticDefaults() {
       DisplayName.SetDefault("Ceaseless Hunger"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-      Tooltip.SetDefault("Shoots a heavy stynger bolt");
+      Tooltip.SetDefault("Consume your foes. \n Shoots a swarm of ravenous skulls.");
     }
 
     public override void SetDefaults() {
@@ -21,8 +21,8 @@ namespace prefixtest.Items.Tokens.tier3.Weapons {
       Item.useAnimation = 20; // The time span of the using animation of the weapon, suggest setting it the same as useTime.
       Item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button.
 
-      Item.DamageType = DamageClass.Melee; //Whether your item is part of the melee class.
-      Item.damage = 66; //The damage your item deals.
+      Item.DamageType = DamageClass.Magic; //Whether your item is part of the melee class.
+      Item.damage = 45; //The damage your item deals.
       Item.knockBack = 20; //The force of knockback of the weapon. Maximum is 20
       Item.crit = 73; //The critical strike chance the weapon has. The player, by default, has a 4% critical strike chance.
       Item.scale = 1.0f;

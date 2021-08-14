@@ -10,7 +10,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
   public class shotgunblade: ModItem {
     public override void SetStaticDefaults() {
       DisplayName.SetDefault("Shotgun Blade"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-      Tooltip.SetDefault("Left click to swing. Right click to fire a bullet. \nThe gun requires one use to switch between modes.");
+      Tooltip.SetDefault("Left click to swing. Right click to fire a spread of bullets. \nThe gun requires one use to switch between modes.");
     }
 
     public override void SetDefaults() {

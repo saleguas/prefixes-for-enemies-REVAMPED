@@ -10,7 +10,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
 	{
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Vampire Knife"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("This is a modded gun.");
+			Tooltip.SetDefault("Shoots a healing vampire knife.");
 		}
 
 		public override void SetDefaults() {
@@ -25,11 +25,11 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
 			Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.Swing; // How you use the item (swinging, holding out, etc.)
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
+			Item.UseSound = SoundID.Item1; // The sound that this item plays when used.
 
 			// Weapon Properties
 			Item.DamageType = DamageClass.Melee; // Sets the damage type to ranged.
-			Item.damage = 9; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
 			Item.crit = 8;

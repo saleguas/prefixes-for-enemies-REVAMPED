@@ -12,7 +12,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons
     private int zhonyascounter = 6000;
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("The Hourglass"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Enter stasis for 5 seconds. \n You cannot take damage in stasis, but you are stunned.");
+			Tooltip.SetDefault("Enter stasis for 5 seconds. \n You cannot take damage in stasis, but you are stunned.\n60 second cooldown.");
 		}
 
 		public override void SetDefaults() {
@@ -26,8 +26,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons
 			Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.HoldUp; // How you use the item (swinging, holding out, etc.)
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
-			Item.shoot = ProjectileID.PurificationPowder;
+			Item.UseSound = SoundID.Item37; // The sound that this item plays when used.
 
 
 		}

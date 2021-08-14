@@ -31,7 +31,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons
 			Item.damage = 50; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
-			Item.mana = 7;
+			Item.mana = 150;
 
 			// Gun Properties
 			Item.shoot = ProjectileID.PurificationPowder; // For some reason, all the guns in the vanilla source have this.
@@ -71,8 +71,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons
         heading.Y += Main.rand.Next(-40, 41) * 1f;
         heading.X += Main.rand.Next(-40, 41) * 1f;
         int a =Projectile.NewProjectile(source, position, heading, type, damage * 2, knockback, player.whoAmI, 0f, ceilingLimit);
-				Main.projectile[a].friendly = false;
-				Main.projectile[a].hostile = true;
+
       }
 
       return false;
