@@ -14,6 +14,12 @@ class quazarproj : ModProjectile
 
     private int AITimer = 0;
     private int i = 0;
+
+		public override void SetStaticDefaults() {
+			// Total count animation frames
+			Main.projFrames[Projectile.type] = 4;
+		}
+
     public override void SetDefaults() {
       Projectile.width = 8; // The width of projectile hitbox
       Projectile.height = 8; // The height of projectile hitbox
@@ -26,14 +32,21 @@ class quazarproj : ModProjectile
       Projectile.light = 1f; // How much light emit around the projectile
       Projectile.tileCollide = true; // Can the projectile collide with tiles?
       Projectile.timeLeft = 300; //The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
-      Projectile.penetrate = 2;
+      Projectile.penetrate = -1;
 
     }
 
     public override void AI() {
       AITimer = (AITimer + 1) % 10000;
-      double radius = 20;
+      double radius = 10;
       double angle = Math.PI / 4.0;
+
+			if (++Projectile.frameCounter >= 5) {
+				Projectile.frameCounter = 0;
+				// Or more compactly Projectile.frame = ++Projectile.frame % Main.projFrames[Projectile.type];
+				if (++Projectile.frame >= Main.projFrames[Projectile.type])
+					Projectile.frame = 0;
+			}
 
       // if(AITimer % 50 == 0){
       //   for(double i = 0; i < 9; i++){
@@ -53,7 +66,6 @@ class quazarproj : ModProjectile
 			// Use the SafeNormalize extension method to avoid NaNs returned by Vector2.Normalize when the vector is zero
 
 		}
-
 
 
 		// Note, this Texture is actually just a blank texture, FYI.

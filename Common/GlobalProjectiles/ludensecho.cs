@@ -23,8 +23,8 @@ namespace prefixtest.Common.GlobalProjectiles
   		// }
 
       public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit) {
-        target.AddBuff(164, 500);
-        Main.player[projectile.owner].AddBuff(164, 500);
+        // target.AddBuff(164, 500);
+        Main.player[projectile.owner].AddBuff(164, 60);
 
       }
 

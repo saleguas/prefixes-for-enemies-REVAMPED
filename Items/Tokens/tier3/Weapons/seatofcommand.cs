@@ -9,7 +9,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons
 	public class seatofcommand : ModItem
 	{
 		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("The Battle Cry"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+      DisplayName.SetDefault("The Seat of Command"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 			Tooltip.SetDefault("Rain hell upon them.");
 		}
 
@@ -28,7 +28,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons
 
 			// Weapon Properties
 			Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
-			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 50; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
 			Item.mana = 7;

@@ -13,14 +13,13 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Infinite Edge"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 
-			Tooltip.SetDefault("Crits are cool right? The right click agrees!");
+			Tooltip.SetDefault("Smite your enemies. \n Right click to call forth the heavens");
 		}
 
 		public override void SetDefaults() {
 			// Common Properties
 			Item.width = 44; // Hitbox width of the item.
 			Item.height = 70; // Hitbox height of the item.
-			Item.scale = 0.75f;
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
@@ -32,12 +31,13 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 
 			// Weapon Properties
 			Item.DamageType = DamageClass.Melee; // Sets the damage type to ranged.
-			Item.damage = 84; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 89; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
       Item.shoot = 116; // For some reason, all the guns in the vanilla source have this.
       Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
 			Item.crit = 100;
+			Item.scale = 2.0f;
 
 			// Gun Properties
 
@@ -53,19 +53,24 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
   			Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
         Item.useTime = 20; // The item's use time in ticks (60 ticks == 1 second.)
         Item.useAnimation = 20; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-        Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
+        Item.useStyle = 4; // How you use the item (swinging, holding out, etc.)
         Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
-        Item.scale = 1.5f;
         Item.damage = 250;
 				Item.crit = 100;
+				Item.useTime = 160; // The item's use time in ticks (60 ticks == 1 second.)
+				Item.useAnimation = 160; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+				Item.scale = 0.75f;
+
 
       } else {
         Item.useStyle = ItemUseStyleID.Swing;
         Item.useTime = 20;
         Item.useAnimation = 20;
         Item.UseSound = SoundID.Item1;
-        Item.scale = 2.5f;
-        Item.damage = 19;
+        Item.scale = 2.0f;
+        Item.damage = 89;
+				Item.useTime = 16; // The item's use time in ticks (60 ticks == 1 second.)
+				Item.useAnimation = 16; // The length of the item's use animation in ticks (60 ticks == 1 second.)
 
 
 

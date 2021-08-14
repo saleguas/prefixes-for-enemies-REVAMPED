@@ -9,26 +9,29 @@ namespace prefixtest.Items.Tokens.tier3.Weapons{
 
     private int charges = 0;
 		public override void SetStaticDefaults() {
-			Tooltip.SetDefault("Why are you using a tuning fork to fight?\n Hitting true melee charges up the fork, right click to release it!"); //The (English) text shown below your weapon's name.
+			Tooltip.SetDefault("Why are you using a tuning fork to fight?\n Hitting true melee charges up the fork, right click to release all charges!\nMaximum 10 charges."); //The (English) text shown below your weapon's name.
 			DisplayName.SetDefault("Tuning Fork");
 		}
 
 		public override void SetDefaults() {
-			Item.width = 120;
-			Item.height = 120;
+			Item.width = 52;
+			Item.height = 52;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.useTime = 13;
 			Item.useAnimation = 13;
 			Item.noMelee = false;
 
 			Item.DamageType = DamageClass.Melee;
-			Item.damage = 69;
+			Item.damage = 45;
 			Item.knockBack = 3;
 			Item.crit = 28;
 			Item.value = Item.buyPrice(gold: 35);
 			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
+
 		}
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit) {
+			if(charges < 10)
          charges++;
     }
 
@@ -70,9 +73,9 @@ namespace prefixtest.Items.Tokens.tier3.Weapons{
           Vector2 angle1 = new Vector2(velocity.X + Main.rand.NextFloat(-10f, 10f), velocity.Y + Main.rand.NextFloat(-10f, 10f));
           Vector2 angle2 = new Vector2(velocity.X + Main.rand.NextFloat(-10f, 10f), velocity.Y + Main.rand.NextFloat(-10f, 10f));
           Vector2 angle3 = new Vector2(velocity.X + Main.rand.NextFloat(-10f, 10f), velocity.Y + Main.rand.NextFloat(-10f, 10f));
-          Projectile.NewProjectile(source, position, angle1, 76, damage, knockback, player.whoAmI);
-          Projectile.NewProjectile(source, position, angle2, 77, damage, knockback, player.whoAmI);
-          Projectile.NewProjectile(source, position, angle3, 78, damage, knockback, player.whoAmI);
+          Projectile.NewProjectile(source, position, angle1, 76, (int)(damage * 2.0f * charges), knockback, player.whoAmI);
+          Projectile.NewProjectile(source, position, angle2, 77, (int)(damage * 2.0f * charges), knockback, player.whoAmI);
+          Projectile.NewProjectile(source, position, angle3, 78, (int)(damage * 2.0f * charges), knockback, player.whoAmI);
         }
         charges = 0;
 

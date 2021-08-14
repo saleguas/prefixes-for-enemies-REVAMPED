@@ -4,6 +4,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using System.Collections.Generic;
+using System;
 
 
 namespace prefixtest.Projectiles
@@ -24,10 +25,14 @@ class purifierproj : ModProjectile
       Projectile.light = 1f; // How much light emit around the projectile
       Projectile.tileCollide = false; // Can the projectile collide with tiles?
       Projectile.timeLeft = 300; //The live time for the projectile (60 = 1 second, so 600 is 10 seconds)
+			Projectile.scale *= 3f;
     }
 
 		// Note, this Texture is actually just a blank texture, FYI.
-
+		public override void AI()
+			{
+			Projectile.rotation = (float)Math.Atan2((double)Projectile.velocity.Y, (double)Projectile.velocity.X) + 1.57f;
+			}
 
 
     // public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {

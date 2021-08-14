@@ -12,7 +12,7 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 	{
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Quazar"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Shoots a volley of arrows.");
+			Tooltip.SetDefault("Shoot a pulsing nanite. \n Uses nanites as ammo");
 		}
 
 		public override void SetDefaults() {
@@ -22,23 +22,30 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
 			// Use Properties
-			Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
-			Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+			Item.useTime = 120; // The item's use time in ticks (60 ticks == 1 second.)
+			Item.useAnimation = 120; // The length of the item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 
 			// Weapon Properties
 			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-			Item.damage = 67; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+			Item.damage = 101; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
 			Item.crit = 8;
 
 			// Gun Properties
-			Item.shoot = ModContent.ProjectileType<Projectiles.quazarproj>(); // For some reason, all the guns in the vanilla source have this.
-			Item.shootSpeed = 1.5f; // The speed of the projectile (measured in pixels per frame.)
+			Item.useAmmo = ItemID.Nanites;
+			Item.shoot = ModContent.ProjectileType<Projectiles.quazarproj>();
+
+			Item.shootSpeed = 2f; // The speed of the projectile (measured in pixels per frame.)
 		}
+
+		public override bool ConsumeAmmo(Player player){
+			return true;
+		}
+
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 

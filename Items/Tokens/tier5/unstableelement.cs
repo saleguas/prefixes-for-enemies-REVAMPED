@@ -14,7 +14,7 @@ namespace prefixtest.Items.Tokens.tier5
     private int shootStyle = 0;
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Unstable Element"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Shoots a volley of arrows.");
+			Tooltip.SetDefault("Conjure pure power.");
 		}
 
 		public override void SetDefaults() {
@@ -32,7 +32,6 @@ namespace prefixtest.Items.Tokens.tier5
 
 			// Weapon Properties
 			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-			Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.
 			Item.crit = 8;

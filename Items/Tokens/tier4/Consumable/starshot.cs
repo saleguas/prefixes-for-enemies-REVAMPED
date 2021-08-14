@@ -14,14 +14,14 @@ namespace prefixtest.Items.Tokens.tier4.Consumable
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("Starshot"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 
-			Tooltip.SetDefault("If an enemy is directly below, this bullet will drop onto them."); // The item's description, can be set to whatever you want.
+			Tooltip.SetDefault("Rains crystal bullets from the sky."); // The item's description, can be set to whatever you want.
 		}
 
 		public override void SetDefaults() {
 			Item.width = 14; // The width of item hitbox
 			Item.height = 14; // The height of item hitbox
 
-			Item.damage = 8; // The damage for projectiles isn't actually 8, it actually is the damage combined with the projectile and the item together
+			Item.damage = 12; // The damage for projectiles isn't actually 8, it actually is the damage combined with the projectile and the item together
 			Item.DamageType = DamageClass.Ranged; // What type of damage does this ammo affect?
 
 			Item.maxStack = 999; // The maximum number of items that can be contained within a single stack

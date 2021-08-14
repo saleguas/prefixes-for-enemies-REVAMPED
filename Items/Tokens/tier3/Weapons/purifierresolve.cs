@@ -7,7 +7,7 @@ using Terraria.DataStructures;
 using prefixtest.buffs;
 using prefixtest.Projectiles;
 
-namespace prefixtest.Items.Tokens.tier4.Weapons {
+namespace prefixtest.Items.Tokens.tier3.Weapons {
   public class purifierresolve: ModItem {
     public override void SetStaticDefaults() {
       DisplayName.SetDefault("Purifier's Resolve"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
@@ -19,9 +19,8 @@ namespace prefixtest.Items.Tokens.tier4.Weapons {
 
     public override void SetDefaults() {
       // Common Properties
-      Item.width = 56; // Hitbox width of the item.
-      Item.height = 26; // Hitbox height of the item.
-      Item.scale = 0.75f;
+      Item.width = 41; // Hitbox width of the item.
+      Item.height = 19; // Hitbox height of the item.
       Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
 
       // Use Properties
@@ -33,11 +32,11 @@ namespace prefixtest.Items.Tokens.tier4.Weapons {
 
       // Weapon Properties
       Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-      Item.damage = 20; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-      Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+      Item.damage = 40; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+      Item.knockBack = 2f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
       Item.noMelee = false; // So the item's animation doesn't do damage.
       Item.shoot = ModContent.ProjectileType<Projectiles.purifierproj>(); // For some reason, all the guns in the vanilla source have this.
-      Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
+      Item.shootSpeed = 40f; // The speed of the projectile (measured in pixels per frame.)
 
       // Gun Properties
 

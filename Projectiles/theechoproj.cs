@@ -21,7 +21,7 @@ class theechoproj : ModProjectile
       Projectile.height = 80; // The height of projectile hitbox
 
       Projectile.aiStyle = 0; // The ai style of the projectile (0 means custom AI). For more please reference the source code of Terraria
-      Projectile.DamageType = DamageClass.Ranged; // What type of damage does this projectile affect?
+      Projectile.DamageType = DamageClass.Magic; // What type of damage does this projectile affect?
       Projectile.friendly = true; // Can the projectile deal damage to enemies?
       Projectile.hostile = false; // Can the projectile deal damage to the player?
       Projectile.ignoreWater = true; // Does the projectile's speed be influenced by water?

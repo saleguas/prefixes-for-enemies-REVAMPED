@@ -12,7 +12,7 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 	{
 		public override void SetStaticDefaults() {
       DisplayName.SetDefault("The Echo"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("Shoots a volley of arrows.");
+			Tooltip.SetDefault("Shoots a projectile that splits upon hitting an enemy. \n The new projectiles also have this effect.");
 			Item.staff[Item.type] = true; //this makes the useStyle animate as a staff instead of as a gun
 
 		}
@@ -28,10 +28,10 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 			Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
 			Item.useStyle = 5; // How you use the item (swinging, holding out, etc.)
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
+			Item.UseSound = SoundID.Item28; // The sound that this item plays when used.
 
 			// Weapon Properties
-			Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
+			Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
 			Item.damage = 67; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
 			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
 			Item.noMelee = true; // So the item's animation doesn't do damage.

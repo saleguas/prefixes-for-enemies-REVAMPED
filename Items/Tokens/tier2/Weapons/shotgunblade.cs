@@ -14,8 +14,8 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
     }
 
     public override void SetDefaults() {
-      Item.width = 67;
-      Item.height = 30;
+      Item.width = 60;
+      Item.height = 67;
 
       Item.useStyle = ItemUseStyleID.Swing;
       Item.useTime = 20;
@@ -24,14 +24,13 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
       Item.shoot = ProjectileID.None;
 
       Item.DamageType = DamageClass.Melee;
-      Item.damage = 19;
+      Item.damage = 30;
       Item.knockBack = 6;
       Item.crit = 6;
       Item.autoReuse = true;
 
       Item.value = Item.buyPrice(gold: 5);
       Item.rare = ItemRarityID.Pink;
-      Item.staff[Item.type] = true;
 
     }
     // This method gets called when firing your weapon/sword.
@@ -49,8 +48,10 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
         Item.useStyle = ItemUseStyleID.Shoot; // How you use the item (swinging, holding out, etc.)
         Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
         Item.DamageType = DamageClass.Ranged;
-				Item.scale = 1.5f;
-				Item.damage = 18;
+				Item.scale = 1.0f;
+				Item.damage = 15;
+        Item.staff[Item.type] = true;
+
 
       } else {
 				Item.useAmmo = -1;
@@ -60,8 +61,10 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
         Item.UseSound = SoundID.Item1;
         Item.shoot = ProjectileID.None;
         Item.DamageType = DamageClass.Melee;
-				Item.scale = 2.5f;
-				Item.damage = 19;
+				Item.scale = 2.0f;
+				Item.damage = 30;
+        Item.staff[Item.type] = false;
+
 
 
 

@@ -22,9 +22,9 @@ namespace prefixtest.Items.Tokens.tier4.Weapons {
       Item.autoReuse = true; // Whether the weapon can be used more than once automatically by holding the use button.
 
       Item.DamageType = DamageClass.Melee; //Whether your item is part of the melee class.
-      Item.damage = 66; //The damage your item deals.
+      Item.damage = 78; //The damage your item deals.
       Item.knockBack = 20; //The force of knockback of the weapon. Maximum is 20
-      Item.crit = 73; //The critical strike chance the weapon has. The player, by default, has a 4% critical strike chance.
+      Item.crit = 40; //The critical strike chance the weapon has. The player, by default, has a 4% critical strike chance.
       Item.scale = 2.0f;
 
       Item.value = Item.buyPrice(gold: 1); //The value of the weapon in copper coins.
