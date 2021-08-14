@@ -27,7 +27,7 @@ namespace prefixtest.Common.GlobalNPCs {
     public override void SetDefaults(NPC npc) {
       // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
       Random random = new Random();
-      int roll2 = random.Next(1, 21); // creates a number from 1 to n-1
+      int roll2 = random.Next(1, 23); // creates a number from 1 to n-1
       switch (roll2) {
 
       case 1:
@@ -89,6 +89,27 @@ namespace prefixtest.Common.GlobalNPCs {
         break;
       case 20:
         prefix3 = "Peddler";
+        break;
+      case 21:
+        prefix3 = "Demonic";
+        break;
+      case 22:
+        prefix3 = "Fungal";
+        break;
+      case 23:
+        prefix3 = "Fishy";
+        break;
+      case 24:
+        prefix3 = "Floral";
+        break;
+      case 25:
+        prefix3 = "Ballistician";
+        break;
+      case 26:
+        prefix3 = "Hemomancer";
+        break;
+      case 27:
+        prefix3 = "Ninja";
         break;
       }
 
@@ -276,6 +297,62 @@ namespace prefixtest.Common.GlobalNPCs {
       if (prefix3.Contains("Peddler")) {
         if (AITimer % 40 == 0) {
           int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 158, (int) (npc.damage * 0.4), 2f); //bullet
+          Main.projectile[a].hostile = true;
+          Main.projectile[a].friendly = false;
+
+        }
+      }
+      if (prefix3.Contains("Demonic")) {
+        if (AITimer % 120 == 0) {
+          int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 44, npc.damage, 2f); //bullet
+          Main.projectile[a].hostile = true;
+          Main.projectile[a].friendly = false;
+
+        }
+      }
+      if (prefix3.Contains("Fungal")) {
+        if (AITimer % 120 == 0) {
+          int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 131, npc.damage, 2f); //bullet
+          Main.projectile[a].hostile = true;
+          Main.projectile[a].friendly = false;
+
+        }
+      }
+      if (prefix3.Contains("Fishy")) {
+        if (AITimer % 120 == 0) {
+          int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 190, npc.damage, 2f); //bullet
+          Main.projectile[a].hostile = true;
+          Main.projectile[a].friendly = false;
+
+        }
+      }
+      if (prefix4.Contains("Floral")) {
+        if (AITimer % 120 == 0) {
+          int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 221, npc.damage, 2f); //bullet
+          Main.projectile[a].hostile = true;
+          Main.projectile[a].friendly = false;
+
+        }
+      }
+      if (prefix4.Contains("Ballistician")) {
+        if (AITimer % 120 == 0) {
+          int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 680, npc.damage, 2f); //bullet
+          Main.projectile[a].hostile = true;
+          Main.projectile[a].friendly = false;
+
+        }
+      }
+      if (prefix4.Contains("Hemomancer")) {
+        if (AITimer % 120 == 0) {
+          int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 756, npc.damage, 2f); //bullet
+          Main.projectile[a].hostile = true;
+          Main.projectile[a].friendly = false;
+
+        }
+      }
+      if (prefix4.Contains("Ninja")) {
+        if (AITimer % 120 == 0) {
+          int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 3, npc.damage, 2f); //bullet
           Main.projectile[a].hostile = true;
           Main.projectile[a].friendly = false;
 
