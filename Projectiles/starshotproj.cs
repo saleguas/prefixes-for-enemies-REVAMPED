@@ -59,7 +59,7 @@ namespace prefixtest.Projectiles
 				heading.Y += Main.rand.Next(-40, 41) * 0.02f;
 				heading.X *= 2f;
 				heading.Y *= 2f;
-				Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), position, heading, 89, 14, 5, Projectile.owner, 0f, ceilingLimit);
+				Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), position, heading, 89, 40, 5, Projectile.owner, 0f, ceilingLimit);
 			}
 
         // Projectile.NewProjectileDirect(Projectile.GetProjectileSource_FromThis(), Projectile.position, newVelocity, 14, 13, 5, Projectile.owner); // 13 damage 5 knockback

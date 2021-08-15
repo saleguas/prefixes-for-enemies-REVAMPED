@@ -29,7 +29,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 10.02; // 0.02
+      return roll1 <= 0.02; // 0.02
 		}
 
 
@@ -72,22 +72,23 @@ namespace prefixtest.Common.GlobalNPCs
 
 		public override void OnKill(NPC npc) {
 
-			if (NPC.downedBoss3 || NPC.downedQueenBee)
-			{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TopazToken>());
-			}
-			else if (Main.hardMode)
-			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
 
+			if (NPC.downedMoonlord){
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DiamondToken>());
 			}
 			else if (NPC.downedPlantBoss)
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EmeraldToken>());
 
 			}
-			else if (NPC.downedMoonlord){
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DiamondToken>());
+			else if (Main.hardMode)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
+
+			}
+			else if (NPC.downedBoss3 || NPC.downedQueenBee)
+			{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TopazToken>());
 			}
 			else{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AmethystToken>());

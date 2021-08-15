@@ -20,13 +20,13 @@ namespace prefixtest.Common.GlobalNPCs {
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 10.025;
+      return roll1 <= 0.025;
     }
 
     public override void SetDefaults(NPC npc) {
       // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
       Random random = new Random();
-      int roll2 = random.Next(1, 2); // creates a number from 1 to n-1
+      int roll2 = random.Next(1, 20); // creates a number from 1 to n-1
       switch (roll2) {
 
       case 1:

@@ -6,6 +6,7 @@ using Terraria.ModLoader;
 using Terraria.Localization;
 using prefixtest.Common.GlobalNPCs;
 using prefixtest.Items.MobDrops;
+using prefixtest.Items.Tokens;
 // I have "random" letters appended to the beginning of each of these files b/c the game reads them in alphabetical order.
 // statchanges first, then spceial effects, then projecitles
 namespace prefixtest.Common.GlobalNPCs
@@ -446,8 +447,13 @@ namespace prefixtest.Common.GlobalNPCs
         crateType = Main.rand.Next(new int[] { crateType, crateTypeHardmode });
       }
 
-      if(Main.rand.Next(3) == 0)
+      if(Main.rand.Next(5) == 0)
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, crateType, 1);
+
+			if(Main.rand.Next(10) == 0){
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<soulofchance>(), 1);
+
+			}
 
 
 
