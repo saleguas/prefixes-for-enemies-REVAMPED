@@ -385,7 +385,7 @@ namespace prefixtest.Common.GlobalNPCs
 			if(prefix.Contains("Fungal")){
         if(Main.rand.Next(3) == 0)
         	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GlowingMushroom, Main.rand.Next(1, 8));
-				if(Main.rand.Next(3) == 0 && Main.hardMode)
+				if(Main.rand.Next(7) == 0 && Main.hardMode)
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.TruffleWorm, 1);
       }
 			if(prefix.Contains("Fishy")){
