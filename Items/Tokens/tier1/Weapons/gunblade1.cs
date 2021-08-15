@@ -32,7 +32,7 @@ namespace prefixtest.Items.Tokens.tier1.Weapons {
       Item.crit = 12;
 
       Item.value = Item.buyPrice(gold: 5);
-      Item.rare = ItemRarityID.Pink;
+      Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
       Item.UseSound = SoundID.Item11;
       Item.useAmmo = AmmoID.Bullet;
 

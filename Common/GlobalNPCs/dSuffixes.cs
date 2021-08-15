@@ -6,6 +6,8 @@ using Terraria.ModLoader;
 using Terraria.Localization;
 using prefixtest.Common.GlobalNPCs;
 using Terraria.Audio;
+using System.Collections.Generic;
+using System;
 
 namespace prefixtest.Common.GlobalNPCs {
   public class dSuffixes: GlobalNPC {
@@ -15,6 +17,9 @@ namespace prefixtest.Common.GlobalNPCs {
     private bool nameChanged = false;
     private int lives = 10;
     private int AITimer = 0;
+    private int floatTimer = 0;
+    private int explosionTimer = 0;
+    private List<Player> floating = new List<Player>();
 
     public override bool AppliesToEntity(NPC npc, bool lateInstatiation) {
       if (npc.townNPC == true || npc.friendly == true)
@@ -23,13 +28,13 @@ namespace prefixtest.Common.GlobalNPCs {
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 1.00;
+      return roll1 <= 1.05;
     }
 
     public override void SetDefaults(NPC npc) {
       // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
       Random random = new Random();
-      int roll2 = random.Next(3, 4); // creates a number from 1 to n-1
+      int roll2 = random.Next(6,7); // creates a number from 1 to n-1
       switch (roll2) {
 
         case 0:
@@ -44,7 +49,15 @@ namespace prefixtest.Common.GlobalNPCs {
         case 3:
           suffix1 = "The Soul Eater";
           break;
-        
+        case 4:
+          suffix1 = "The Cultist";
+          break;
+        case 5:
+          suffix1 = "The Psyker";
+          break;
+        case 6:
+          suffix1 = "The Fireborn";
+          break;
 
 
       }
@@ -54,6 +67,8 @@ namespace prefixtest.Common.GlobalNPCs {
     public override void AI(NPC npc) {
       AITimer = (AITimer + 1) % 10000;
       //Make the guide giant and green.
+      Player targetPlayer = Main.player[npc.target];
+      Vector2 npcToPlayer = targetPlayer.position - npc.position;
       if(suffix1.Contains("The Necromancer") && npc.value != 0){
 
           if(AITimer % 300 == 0){
@@ -104,6 +119,71 @@ namespace prefixtest.Common.GlobalNPCs {
 
 
         }
+
+        if(suffix1.Contains("The Cultist")){
+
+          if(AITimer % 300 == 0){
+            int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, npc.velocity, 464, npc.damage, 2f); //bullet
+
+          }
+          if(AITimer % 600 == 0){
+            int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, npc.velocity, 465, npc.damage, 2f); //bullet
+
+          }
+
+          }
+
+
+          if(suffix1.Contains("The Psyker")){
+            if(floatTimer > 0){
+              floatTimer -= 1;
+              foreach(Player p in floating){
+                p.velocity = new Vector2(0, -2f);
+              }
+              if (floatTimer == 1){
+                foreach(Player p in floating){
+                  p.velocity += new Vector2(50f, -2f);
+                }
+                floating.Clear();
+                floatTimer = 0;
+              }
+            }
+
+            else if(AITimer % 300 == 0){
+
+              for (int k = 0; k < Main.maxPlayers; k++) {
+                Player player = Main.player[k];
+                float sqrDistanceToTarget = Vector2.DistanceSquared(player.Center, npc.Center);
+                if(Math.Abs(sqrDistanceToTarget) < 1000000f){
+                  floating.Add(player);
+                  floatTimer = 180;
+
+                }
+              }
+
+            }
+          }
+
+          if(suffix1.Contains("The Fireborn")){
+            if(explosionTimer > 0){
+              if(AITimer % 10 == 0){
+                int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), new Vector2(npc.position.X - 200 - 100 *(10 - explosionTimer), npc.position.Y), new Vector2(0, 0), 686, npc.damage * 2, 2f); //bullet
+                int b = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), new Vector2(npc.position.X + 200 + 100 *(10 - explosionTimer), npc.position.Y), new Vector2(0, 0), 686, npc.damage * 2, 2f); //bullet
+
+                explosionTimer -= 1;
+              }
+
+            }
+            if(AITimer % 180 == 0){
+              int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 686, npc.damage * 2, 2f); //bullet
+
+            }
+            if(AITimer % 300 == 0){
+              explosionTimer = 10;
+            }
+
+          }
+
 
 
 

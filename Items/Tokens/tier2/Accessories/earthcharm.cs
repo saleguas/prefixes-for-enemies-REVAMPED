@@ -18,7 +18,7 @@ namespace prefixtest.Items.Tokens.tier2.Accessories
 			Item.width = 32;
 			Item.height = 32;
 			Item.accessory = true;
-			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
+			Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
 
 		}
 
