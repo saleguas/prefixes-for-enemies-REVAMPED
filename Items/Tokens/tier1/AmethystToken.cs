@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace prefixtest.Items.Tokens.tier1
 {
-	public class LootToken1 : ModItem
+	public class AmethystToken : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
@@ -27,12 +27,6 @@ namespace prefixtest.Items.Tokens.tier1
       Item.useTime = 40;
 		}
 
-		public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.DirtBlock, 10);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.Register();
-		}
+
 	}
 }

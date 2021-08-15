@@ -1,7 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-
+using prefixtest.Items.Tokens;
 namespace prefixtest.Items.Tokens.tier1.Consumable
 {
 	// This Example class demonstrates how to make your own weapon ammo.
@@ -32,6 +32,21 @@ namespace prefixtest.Items.Tokens.tier1.Consumable
 
 		}
 
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe(999);
+			recipe.AddIngredient<soulofchance>(1);
+			recipe.AddIngredient<tier1.AmethystToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+
+		// public override void AddRecipes() {
+		// 	CreateRecipe()
+		// 		.AddIngredient<ExampleItem>()
+		// 		.AddTile<Tiles.Furniture.ExampleWorkbench>()
+		// 		.Register();
+		// }
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		// Here we create recipe for 999/ExampleCustomAmmo stack from 1/ExampleItem
 
