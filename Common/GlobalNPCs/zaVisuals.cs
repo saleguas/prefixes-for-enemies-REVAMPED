@@ -160,6 +160,8 @@ namespace prefixtest.Common.GlobalNPCs
                     int dust = Dust.NewDust(npc.position, npc.width + 4, npc.height + 4, 43, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 228, default(Color), 2f);
                 }
             }
+						npc.netUpdate = true;
+
 
           }
 

@@ -19,6 +19,14 @@ Original Idea and many concepts belong to Hiccup251 and Jofairden. There are fun
 
  I'll update this with a wiki as soon as I can.
 
+TODO:
+ - Polish up Weapons
+ - Add more Weapons
+ - Add suffixes
+ - Add more prefixes
+ - Balance prefixes more
+ - Optimize for multiplayer
+ 
 Credits:
  - Main developer/Spriter: timetonic#5547
  - Assistant Developer: Stats Captain#3423

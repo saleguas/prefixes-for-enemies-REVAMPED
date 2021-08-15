@@ -100,21 +100,21 @@ namespace prefixtest.NPCs
 
 
 
-		// public override bool CanTownNPCSpawn(int numTownNPCs, int money) { // Requirements for the town NPC to spawn.
-		// 	for (int k = 0; k < 255; k++) {
-		// 		Player player = Main.player[k];
-		// 		if (!player.active) {
-		// 			continue;
-		// 		}
-		//
-		// 		// Player has to have either an ExampleItem or an ExampleBlock in order for the NPC to spawn
-		// 		if (player.inventory.Any(item => item.type == ModContent.ItemType<ExampleItem>() || item.type == ModContent.ItemType<Items.Placeable.ExampleBlock>())) {
-		// 			return true;
-		// 		}
-		// 	}
-		//
-		// 	return false;
-		// }
+		public override bool CanTownNPCSpawn(int numTownNPCs, int money) { // Requirements for the town NPC to spawn.
+			for (int k = 0; k < 255; k++) {
+				Player player = Main.player[k];
+				if (!player.active) {
+					continue;
+				}
+
+				// Player has to have either an ExampleItem or an ExampleBlock in order for the NPC to spawn
+				if (player.inventory.Any(item => item.type == ModContent.ItemType<soulofchance>() || item.type == ModContent.ItemType<soulshard>())) {
+					return true;
+				}
+			}
+
+			return false;
+		}
 
 		// Example Person needs a house built out of ExampleMod tiles. You can delete this whole method in your townNPC for the regular house conditions.
 

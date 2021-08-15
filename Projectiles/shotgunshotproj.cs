@@ -43,6 +43,7 @@ namespace prefixtest.Projectiles
         //Create a projectile.
         Projectile.NewProjectileDirect(Projectile.GetProjectileSource_FromThis(), Projectile.position, newVelocity, 14, 13, 5, Projectile.owner); // 13 damage 5 knockback
       }
+			Projectile.netUpdate = true;
 
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

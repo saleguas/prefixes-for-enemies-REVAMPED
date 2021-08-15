@@ -20,7 +20,7 @@ namespace prefixtest.Common.GlobalNPCs
 
 
 		public override bool AppliesToEntity(NPC npc, bool lateInstatiation) {
-      if (npc.townNPC == true)
+      if (npc.townNPC == true || npc.friendly == true)
         return false;
       return true;
 		}
@@ -38,7 +38,7 @@ namespace prefixtest.Common.GlobalNPCs
 
 
       if (!nameChanged){
-				npc.GivenName = npc.GetGlobalNPC<prefixString>().prefix = npc.GetGlobalNPC<prefixString>().prefix + " " + npc.FullName;
+				npc.GivenName = npc.GetGlobalNPC<prefixString>().prefix = npc.GetGlobalNPC<prefixString>().prefix + " " + npc.FullName + " " + npc.GetGlobalNPC<prefixString>().suffix;
 				nameChanged = true;
 			}
 		}
@@ -48,6 +48,10 @@ namespace prefixtest.Common.GlobalNPCs
       prefix = npc.GetGlobalNPC<prefixString>().prefix;
       if (prefix == "")
         return;
+
+			if(npc.value == 0f && npc.npcSlots == 0f){
+				return;
+			}
 
       if(prefix.Contains("Burning")){
         if(Main.rand.Next(3) == 0) // 1 in 2 chance, 50% drop chance
@@ -175,7 +179,7 @@ namespace prefixtest.Common.GlobalNPCs
 			if(prefix.Contains("Wing Clipper")){
         if(Main.hardMode){
           if(Main.rand.Next(2) == 0)
-          	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofFlight, Main.rand.Next(1, 10));
+          	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofFlight, Main.rand.Next(1, 4));
           }
       }
 
@@ -199,7 +203,7 @@ namespace prefixtest.Common.GlobalNPCs
 			if(prefix.Contains("Dark")){
         if(Main.rand.Next(10) == 0)
         	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DemonScythe, 1);
-        if(Main.rand.Next(10) == 0)
+        if(Main.rand.Next(10) == 0 && (NPC.downedBoss3 || NPC.downedQueenBee))
         	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BookofSkulls, 1);
         if(Main.rand.Next(10) == 0 && Main.hardMode)
         	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.UnholyTrident, 1);
@@ -447,13 +451,15 @@ namespace prefixtest.Common.GlobalNPCs
         crateType = Main.rand.Next(new int[] { crateType, crateTypeHardmode });
       }
 
-      if(Main.rand.Next(5) == 0)
+      if(Main.rand.Next(11) == 0)
         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, crateType, 1);
 
 			if(Main.rand.Next(10) == 0){
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<soulofchance>(), 1);
 
 			}
+			npc.netUpdate = true;
+
 
 
 

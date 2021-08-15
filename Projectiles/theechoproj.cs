@@ -44,6 +44,8 @@ class theechoproj : ModProjectile
 				Vector2 downProj = new Vector2(Projectile.velocity.X, Projectile.velocity.Y - 12f);
 				Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Projectile.position, upProj, Projectile.type, damage, knockback, Projectile.owner);
 				Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Projectile.position, downProj, Projectile.type, damage, knockback, Projectile.owner);
+				Projectile.netUpdate = true;
+
 			}
 		}
 

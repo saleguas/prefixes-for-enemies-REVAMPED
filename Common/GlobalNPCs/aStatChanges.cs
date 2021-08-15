@@ -14,7 +14,7 @@ namespace prefixtest.Common.GlobalNPCs {
     private bool nameChanged = false;
 
     public override bool AppliesToEntity(NPC npc, bool lateInstatiation) {
-      if (npc.townNPC == true)
+      if (npc.townNPC == true || npc.friendly == true)
         return false;
 
       Random random = new Random();
@@ -144,6 +144,7 @@ namespace prefixtest.Common.GlobalNPCs {
         npc.scale *= roll3;
         break;
       }
+      npc.netUpdate = true;
       npc.value *= 2f;
 
     }

@@ -23,11 +23,14 @@ namespace prefixtest.Common.GlobalNPCs
 
 
 		public override bool AppliesToEntity(NPC npc, bool lateInstatiation) {
-			if (npc.townNPC == true)
+			if (npc.townNPC == true || npc.friendly == true)
 				return false;
 
       Random random = new Random();
       double roll1 = random.NextDouble();
+
+			npc.netUpdate = true;
+
 
       return roll1 <= 0.02; // 0.02
 		}
@@ -48,6 +51,7 @@ namespace prefixtest.Common.GlobalNPCs
 					Lighting.AddLight(npc.position, 0.410f, 0.340f, 0.100f);
 					int dust = Dust.NewDust(npc.position, npc.width+5, npc.height+5, 204, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 1.89f);
 			}
+
 		}
 		public override bool PreAI(NPC npc){
 			if (prefix.Contains("Rare") && npc.value == 0f && npc.npcSlots == 0f)

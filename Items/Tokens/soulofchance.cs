@@ -11,7 +11,7 @@ namespace prefixtest.Items.Tokens
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Soul of Chance");
-			Tooltip.SetDefault("'The essence of rare creates'");
+			Tooltip.SetDefault("'The essence of rare creatures'");
 
 			// Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 			// Reminder, (4, 6) is an example of an item that draws a new frame every 6 ticks

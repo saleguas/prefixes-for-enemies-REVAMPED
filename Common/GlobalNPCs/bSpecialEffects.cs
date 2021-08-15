@@ -120,6 +120,7 @@ namespace prefixtest.Common.GlobalNPCs
 					// 	prefix2 = "Teleporting";
 					// 	break;
         }
+				npc.netUpdate = true;
         npc.value *= 4f;
 		}
 
@@ -235,11 +236,11 @@ namespace prefixtest.Common.GlobalNPCs
                         {
                             Main.mouseItem = target.inventory[i].Clone();
                         }
+
                     }
                 }
               }
-
-
+							npc.netUpdate = true;
 
     }
 
