@@ -33,6 +33,15 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
       Item.rare = ItemRarityID.Pink;
 
     }
+
+    public override void AddRecipes()
+    {
+      Recipe recipe = CreateRecipe();
+      recipe.AddIngredient<soulofchance>(3);
+      recipe.AddIngredient<TopazToken>(1);
+      recipe.AddTile(TileID.WorkBenches);
+      recipe.Register();
+    }
     // This method gets called when firing your weapon/sword.
     public override bool AltFunctionUse(Player player) {
       return true;

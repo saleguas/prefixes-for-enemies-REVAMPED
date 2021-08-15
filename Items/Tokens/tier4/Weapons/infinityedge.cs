@@ -43,6 +43,15 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 
 		}
 
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<EmeraldToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+
     public override bool AltFunctionUse(Player player) {
       return true;
     }

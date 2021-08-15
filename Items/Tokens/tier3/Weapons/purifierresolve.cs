@@ -42,6 +42,15 @@ namespace prefixtest.Items.Tokens.tier3.Weapons {
 
     }
 
+    public override void AddRecipes()
+    {
+      Recipe recipe = CreateRecipe();
+      recipe.AddIngredient<soulofchance>(3);
+      recipe.AddIngredient<SapphireToken>(1);
+      recipe.AddTile(TileID.WorkBenches);
+      recipe.Register();
+    }
+
     public override bool AltFunctionUse(Player player) {
       return true;
     }

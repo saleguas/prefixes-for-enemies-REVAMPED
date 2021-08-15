@@ -4,6 +4,8 @@ using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using System;
+using prefixtest.Items.Tokens.tier1;
+using prefixtest.Items.Tokens;
 
 
 namespace prefixtest.Items.Tokens.tier1.Weapons {
@@ -43,6 +45,15 @@ namespace prefixtest.Items.Tokens.tier1.Weapons {
 
     public override bool ConsumeAmmo(Player player) {
       return true;
+    }
+
+    public override void AddRecipes()
+    {
+      Recipe recipe = CreateRecipe();
+      recipe.AddIngredient<soulofchance>(3);
+      recipe.AddIngredient<AmethystToken>(1);
+      recipe.AddTile(TileID.WorkBenches);
+      recipe.Register();
     }
 
 

@@ -6,6 +6,11 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 using Terraria.Graphics.Shaders;
+using prefixtest.Items.Tokens.tier1;
+using prefixtest.Items.Tokens.tier2;
+using prefixtest.Items.Tokens.tier3;
+using prefixtest.Items.Tokens.tier4;
+using prefixtest.Items.Tokens.tier5;
 
 namespace prefixtest.Common.GlobalNPCs
 {
@@ -24,7 +29,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 0.02; // 0.02
+      return roll1 <= 10.02; // 0.02
 		}
 
 
@@ -32,30 +37,9 @@ namespace prefixtest.Common.GlobalNPCs
 		{
 				// Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
 				prefix = "Rare";
-        // if (NPC.downedAncientCultist)
-        // {
-        //     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AmberToken"));
-        // }
-        // else if (NPC.downedPlantBoss)
-        // {
-        //     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("RubyToken"));
-        // }
-        // else if (NPC.downedMechBossAny)
-        // {
-        //     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("EmeraldToken"));
-        // }
-        // else if (Main.hardMode)
-        // {
-        //     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("SapphireToken"));
-        // }
-        // else if (NPC.downedBoss3 || NPC.downedQueenBee)
-        // {
-        //     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("TopazToken"));
-        // }
-        // else
-        // {
-        //     Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AmethystToken"));
-        // }
+
+
+
 		}
 
 		public override void DrawEffects(NPC npc, ref Color drawColor)
@@ -88,8 +72,26 @@ namespace prefixtest.Common.GlobalNPCs
 
 		public override void OnKill(NPC npc) {
 
-			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
+			if (NPC.downedBoss3 || NPC.downedQueenBee)
+			{
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TopazToken>());
+			}
+			else if (Main.hardMode)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
 
+			}
+			else if (NPC.downedPlantBoss)
+			{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EmeraldToken>());
+
+			}
+			else if (NPC.downedMoonlord){
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DiamondToken>());
+			}
+			else{
+				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AmethystToken>());
+			}
 			//TODO: Add the rest of the vanilla drop rules!!
 		}
 

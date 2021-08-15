@@ -4,6 +4,8 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using prefixtest.Items.Tokens.tier1;
+using prefixtest.Items.Tokens;
 
 namespace prefixtest.Items.Tokens.tier1.Accessories
 {
@@ -39,6 +41,15 @@ namespace prefixtest.Items.Tokens.tier1.Accessories
 			// GetKnockback is functionally identical to GetDamage, but for the knockback stat instead.
 			// In this case, we're adding 100% knockback additively, but only for our custom example DamageClass (as such, only our example class weapons will receive this bonus).
 		}
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<AmethystToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+
 
 
 	}

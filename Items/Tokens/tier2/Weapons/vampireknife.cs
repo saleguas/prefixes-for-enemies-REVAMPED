@@ -39,6 +39,15 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
 			Item.shootSpeed = 16f; // The speed of the projectile (measured in pixels per frame.)
 		}
 
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<TopazToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		// This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
 

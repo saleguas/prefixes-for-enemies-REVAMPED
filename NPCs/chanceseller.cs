@@ -14,7 +14,13 @@ using Microsoft.Xna.Framework.Graphics;
 using prefixtest;
 using prefixtest.Items.Tokens.tier1.Consumable;
 using prefixtest.Items.Tokens.tier1;
-
+using prefixtest.Items.Tokens;
+using prefixtest.Items.Tokens.tier2.Consumable;
+using prefixtest.Items.Tokens.tier2;
+using prefixtest.Items.Tokens.tier3.Consumable;
+using prefixtest.Items.Tokens.tier3;
+using prefixtest.Items.Tokens.tier4.Consumable;
+using prefixtest.Items.Tokens.tier4;
 namespace prefixtest.NPCs
 {
 	// [AutoloadHead] and npc.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
@@ -71,11 +77,8 @@ namespace prefixtest.NPCs
 				BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
 
 				// Sets your NPC's flavor text in the bestiary.
-				new FlavorTextBestiaryInfoElement("Hailing from a mysterious greyscale cube world, the Example Person is here to help you understand everything about tModLoader."),
+				new FlavorTextBestiaryInfoElement("A collector obsessed with rare creatures."),
 
-				// You can add multiple elements if you really wanted to
-				// You can also use localization keys (see Localization/en-US.lang)
-				new FlavorTextBestiaryInfoElement("Mods.ExampleMod.Bestiary.ExamplePerson")
 			});
 		}
 
@@ -119,16 +122,16 @@ namespace prefixtest.NPCs
 		public override string TownNPCName() {
 			switch (WorldGen.genRand.Next(4)) {
 				case 0: // The cases are potential names for the NPC.
-					return "Someone";
+					return "Otto von Bismarck";
 
 				case 1:
-					return "Somebody";
+					return "Leo von Caprivi";
 
 				case 2:
-					return "Blocky";
+					return "Julie";
 
 				default:
-					return "Colorless";
+					return "Arctophile";
 			}
 		}
 
@@ -147,16 +150,20 @@ namespace prefixtest.NPCs
 		public override string GetChat() {
 			WeightedRandom<string> chat = new WeightedRandom<string>();
 
-			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
-			if (partyGirl >= 0 && Main.rand.NextBool(4)) {
-				chat.Add("Can you please tell " + Main.npc[partyGirl].GivenName + " to stop decorating my house with colors?");
+			int wizard = NPC.FindFirstNPC(NPCID.Wizard);
+			if (wizard >= 0 && Main.rand.NextBool(4)) {
+				chat.Add("Can you please tell " + Main.npc[wizard].GivenName + " to get some new clothes? He's totally copying me.");
 			}
 			// These are things that the NPC has a chance of telling you when you talk to it.
-			chat.Add("Sometimes I feel like I'm different from everyone else here.");
-			chat.Add("What's your favorite color? My favorite colors are white and black.");
-			chat.Add("What? I don't have any arms or legs? Oh, don't be ridiculous!");
-			chat.Add("This message has a weight of 5, meaning it appears 5 times more often.", 5.0);
-			chat.Add("This message has a weight of 0.1, meaning it appears 10 times as rare.", 0.1);
+			chat.Add("You know, if everything was rare, then nothing is rare.");
+			chat.Add("Smash your Chance Souls into Soul Shards to buy ammunition from me.");
+			chat.Add("Are the Chance Souls the actual souls of organisms? Depends if you'll still give them to me.");
+			chat.Add("I love the color gold. And the Material Gold. And the name Gold.", 2);
+			chat.Add("Stop whining, monsters are monsters.", 1);
+			chat.Add("I was banned from all villages for hunting the other NPCs.");
+			chat.Add("Why does the Wizard stay away from me? Where do you think I got my clothes from?.");
+			chat.Add("I'm not allowed into Warlock Villages anymore.");
+
 			return chat; // chat is implicitly cast to a string.
 		}
 
@@ -181,10 +188,43 @@ namespace prefixtest.NPCs
 			shop.item[nextSlot].shopCustomPrice = new int?(1);
 			shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulShardCurrencyID;
 			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ModContent.ItemType<AmethystToken>());
-			shop.item[nextSlot].shopCustomPrice = new int?(3);
-			shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulCurrencyID;
-			nextSlot++;
+
+
+			if (NPC.downedBoss3 || NPC.downedQueenBee)
+			{
+				shop.item[nextSlot].SetDefaults(ModContent.ItemType<shotgunshot>());
+				shop.item[nextSlot].shopCustomPrice = new int?(1);
+				shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulShardCurrencyID;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModContent.ItemType<AmethystToken>());
+				shop.item[nextSlot].shopCustomPrice = new int?(3);
+				shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulCurrencyID;
+				nextSlot++;
+				}
+			if (Main.hardMode)
+			{
+				shop.item[nextSlot].SetDefaults(ModContent.ItemType<slug>());
+				shop.item[nextSlot].shopCustomPrice = new int?(1);
+				shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulShardCurrencyID;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModContent.ItemType<TopazToken>());
+				shop.item[nextSlot].shopCustomPrice = new int?(3);
+				shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulCurrencyID;
+				nextSlot++;
+			}
+			 if (NPC.downedPlantBoss)
+			{
+				shop.item[nextSlot].SetDefaults(ModContent.ItemType<starshot>());
+				shop.item[nextSlot].shopCustomPrice = new int?(1);
+				shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulShardCurrencyID;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ModContent.ItemType<SapphireToken>());
+				shop.item[nextSlot].shopCustomPrice = new int?(3);
+				shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulCurrencyID;
+				nextSlot++;
+			}
+
+
 
 			//prefixtest.soulShardCurrencyID
 			//prefixtest.soulCurrencyID

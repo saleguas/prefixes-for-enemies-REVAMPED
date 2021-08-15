@@ -42,6 +42,15 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 			Item.shootSpeed = 2f; // The speed of the projectile (measured in pixels per frame.)
 		}
 
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<EmeraldToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+
 		public override bool ConsumeAmmo(Player player){
 			return true;
 		}

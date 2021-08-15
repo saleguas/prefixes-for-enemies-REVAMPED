@@ -33,6 +33,15 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
       Item.shoot = 246;
       Item.shootSpeed = 8f;
     }
+
+    public override void AddRecipes()
+    {
+      Recipe recipe = CreateRecipe();
+      recipe.AddIngredient<soulofchance>(3);
+      recipe.AddIngredient<TopazToken>(1);
+      recipe.AddTile(TileID.WorkBenches);
+      recipe.Register();
+    }
     // This method gets called when firing your weapon/sword.
     // Item.useAmmo = ModContent.ItemType<blazereap4>();
 

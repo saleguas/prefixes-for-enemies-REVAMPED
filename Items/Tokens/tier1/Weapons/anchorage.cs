@@ -3,6 +3,8 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using prefixtest.Items.Tokens.tier1;
+using prefixtest.Items.Tokens;
 
 namespace prefixtest.Items.Tokens.tier1.Weapons
 {
@@ -59,6 +61,15 @@ namespace prefixtest.Items.Tokens.tier1.Weapons
 			Projectile.NewProjectile(source, position4, velocity, type, damage, knockback, player.whoAmI);
 
 			return false;
+		}
+
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<AmethystToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
 		}
 
 

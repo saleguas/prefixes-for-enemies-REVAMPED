@@ -2,6 +2,8 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using prefixtest.Items.Tokens;
+using prefixtest.Items.Tokens.tier1;
+
 namespace prefixtest.Items.Tokens.tier1.Consumable
 {
 	// This Example class demonstrates how to make your own weapon ammo.

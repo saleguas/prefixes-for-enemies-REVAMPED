@@ -36,6 +36,15 @@ namespace prefixtest.Items.Tokens.tier2.Consumable
 
 		}
 
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe(999);
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<TopazToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		// Here we create recipe for 999/ExampleCustomAmmo stack from 1/ExampleItem

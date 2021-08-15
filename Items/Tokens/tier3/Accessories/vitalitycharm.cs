@@ -40,6 +40,15 @@ namespace prefixtest.Items.Tokens.tier3.Accessories
 			// In this case, we're adding 100% knockback additively, but only for our custom example DamageClass (as such, only our example class weapons will receive this bonus).
 		}
 
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe(1);
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<SapphireToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+
 
 	}
 }

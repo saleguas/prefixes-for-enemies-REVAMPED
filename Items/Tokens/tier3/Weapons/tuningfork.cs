@@ -33,6 +33,16 @@ namespace prefixtest.Items.Tokens.tier3.Weapons{
 			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
 
 		}
+
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<SapphireToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+		
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit) {
          charges++;
     }

@@ -36,7 +36,14 @@ namespace prefixtest.Items.Tokens.tier4.Weapons {
     }
     // This method gets called when firing your weapon/sword.
     // Item.useAmmo = ModContent.ItemType<blazereap4>();
-
+    public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<EmeraldToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
 
     public override bool ConsumeAmmo(Player player){
       return true;

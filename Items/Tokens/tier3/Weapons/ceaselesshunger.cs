@@ -55,6 +55,15 @@ namespace prefixtest.Items.Tokens.tier3.Weapons {
       return false; // Return false because we don't want tModLoader to shoot projectile
     }
 
+    public override void AddRecipes()
+    {
+      Recipe recipe = CreateRecipe();
+      recipe.AddIngredient<soulofchance>(3);
+      recipe.AddIngredient<SapphireToken>(1);
+      recipe.AddTile(TileID.WorkBenches);
+      recipe.Register();
+    }
+
 
 
 

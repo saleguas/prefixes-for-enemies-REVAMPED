@@ -49,6 +49,15 @@ public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source,
 
 		}
 
+		public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<soulofchance>(3);
+			recipe.AddIngredient<SapphireToken>(1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.Register();
+		}
+
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		// This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
 
