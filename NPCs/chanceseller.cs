@@ -13,6 +13,8 @@ using Terraria.GameContent.ItemDropRules;
 using Microsoft.Xna.Framework.Graphics;
 using prefixtest;
 using prefixtest.Items.Tokens.tier1.Consumable;
+using prefixtest.Items.Tokens.tier1;
+
 namespace prefixtest.NPCs
 {
 	// [AutoloadHead] and npc.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
@@ -22,6 +24,8 @@ namespace prefixtest.NPCs
 		public override void SetStaticDefaults() {
 			// DisplayName automatically assigned from .lang files, but the commented line below is the normal approach.
 			// DisplayName.SetDefault("Example Person");
+			DisplayName.SetDefault("The Chancellor");
+
 			Main.npcFrameCount[Type] = 23; // The amount of frames the NPC has
 
 			NPCID.Sets.ExtraFramesCount[Type] = 5; // Generally for Town NPCs, but this is how the NPC does extra things such as sitting in a chair and talking to other NPCs.
@@ -175,10 +179,15 @@ namespace prefixtest.NPCs
 		public override void SetupShop(Chest shop, ref int nextSlot) {
 			shop.item[nextSlot].SetDefaults(ModContent.ItemType<hookshot>());
 			shop.item[nextSlot].shopCustomPrice = new int?(1);
+			shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulShardCurrencyID;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults(ModContent.ItemType<AmethystToken>());
+			shop.item[nextSlot].shopCustomPrice = new int?(3);
 			shop.item[nextSlot].shopSpecialCurrency = prefixtest.soulCurrencyID;
 			nextSlot++;
 
-
+			//prefixtest.soulShardCurrencyID
+			//prefixtest.soulCurrencyID
 
 			// if (Main.LocalPlayer.HasBuff(BuffID.Lifeforce)) {
 				// shop.item[nextSlot++].SetDefaults(ItemType<ExampleHealingPotion>());

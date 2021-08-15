@@ -10,8 +10,8 @@ namespace prefixtest.Items.Tokens
 	public class soulshard : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Chance Soul Shard");
-			Tooltip.SetDefault("'A shard of pure chance'");
+			DisplayName.SetDefault("Soul Shard");
+			Tooltip.SetDefault("A shard of pure chance.\nUse to buy consumables from The Chancellor");
 
 			// Registers a vertical animation with 4 frames and each one will last 5 ticks (1/12 second)
 			// Reminder, (4, 6) is an example of an item that draws a new frame every 6 ticks
@@ -27,7 +27,7 @@ namespace prefixtest.Items.Tokens
 
     public override void AddRecipes()
     {
-      Recipe recipe = CreateRecipe(9);
+      Recipe recipe = CreateRecipe(333);
       recipe.AddIngredient<soulofchance>(1);
       recipe.AddTile(TileID.WorkBenches);
       recipe.Register();

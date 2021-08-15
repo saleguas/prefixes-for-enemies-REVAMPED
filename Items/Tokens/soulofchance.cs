@@ -43,7 +43,7 @@ namespace prefixtest.Items.Tokens
 		public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe(1);
-			recipe.AddIngredient<soulshard>(9);
+			recipe.AddIngredient<soulshard>(333);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
 		}

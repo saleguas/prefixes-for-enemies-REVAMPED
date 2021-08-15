@@ -21,10 +21,14 @@ namespace prefixtest
 	{
 
 				public static int soulCurrencyID;
+				public static int soulShardCurrencyID;
+
 				public override void Load() {
 			// Will show up in client.log under the ExampleMod name
 
-					soulCurrencyID = CustomCurrencyManager.RegisterCurrency(new soulCurrencyData(ModContent.ItemType<soulshard>(), 999L));
+					soulCurrencyID = CustomCurrencyManager.RegisterCurrency(new soulCurrencyData(ModContent.ItemType<soulofchance>(), 999L));
+					soulShardCurrencyID = CustomCurrencyManager.RegisterCurrency(new soulShardCurrencyData(ModContent.ItemType<soulshard>(), 999L));
+
 				}
 		}
 	}
