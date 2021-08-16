@@ -5,7 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 using prefixtest.Common.GlobalNPCs;
-
+using prefixtest;
 namespace prefixtest.Common.GlobalNPCs {
   public class aStatChanges: GlobalNPC {
 
@@ -20,7 +20,7 @@ namespace prefixtest.Common.GlobalNPCs {
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 0.025;
+      return roll1 <= (double) (ModContent.GetInstance<modconfig>().StatChangeChance * 0.01);
     }
 
     public override void SetDefaults(NPC npc) {

@@ -32,7 +32,7 @@ namespace prefixtest.Common.GlobalNPCs
 			npc.netUpdate = true;
 
 
-      return roll1 <= 0.02; // 0.02
+			return roll1 <= (double) (ModContent.GetInstance<modconfig>().RareChance * 0.01);
 		}
 
 

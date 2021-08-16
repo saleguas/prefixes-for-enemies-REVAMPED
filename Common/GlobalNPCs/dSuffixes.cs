@@ -28,13 +28,13 @@ namespace prefixtest.Common.GlobalNPCs {
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 1.05;
+      return roll1 <= (double) (ModContent.GetInstance<modconfig>().SuffixChance * 0.01);
     }
 
     public override void SetDefaults(NPC npc) {
       // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
       Random random = new Random();
-      int roll2 = random.Next(6,7); // creates a number from 1 to n-1
+      int roll2 = random.Next(0,7); // creates a number from 1 to n-1
       switch (roll2) {
 
         case 0:

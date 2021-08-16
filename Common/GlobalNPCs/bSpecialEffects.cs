@@ -25,7 +25,7 @@ namespace prefixtest.Common.GlobalNPCs
       Random random = new Random();
       double roll1 = random.NextDouble();
 
-      return roll1 <= 0.16;
+      return roll1 <= (double) (ModContent.GetInstance<modconfig>().SpecialEffectChance * 0.01);
 		}
 
 
