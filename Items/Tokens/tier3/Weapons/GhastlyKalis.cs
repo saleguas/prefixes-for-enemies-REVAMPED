@@ -24,7 +24,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons {
       Item.autoReuse = true;
 
       Item.value = Item.buyPrice(gold: 35);
-      Item.rare = ItemRarityID.Pink;
+      Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
 
       Item.DamageType = DamageClass.Melee;
       Item.damage = 45;

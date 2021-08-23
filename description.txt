@@ -24,6 +24,10 @@ Original Idea and many concepts belong to Hiccup251 and Jofairden. There are fun
 
 CHANGELOG:
 
+v0.1.5:
+- fixed rarities
+- balanced spawn chances more
+- hardmode locked some modifiers
 v0.1.4:
 - added configuration settings
 

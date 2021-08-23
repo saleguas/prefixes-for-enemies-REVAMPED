@@ -21,7 +21,7 @@ namespace prefixtest {
   public class modconfig: ModConfig {
     public override ConfigScope Mode => ConfigScope.ServerSide;
 
-    [DefaultValue(10)]
+    [DefaultValue(4)]
     [Increment(1)]
     [Range(0, 100)]
     [Slider]
@@ -29,7 +29,7 @@ namespace prefixtest {
     [Label("Chance for Enemies to have stat changes (%)")]
     public int StatChangeChance;
 
-    [DefaultValue(10)]
+    [DefaultValue(3)]
     [Increment(1)]
     [Range(0, 100)]
     [Slider]
@@ -38,7 +38,7 @@ namespace prefixtest {
 
     public int SpecialEffectChance;
 
-    [DefaultValue(10)]
+    [DefaultValue(2)]
     [Increment(1)]
     [Range(0, 100)]
     [Slider]
@@ -56,7 +56,7 @@ namespace prefixtest {
 
     public int RareChance;
 
-    [DefaultValue(5)]
+    [DefaultValue(1)]
     [Increment(1)]
     [Range(0, 100)]
     [Slider]

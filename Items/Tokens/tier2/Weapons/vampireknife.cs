@@ -18,7 +18,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons
 			Item.width = 14; // Hitbox width of the item.
 			Item.height = 30; // Hitbox height of the item.
 			Item.scale = 0.001f;
-			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
+			Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
 
 			// Use Properties
 			Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)

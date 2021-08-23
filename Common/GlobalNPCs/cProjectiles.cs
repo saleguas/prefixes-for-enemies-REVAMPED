@@ -30,91 +30,95 @@ namespace prefixtest.Common.GlobalNPCs {
 
     public override void SetDefaults(NPC npc) {
       // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
+      int upLimit = 16;
+      if(Main.hardMode)
+        upLimit = 28;
       Random random = new Random();
-      int roll2 = random.Next(1, 28); // creates a number from 1 to n-1
+      int roll2 = random.Next(1, upLimit); // creates a number from 1 to n-1
       switch (roll2) {
 
       case 1:
         prefix3 = "Gunner";
         break;
       case 2:
-        prefix3 = "Shotgunning";
-        break;
-      case 3:
-        prefix3 = "Machine Gunning";
-        break;
-      case 4:
-        prefix3 = "Sniper";
-        break;
-      case 5:
-        prefix3 = "Volcanic";
-        break;
-      case 6:
-        prefix3 = "Umbra";
-        break;
-      case 7:
         prefix3 = "Webbing";
         break;
-      case 8:
-        prefix3 = "Electric";
-        break;
-      case 9:
-        prefix3 = "Rioting";
-        break;
-      case 10:
-        prefix3 = "Pirate";
-        break;
-      case 11:
-        prefix3 = "Night Hunter";
-        break;
-      case 12:
-        prefix3 = "Infinite";
-        break;
-      case 13:
-        prefix3 = "Infernal";
-        break;
-      case 14:
-        prefix3 = "Hellish";
-        break;
-      case 15:
+      case 3:
         prefix3 = "Vampire Hunter";
         break;
-      case 16:
+      case 4:
         prefix3 = "Cyborg";
         break;
-      case 17:
+      case 5:
         prefix3 = "Grave Robber";
         break;
-      case 18:
+      case 6:
         prefix3 = "Grassy";
         break;
-      case 19:
+      case 7:
         prefix3 = "Boomerang";
         break;
-      case 20:
+      case 8:
         prefix3 = "Peddler";
         break;
-      case 21:
+      case 9:
         prefix3 = "Demonic";
         break;
-      case 22:
+      case 10:
         prefix3 = "Fungal";
         break;
-      case 23:
+      case 11:
         prefix3 = "Fishy";
         break;
-      case 24:
+      case 12:
         prefix3 = "Floral";
         break;
-      case 25:
+      case 13:
         prefix3 = "Ballistician";
         break;
-      case 26:
+      case 14:
         prefix3 = "Hemomancer";
         break;
-      case 27:
+      case 15:
         prefix3 = "Ninja";
         break;
+      case 16:
+        prefix3 = "Volcanic";
+        break;
+      case 17:
+        prefix3 = "Umbra";
+        break;
+      case 18:
+        prefix3 = "Electric";
+        break;
+      case 19:
+        prefix3 = "Rioting";
+        break;
+      case 20:
+        prefix3 = "Pirate";
+        break;
+      case 21:
+        prefix3 = "Night Hunter";
+        break;
+      case 22:
+        prefix3 = "Infinite";
+        break;
+      case 23:
+        prefix3 = "Infernal";
+        break;
+      case 24:
+        prefix3 = "Hellish";
+        break;
+      case 25:
+        prefix3 = "Shotgunning";
+        break;
+      case 26:
+        prefix3 = "Machine Gunning";
+        break;
+      case 27:
+        prefix3 = "Sniper";
+        break;
+
       }
 
       npc.value *= 2f;
@@ -152,6 +156,8 @@ namespace prefixtest.Common.GlobalNPCs {
             npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, newVelocity, 14, (int)(npc.damage * 0.7), 2f); //bullet
             Main.projectile[npcProjectile].friendly = false;
             Main.projectile[npcProjectile].hostile = true;
+            Main.projectile[npcProjectile].netUpdate = true;
+
           }
         }
       }
@@ -176,16 +182,20 @@ namespace prefixtest.Common.GlobalNPCs {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, npcToPlayer, 242, (int)(npc.damage * 1.4), 2f); //bullet high velocity
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
+
         }
       }
       if (prefix3.Contains("Volcanic")) {
         if (AITimer % 240 == 0) {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.01f, npcToPlayer.Y * 0.01f), 467, (int)(npc.damage * 1.2), 2f);
+
         }
+
       }
       if (prefix3.Contains("Umbra")) {
         if (AITimer % 240 == 0) {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.01f, npcToPlayer.Y * 0.01f), 468, (int)(npc.damage * 1.2), 2f);
+
         }
       }
       if (prefix3.Contains("Webbing")) {
@@ -197,6 +207,7 @@ namespace prefixtest.Common.GlobalNPCs {
       if (prefix3.Contains("Electric")) {
         if (AITimer % 240 == 0) {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 435, (int)(npc.damage * 0.4), 2f);
+
         }
       }
       if (prefix3.Contains("Rioting")) {
@@ -204,6 +215,8 @@ namespace prefixtest.Common.GlobalNPCs {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 399, (int)(npc.damage * 0.9), 2f);
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
+          Main.projectile[npcProjectile].netUpdate = true;
+
         }
       }
       if (prefix3.Contains("Pirate")) {
@@ -217,6 +230,7 @@ namespace prefixtest.Common.GlobalNPCs {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 246, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
+
         }
       }
       if (prefix3.Contains("Infinite")) {
@@ -227,6 +241,8 @@ namespace prefixtest.Common.GlobalNPCs {
             npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), source2, newVelocity, 116, npc.damage, 2f); //bullet
             Main.projectile[npcProjectile].friendly = false;
             Main.projectile[npcProjectile].hostile = true;
+            Main.projectile[npcProjectile].netUpdate = true;
+
           }
         }
       }
@@ -237,6 +253,8 @@ namespace prefixtest.Common.GlobalNPCs {
             npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, newVelocity, 668, npc.damage, 2f); //bullet
             Main.projectile[npcProjectile].friendly = false;
             Main.projectile[npcProjectile].hostile = true;
+            Main.projectile[npcProjectile].netUpdate = true;
+
           }
         }
       }
@@ -251,11 +269,13 @@ namespace prefixtest.Common.GlobalNPCs {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.05f, npcToPlayer.Y * 0.05f), 304, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
+
         }
       }
       if (prefix3.Contains("Cyborg")) {
         if (AITimer % 120 == 0) {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.01f, npcToPlayer.Y * 0.01f), 466, npc.damage, 2f); //bullet
+
         }
       }
 
@@ -272,6 +292,7 @@ namespace prefixtest.Common.GlobalNPCs {
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
 
+
         }
       }
       if (prefix3.Contains("Grassy")) {
@@ -286,6 +307,8 @@ namespace prefixtest.Common.GlobalNPCs {
             npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, perturbedSpeed, 206, npc.damage, 2f); //
             Main.projectile[npcProjectile].friendly = false;
             Main.projectile[npcProjectile].hostile = true;
+            Main.projectile[npcProjectile].netUpdate = true;
+
           }
 
         }
@@ -296,6 +319,7 @@ namespace prefixtest.Common.GlobalNPCs {
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
+
         }
       }
       if (prefix3.Contains("Peddler")) {
@@ -303,6 +327,7 @@ namespace prefixtest.Common.GlobalNPCs {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 158, (int) (npc.damage * 0.4), 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
+
 
         }
       }
@@ -312,6 +337,7 @@ namespace prefixtest.Common.GlobalNPCs {
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
+
         }
       }
       if (prefix3.Contains("Fungal")) {
@@ -319,6 +345,7 @@ namespace prefixtest.Common.GlobalNPCs {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 131, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
+
 
         }
       }
@@ -328,6 +355,7 @@ namespace prefixtest.Common.GlobalNPCs {
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
+
         }
       }
       if (prefix3.Contains("Floral")) {
@@ -335,6 +363,7 @@ namespace prefixtest.Common.GlobalNPCs {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 221, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
+
 
         }
       }
@@ -344,6 +373,7 @@ namespace prefixtest.Common.GlobalNPCs {
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
+
         }
       }
       if (prefix3.Contains("Hemomancer")) {
@@ -352,6 +382,7 @@ namespace prefixtest.Common.GlobalNPCs {
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
+
         }
       }
       if (prefix3.Contains("Ninja")) {
@@ -359,6 +390,7 @@ namespace prefixtest.Common.GlobalNPCs {
           npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 3, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
+
 
         }
       }

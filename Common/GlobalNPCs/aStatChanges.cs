@@ -19,14 +19,19 @@ namespace prefixtest.Common.GlobalNPCs {
 
       Random random = new Random();
       double roll1 = random.NextDouble();
+      npc.netUpdate = true;
+
 
       return roll1 <= (double) (ModContent.GetInstance<modconfig>().StatChangeChance * 0.01);
     }
 
     public override void SetDefaults(NPC npc) {
       // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
+      int upLimit = 12;
+      if (Main.hardMode)
+        upLimit = 20;
       Random random = new Random();
-      int roll2 = random.Next(1, 20); // creates a number from 1 to n-1
+      int roll2 = random.Next(1, upLimit); // creates a number from 1 to n-1
       switch (roll2) {
 
       case 1:
@@ -157,6 +162,8 @@ namespace prefixtest.Common.GlobalNPCs {
       if (!nameChanged) {
         npc.GetGlobalNPC < prefixString > ().prefix = npc.GetGlobalNPC < prefixString > ().prefix + " " + prefix1;
         nameChanged = true;
+        npc.netUpdate = true;
+
       }
     }
 

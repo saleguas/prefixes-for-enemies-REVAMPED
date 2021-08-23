@@ -66,6 +66,8 @@ namespace prefixtest.Common.GlobalNPCs
 			if(!nameChanged){
 				npc.GetGlobalNPC<prefixString>().prefix = prefix + " " +npc.GetGlobalNPC<prefixString>().prefix;
 				nameChanged = true;
+				npc.netUpdate = true;
+
 		}
 
 

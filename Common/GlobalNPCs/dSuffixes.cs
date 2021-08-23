@@ -27,14 +27,19 @@ namespace prefixtest.Common.GlobalNPCs {
 
       Random random = new Random();
       double roll1 = random.NextDouble();
+      npc.netUpdate = true;
+
 
       return roll1 <= (double) (ModContent.GetInstance<modconfig>().SuffixChance * 0.01);
     }
 
     public override void SetDefaults(NPC npc) {
       // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
+      int upLimit = 4;
+      if (Main.hardMode)
+        upLimit = 7;
       Random random = new Random();
-      int roll2 = random.Next(0,7); // creates a number from 1 to n-1
+      int roll2 = random.Next(0,upLimit); // creates a number from 1 to n-1
       switch (roll2) {
 
         case 0:
@@ -61,6 +66,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
 
       }
+      npc.value *= 4f;
 
     }
 
@@ -80,12 +86,15 @@ namespace prefixtest.Common.GlobalNPCs {
 
                 int n = NPC.NewNPC((int)npc.position.X + Main.rand.Next(-300, 300), (int)npc.position.Y - 100, summonType);
                 Main.npc[n].value = 0;
+                npc.netUpdate = true;
+
 
             }
 
 
         }
       }
+
       if(suffix1.Contains("The Sacrifice")){
 
 
@@ -193,6 +202,8 @@ namespace prefixtest.Common.GlobalNPCs {
       if (!nameChanged) {
         npc.GetGlobalNPC < prefixString > ().suffix = npc.GetGlobalNPC < prefixString > ().suffix + " " + suffix1;
         nameChanged = true;
+        npc.netUpdate = true;
+
       }
       npc.netUpdate = true;
 

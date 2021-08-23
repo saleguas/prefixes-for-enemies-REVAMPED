@@ -20,7 +20,7 @@ namespace prefixtest.Items.Tokens.tier4
       Item.height = 26;
 
       Item.value = 10000;
-      Item.rare = 2;
+			Item.rare = ItemRarityID.Lime; // The color that the item's name will be in-game.
       Item.maxStack = 1;
       Item.consumable = true;
       Item.UseSound = SoundID.Item4;

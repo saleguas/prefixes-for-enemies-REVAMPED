@@ -24,6 +24,8 @@ namespace prefixtest.Common.GlobalNPCs
 
       Random random = new Random();
       double roll1 = random.NextDouble();
+			npc.netUpdate = true;
+
 
       return roll1 <= (double) (ModContent.GetInstance<modconfig>().SpecialEffectChance * 0.01);
 		}
@@ -301,6 +303,8 @@ namespace prefixtest.Common.GlobalNPCs
 			if(!nameChanged){
 			npc.GetGlobalNPC<prefixString>().prefix = npc.GetGlobalNPC<prefixString>().prefix + " " + prefix2;
 			nameChanged = true;
+			npc.netUpdate = true;
+
 		}
 
 

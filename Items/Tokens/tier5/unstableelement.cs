@@ -21,7 +21,7 @@ namespace prefixtest.Items.Tokens.tier5
 			// Common Properties
 			Item.width = 26; // Hitbox width of the item.
 			Item.height = 24; // Hitbox height of the item.
-			Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
+			Item.rare = -12; // The color that the item's name will be in-game.
 
 			// Use Properties
 			Item.useTime = 4; // The item's use time in ticks (60 ticks == 1 second.)

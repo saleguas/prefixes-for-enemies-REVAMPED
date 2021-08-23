@@ -30,7 +30,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
       Item.autoReuse = true;
 
       Item.value = Item.buyPrice(gold: 5);
-      Item.rare = ItemRarityID.Pink;
+      Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
 
     }
 

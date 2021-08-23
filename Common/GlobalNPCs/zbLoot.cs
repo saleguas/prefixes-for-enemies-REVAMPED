@@ -40,6 +40,8 @@ namespace prefixtest.Common.GlobalNPCs
       if (!nameChanged){
 				npc.GivenName = npc.GetGlobalNPC<prefixString>().prefix = npc.GetGlobalNPC<prefixString>().prefix + " " + npc.FullName + " " + npc.GetGlobalNPC<prefixString>().suffix;
 				nameChanged = true;
+				npc.netUpdate = true;
+
 			}
 		}
 
@@ -420,6 +422,8 @@ namespace prefixtest.Common.GlobalNPCs
 				if(Main.rand.Next(3) == 0)
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BlackBelt, 1);
       }
+			npc.netUpdate = true;
+
 
       // general loot
 

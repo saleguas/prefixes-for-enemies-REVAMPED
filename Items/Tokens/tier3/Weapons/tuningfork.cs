@@ -23,6 +23,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons{
 			Item.useAnimation = 13;
 			Item.noMelee = false;
 			Item.scale *= 2f;
+			Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
 
 			Item.DamageType = DamageClass.Melee;
 			Item.damage = 45;
@@ -42,7 +43,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons{
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
 		}
-		
+
 		public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit) {
          charges++;
     }

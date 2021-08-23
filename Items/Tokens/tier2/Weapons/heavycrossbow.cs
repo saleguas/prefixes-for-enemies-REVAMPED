@@ -26,6 +26,7 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
       Item.knockBack = 20; //The force of knockback of the weapon. Maximum is 20
       Item.crit = 73; //The critical strike chance the weapon has. The player, by default, has a 4% critical strike chance.
       Item.scale = 1.0f;
+      Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
 
       Item.value = Item.buyPrice(gold: 1); //The value of the weapon in copper coins.
       Item.UseSound = SoundID.Item11; //The sound when the weapon is being used.

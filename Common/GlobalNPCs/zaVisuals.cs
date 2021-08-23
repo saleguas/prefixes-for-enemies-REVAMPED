@@ -20,7 +20,7 @@ namespace prefixtest.Common.GlobalNPCs
 
 
     public override bool AppliesToEntity(NPC npc, bool lateInstatiation) {
-      if (npc.townNPC == true)
+			if (npc.townNPC == true || npc.friendly == true)
         return false;
       return true;
     }

@@ -18,6 +18,8 @@ namespace prefixtest.Items.Tokens.tier3.Accessories
 			Item.width = 40;
 			Item.height = 40;
 			Item.accessory = true;
+			Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
+
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {

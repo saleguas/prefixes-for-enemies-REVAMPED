@@ -28,7 +28,7 @@ namespace prefixtest.Items.Tokens.tier2.Consumable
 			Item.consumable = true; // This marks the item as consumable, making it automatically be consumed when it's used as ammunition, or something else, if possible
 			Item.knockBack = 2f; // Sets the item's knockback. Ammunition's knockback added together with weapon and projectiles.
 			Item.value = Item.sellPrice(0, 0, 1, 0); // Item price in copper coins (can be converted with Item.sellPrice/Item.buyPrice)
-			Item.rare = ItemRarityID.Yellow; // The color that the item's name will be in-game.
+			Item.rare = ItemRarityID.Orange; // The color that the item's name will be in-game.
 			Item.shoot = ModContent.ProjectileType<Projectiles.shotgunshotproj>(); // The projectile that weapons fire when using this item as ammunition.
 
       Item.ammo = AmmoID.Bullet;
