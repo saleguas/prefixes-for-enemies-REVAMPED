@@ -17,6 +17,7 @@ namespace prefixtest.Common.GlobalNPCs
 		public bool nameChanged = false;
 		public override bool InstancePerEntity => true;
     private string prefix = "";
+		private string suffix = "";
 
 
 		public override bool AppliesToEntity(NPC npc, bool lateInstatiation) {
@@ -48,6 +49,7 @@ namespace prefixtest.Common.GlobalNPCs
 		public override void OnKill(NPC npc) {
 
       prefix = npc.GetGlobalNPC<prefixString>().prefix;
+			suffix = npc.GetGlobalNPC<prefixString>().suffix;
       if (prefix == "")
         return;
 
@@ -422,6 +424,98 @@ namespace prefixtest.Common.GlobalNPCs
 				if(Main.rand.Next(3) == 0)
 					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BlackBelt, 1);
       }
+
+			// SUFFIXES START *****************************************************
+			if(suffix.Contains("The Immortal")){
+				if(Main.rand.Next(2) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LifeCrystal, Main.rand.Next(1, 4));
+				if(NPC.downedPlantBoss)
+					if(Main.rand.Next(2) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LifeFruit, Main.rand.Next(1, 2));
+				if(Main.hardMode)
+					if(Main.rand.Next(4) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulDrain, 1);
+				if(Main.rand.Next(3) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LifeforcePotion, Main.rand.Next(1, 3));
+
+			}
+			if(suffix.Contains("The Necromancer")){
+				if(Main.rand.Next(2) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Bone, Main.rand.Next(10, 40));
+				if(Main.rand.Next(5) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Skull, 1);
+				if(Main.rand.Next(5) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SkeletonBow, 1);
+				if(Main.rand.Next(5) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BookofSkulls, 1);
+				if(Main.hardMode)
+					if(Main.rand.Next(3) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MechanicalSkull, 1);
+
+			}
+			if(suffix.Contains("The Sacrifice")){
+				// if(Main.rand.Next(3) == 0)
+				// 	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.ClimbingClaws, 1);
+			}
+			if(suffix.Contains("The Soul Eater")){
+				if(Main.hardMode){
+					if(Main.rand.Next(4) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofLight, Main.rand.Next(1, 6));
+					if(Main.rand.Next(4) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofNight, Main.rand.Next(1, 6));
+					if(Main.rand.Next(4) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofFlight, Main.rand.Next(1, 6));
+					if(NPC.downedMechBossAny){
+						if(Main.rand.Next(5) == 0)
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofFright, Main.rand.Next(1, 6));
+						if(Main.rand.Next(5) == 0)
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofMight, Main.rand.Next(1, 6));
+						if(Main.rand.Next(5) == 0)
+							Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofSight, Main.rand.Next(1, 6));
+					}
+
+				}
+
+			}
+			if(suffix.Contains("The Cultist")){
+				if(Main.rand.Next(3) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IceBlock, Main.rand.Next(10, 60));
+				if(Main.hardMode){
+					if(Main.rand.Next(3) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.CursedFlames, Main.rand.Next(1, 6));
+					if(Main.rand.Next(4) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Ichor, Main.rand.Next(1, 6));
+
+				}
+				if(NPC.downedPlantBoss){
+					if(Main.rand.Next(3) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LunarTabletFragment, Main.rand.Next(1, 10));
+					if(Main.rand.Next(3) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LunarBlockSolar, Main.rand.Next(1, 10));
+					if(Main.rand.Next(3) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LunarBlockVortex, Main.rand.Next(1, 10));
+					if(Main.rand.Next(3) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LunarBlockNebula, Main.rand.Next(1, 10));
+					if(Main.rand.Next(3) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LunarBlockStardust, Main.rand.Next(1, 10));
+				}
+			}
+			if(suffix.Contains("The Psyker")){
+				if(Main.rand.Next(3) == 0 && NPC.downedPlantBoss)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Ectoplasm, Main.rand.Next(1, 10));
+			}
+			if(suffix.Contains("The Fireborn")){
+				if(Main.rand.Next(5) == 0 && Main.hardMode)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.FireFeather, 1);
+				if(Main.rand.Next(3) == 0)
+					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LivingFlameDye, Main.rand.Next(1, 2));
+				if(NPC.downedQueenBee){
+					if(Main.rand.Next(3) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Flamelash, Main.rand.Next(1, 2));
+					if(Main.rand.Next(3) == 0)
+						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MagmaStone, Main.rand.Next(1, 2));
+				}
+			}
 			npc.netUpdate = true;
 
 

@@ -47,7 +47,7 @@ namespace prefixtest.Common.GlobalNPCs
 
 		public override void DrawEffects(NPC npc, ref Color drawColor)
 		{
-				if(Main.rand.Next(5) == 1){
+				if(Main.rand.Next(3) == 1){
 					Lighting.AddLight(npc.position, 0.410f, 0.340f, 0.100f);
 					int dust = Dust.NewDust(npc.position, npc.width+5, npc.height+5, 204, npc.velocity.X * 0.4f, npc.velocity.Y * 0.4f, 100, default(Color), 1.89f);
 			}
