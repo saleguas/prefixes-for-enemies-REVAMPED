@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using System;
-
+using prefixtest.Projectiles;
 namespace prefixtest.Items.Testing {
   public class quartzstaff: ModItem {
     public override void SetStaticDefaults() {
@@ -30,8 +30,8 @@ namespace prefixtest.Items.Testing {
       Item.value = Item.buyPrice(gold: 1); //The value of the weapon in copper coins.
       Item.UseSound = SoundID.Item1; //The sound when the weapon is being used.
 
-      Item.shoot = 356;
-      Item.shootSpeed = 8f;
+      Item.shoot = ModContent.ProjectileType<Projectiles.rotateproj>();
+      Item.shootSpeed = 0f;
     }
     // This method gets called when firing your weapon/sword.
     // Item.useAmmo = ModContent.ItemType<blazereap4>();

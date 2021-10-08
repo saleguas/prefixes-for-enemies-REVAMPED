@@ -51,9 +51,10 @@ namespace prefixtest.Items.Tokens.tier4.Weapons
 			recipe.Register();
 		}
 
-		public override bool ConsumeAmmo(Player player){
-			return true;
-		}
+		public override bool CanBeConsumedAsAmmo(Player player) {
+      return true;
+    }
+
 
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.

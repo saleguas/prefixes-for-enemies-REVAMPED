@@ -97,8 +97,8 @@ namespace prefixtest.Items.Tokens.tier2.Weapons {
 
       return false; // Return false because we don't want tModLoader to shoot projectile
     }
-
-    public override bool ConsumeAmmo(Player player) {
+    
+    public override bool CanBeConsumedAsAmmo(Player player) {
       if (player.altFunctionUse == 2) {
         return true;
       }

@@ -1,3 +1,3 @@
 displayName = Prefixes For Enemies REIMAGINED
 author = timetonic
-version = 0.1.8
+version = 0.1.9

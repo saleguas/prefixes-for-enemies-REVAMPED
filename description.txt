@@ -20,9 +20,11 @@ The mod is still being developed, as I'm trying to finish it before college, but
 
 Original Idea and many concepts belong to Hiccup251 and Jofairden. There are fundamental similarities between this mod and the original prefixes for enemies, but also many differences. I tried to reach out to the original developers, but I could not get a response back; if there is any problem with any code/concepts, please contact me and I will adjust it accordingly.
 
- I'll update this with a wiki as soon as I can.
+I'll update this with a wiki as soon as I can.
 
 CHANGELOG:
+v0.1.9:
+- moved phantasmal dragon to hardMode
 v0.1.8:
 - added more loot tables and balancing
 v0.1.7:

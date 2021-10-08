@@ -72,7 +72,7 @@ namespace prefixtest.Items.Tokens.tier1.Weapons {
       return base.CanUseItem(player);
     }
 
-    public override bool ConsumeAmmo(Player player) {
+    public override bool CanBeConsumedAsAmmo(Player player) {
       if (player.altFunctionUse == 2) {
         return true;
       }

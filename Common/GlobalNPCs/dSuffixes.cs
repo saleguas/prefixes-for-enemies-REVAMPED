@@ -49,7 +49,7 @@ namespace prefixtest.Common.GlobalNPCs {
           suffix1 = "The Necromancer";
           break;
         case 2:
-          suffix1 = "The Sacrifice";
+          suffix1 = "The Psyker";
           break;
         case 3:
           suffix1 = "The Soul Eater";
@@ -58,7 +58,7 @@ namespace prefixtest.Common.GlobalNPCs {
           suffix1 = "The Cultist";
           break;
         case 5:
-          suffix1 = "The Psyker";
+          suffix1 = "The Sacrifice";
           break;
         case 6:
           suffix1 = "The Fireborn";
@@ -100,7 +100,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
         if(AITimer % 600 == 0){
           int n = NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, 454);
-          if(!Main.hardMode){
+          if(!NPC.downedPlantBoss){
             Main.npc[n].life /= 2;
             Main.npc[n].defense = 0;
 

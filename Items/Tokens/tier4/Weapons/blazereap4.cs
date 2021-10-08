@@ -46,7 +46,7 @@ namespace prefixtest.Items.Tokens.tier4.Weapons {
 			recipe.Register();
 		}
 
-    public override bool ConsumeAmmo(Player player){
+    public override bool CanBeConsumedAsAmmo(Player player) {
       return true;
     }
 

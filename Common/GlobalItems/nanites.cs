@@ -23,7 +23,7 @@ namespace prefixtest.Common.GlobalItems
 			item.maxStack = 999;
 		}
 
-    public override bool ConsumeAmmo(Item item, Player player){
+		public override bool CanBeConsumedAsAmmo(Item item, Player player){
       return true;
     }
 
