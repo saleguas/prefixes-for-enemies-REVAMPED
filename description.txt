@@ -1,4 +1,4 @@
-[1.4 Alpha] PREFIXES FOR ENEMIES REIMAGINED!!
+[1.4 Alpha] MODIFIERS FOR ENEMIES!
 
 A remake of my favorite terraria mod of all time (prefixes for enemies) that sadly became out of date in tmodloader v0.10.
 
@@ -23,6 +23,8 @@ Original Idea and many concepts belong to Hiccup251 and Jofairden. There are fun
 I'll update this with a wiki as soon as I can.
 
 CHANGELOG:
+v0.1.12:
+- changed name from "Prefixes for Enemies" to "Modifiers For Enemies"
 v0.1.9:
 - moved phantasmal dragon to hardMode
 v0.1.8:

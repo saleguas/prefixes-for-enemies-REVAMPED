@@ -1,3 +1,3 @@
-displayName = Prefixes For Enemies REIMAGINED
+displayName = Modifiers For Enemies
 author = timetonic
-version = 0.1.10
+version = 0.1.12
