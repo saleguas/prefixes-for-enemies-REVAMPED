@@ -39,7 +39,7 @@ namespace prefixtest.Common.GlobalNPCs
 
 		// public override void OnKill(NPC npc) {
 		//
-		// 	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
+		// 	Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
 		//
 		// 	//TODO: Add the rest of the vanilla drop rules!!
 		// }

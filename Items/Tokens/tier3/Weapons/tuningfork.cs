@@ -78,7 +78,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons{
       return base.CanUseItem(player);
     }
 
-    public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+    public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
       // Vector2 perturbedSpeed = new Vector2(0, velocity.Y);
       // position.X += 200f;
 

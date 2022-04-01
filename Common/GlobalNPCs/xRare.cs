@@ -80,24 +80,24 @@ namespace prefixtest.Common.GlobalNPCs
 
 
 			if (NPC.downedMoonlord){
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DiamondToken>());
+				Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<DiamondToken>());
 			}
 			else if (NPC.downedPlantBoss)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EmeraldToken>());
+				Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<EmeraldToken>());
 
 			}
 			else if (Main.hardMode)
 			{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
+				Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
 
 			}
 			else if (NPC.downedBoss3 || NPC.downedQueenBee)
 			{
-					Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TopazToken>());
+					Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<TopazToken>());
 			}
 			else{
-				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AmethystToken>());
+				Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<AmethystToken>());
 			}
 			//TODO: Add the rest of the vanilla drop rules!!
 		}

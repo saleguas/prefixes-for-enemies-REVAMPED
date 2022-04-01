@@ -196,7 +196,7 @@ namespace prefixtest.Common.GlobalNPCs
 					if (prefix2.Contains("Vampiric"))
 					{
 							npc.life += damage;
-							CombatText.NewText(new Rectangle((int)npc.position.X, (int)npc.position.Y - 50, npc.width, npc.height), new Color(20, 120, 20, 200), "" + damage);
+							CombatText.NewText(new Rectangle(npc.position.X, npc.position.Y - 50, npc.width, npc.height), new Color(20, 120, 20, 200), "" + damage);
 							if (npc.life > npc.lifeMax)
 							{
 									npc.life = npc.lifeMax;
@@ -325,7 +325,7 @@ namespace prefixtest.Common.GlobalNPCs
                 int x = 2 + Main.rand.Next(0, 9);
                 for (int i = 0; i < x; i++)
                 {
-                    int n = NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, npc.type);
+                    int n = NPC.NewNPC(npc.position.X, npc.position.Y, npc.type);
                     Main.npc[n].velocity.X = Main.rand.Next(-3, 4);
                     Main.npc[n].velocity.Y = Main.rand.Next(-3, 4);
                     Main.npc[n].life /= 2;

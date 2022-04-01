@@ -84,7 +84,7 @@ namespace prefixtest.Common.GlobalNPCs {
             {
                 int summonType = Main.rand.Next(new int[] { 3, 21, 201, 202, 203, 449, 450, 451, 452 });
 
-                int n = NPC.NewNPC((int)npc.position.X + Main.rand.Next(-300, 300), (int)npc.position.Y - 100, summonType);
+                int n = NPC.NewNPC(npc.position.X + Main.rand.Next(-300, 300), npc.position.Y - 100, summonType);
                 Main.npc[n].value = 0;
                 npc.netUpdate = true;
 
@@ -99,7 +99,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
 
         if(AITimer % 600 == 0){
-          int n = NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, 454);
+          int n = NPC.NewNPC(npc.position.X, npc.position.Y, 454);
           if(!NPC.downedPlantBoss){
             Main.npc[n].life /= 2;
             Main.npc[n].defense = 0;
@@ -224,7 +224,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
     // public override void OnKill(NPC npc) {
     //
-    // 	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
+    // 	Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ItemID.IronBar, 10);
     //
     // 	//TODO: Add the rest of the vanilla drop rules!!
     // }

@@ -38,7 +38,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons
 			Item.shootSpeed = 8f; // The speed of the projectile (measured in pixels per frame.)
 		}
 
-public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback){			// Here we randomly set type to either the original (as defined by the ammo), a vanilla projectile, or a mod projectile.
+public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback){			// Here we randomly set type to either the original (as defined by the ammo), a vanilla projectile, or a mod projectile.
 			int newType = Main.rand.Next(new int[] {34, 15, 504 });
       Vector2 angle = new Vector2(velocity.X + Main.rand.NextFloat(-10f, 10f), velocity.Y + Main.rand.NextFloat(-10f, 10f));
 
@@ -76,7 +76,7 @@ public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source,
 
 		// What if I wanted multiple projectiles in a even spread? (Vampire Knives)
 		// Even Arc style: Multiple Projectile, Even Spread
-		/*public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+		/*public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
 			float numberProjectiles = 3 + Main.rand.Next(3); // 3, 4, or 5 shots
 			float rotation = MathHelper.ToRadians(45);
 
@@ -113,7 +113,7 @@ public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source,
 		}*/
 
 		// How can I shoot 2 different projectiles at the same time?
-		/*public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+		/*public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
 			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
 			Projectile.NewProjectile(source, position, velocity, ProjectileID.GrenadeI, damage, knockback, player.whoAmI);
 
