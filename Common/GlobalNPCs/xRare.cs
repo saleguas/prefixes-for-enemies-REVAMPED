@@ -80,7 +80,8 @@ namespace prefixtest.Common.GlobalNPCs
 
 
 			if (NPC.downedMoonlord){
-				Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<DiamondToken>());
+				new CommonDrop(ModContent.ItemType<DiamondToken>(), 1, 1, 1, 1); // Drop a stack of 10 to 15 torches with 2 in 5 chance (40% chance)
+				// Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height);
 			}
 			else if (NPC.downedPlantBoss)
 			{
