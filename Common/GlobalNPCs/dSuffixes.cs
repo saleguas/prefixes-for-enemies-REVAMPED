@@ -8,6 +8,8 @@ using prefixtest.Common.GlobalNPCs;
 using Terraria.Audio;
 using System.Collections.Generic;
 using System;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.DataStructures;
 
 namespace prefixtest.Common.GlobalNPCs {
   public class dSuffixes: GlobalNPC {
@@ -84,7 +86,7 @@ namespace prefixtest.Common.GlobalNPCs {
             {
                 int summonType = Main.rand.Next(new int[] { 3, 21, 201, 202, 203, 449, 450, 451, 452 });
 
-                int n = NPC.NewNPC(npc.GetSpawnSourceForNPCFromNPCAI(), (int)npc.position.X + Main.rand.Next(-300, 300), (int)npc.position.Y - 100, summonType);
+                int n = NPC.NewNPC(npc.GetSource_FromAI(), (int)npc.position.X + Main.rand.Next(-300, 300), (int)npc.position.Y - 100, summonType, npc.whoAmI);
                 Main.npc[n].value = 0;
                 npc.netUpdate = true;
 
@@ -99,7 +101,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
 
         if(AITimer % 600 == 0){
-          int n = NPC.NewNPC(NPC.GetSpawnSourceForNPCFromNPCAI(), (int)npc.position.X, (int)npc.position.Y, 454);
+          int n = NPC.NewNPC(npc.GetSource_FromAI(), (int)npc.position.X, (int)npc.position.Y, 454, npc.whoAmI);
           if(!NPC.downedPlantBoss){
             Main.npc[n].life /= 2;
             Main.npc[n].defense = 0;

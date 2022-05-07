@@ -325,7 +325,7 @@ namespace prefixtest.Common.GlobalNPCs
                 int x = 2 + Main.rand.Next(0, 9);
                 for (int i = 0; i < x; i++)
                 {
-                    int n = NPC.NewNPC(NPC.GetSpawnSourceForNPCFromNPCAI(), (int)npc.position.X, (int)npc.position.Y, npc.type);
+                    int n = NPC.NewNPC(npc.GetSource_FromAI(), (int)npc.position.X, (int)npc.position.Y, npc.type, npc.whoAmI);
                     Main.npc[n].velocity.X = Main.rand.Next(-3, 4);
                     Main.npc[n].velocity.Y = Main.rand.Next(-3, 4);
                     Main.npc[n].life /= 2;
