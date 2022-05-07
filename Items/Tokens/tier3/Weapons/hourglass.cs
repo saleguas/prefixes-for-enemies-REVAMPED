@@ -32,7 +32,7 @@ namespace prefixtest.Items.Tokens.tier3.Weapons
 
 
 
-		public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback){			// Here we randomly set type to either the original (as defined by the ammo), a vanilla projectile, or a mod projectile.
+		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source, Vector2 position, Vector2 velocity, int type, int damage, float knockback){			// Here we randomly set type to either the original (as defined by the ammo), a vanilla projectile, or a mod projectile.
       var player2 = player.GetModPlayer<zhonyasPlayer>();
 			player2.zhonyasTimer = player2.zhonyasDuration;
 			// Main.NewText($"{player2.zhonyasTimer} {player2.zhonyasDuration} hello");
