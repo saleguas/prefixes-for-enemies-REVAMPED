@@ -134,11 +134,11 @@ namespace prefixtest.Common.GlobalNPCs {
         if(suffix1.Contains("The Cultist")){
 
           if(AITimer % 300 == 0){
-            int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, npc.velocity, 464, npc.damage, 2f); //bullet
+            int a = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, npc.velocity, 464, npc.damage, 2f); //bullet
 
           }
           if(AITimer % 600 == 0){
-            int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, npc.velocity, 465, npc.damage, 2f); //bullet
+            int a = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, npc.velocity, 465, npc.damage, 2f); //bullet
 
           }
 
@@ -178,15 +178,15 @@ namespace prefixtest.Common.GlobalNPCs {
           if(suffix1.Contains("The Fireborn")){
             if(explosionTimer > 0){
               if(AITimer % 10 == 0){
-                int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), new Vector2(npc.position.X - 200 - 100 *(10 - explosionTimer), npc.position.Y), new Vector2(0, 0), 686, npc.damage * 2, 2f); //bullet
-                int b = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), new Vector2(npc.position.X + 200 + 100 *(10 - explosionTimer), npc.position.Y), new Vector2(0, 0), 686, npc.damage * 2, 2f); //bullet
+                int a = Projectile.NewProjectile(npc.GetSource_FromAI(), new Vector2(npc.position.X - 200 - 100 *(10 - explosionTimer), npc.position.Y), new Vector2(0, 0), 686, npc.damage * 2, 2f); //bullet
+                int b = Projectile.NewProjectile(npc.GetSource_FromAI(), new Vector2(npc.position.X + 200 + 100 *(10 - explosionTimer), npc.position.Y), new Vector2(0, 0), 686, npc.damage * 2, 2f); //bullet
 
                 explosionTimer -= 1;
               }
 
             }
             if(AITimer % 180 == 0){
-              int a = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 686, npc.damage * 2, 2f); //bullet
+              int a = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X * 0.1f, npcToPlayer.Y * 0.1f), 686, npc.damage * 2, 2f); //bullet
 
             }
             if(AITimer % 300 == 0){

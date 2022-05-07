@@ -136,7 +136,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
       if (prefix3.Contains("Gunner")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, npcToPlayer, 14, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, npcToPlayer, 14, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
         }
@@ -154,7 +154,7 @@ namespace prefixtest.Common.GlobalNPCs {
             newVelocity *= 1f - Main.rand.NextFloat(0.3f);
 
             //Create a projectile.
-            npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, newVelocity, 14, (int)(npc.damage * 0.7), 2f); //bullet
+            npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, newVelocity, 14, (int)(npc.damage * 0.7), 2f); //bullet
             Main.projectile[npcProjectile].friendly = false;
             Main.projectile[npcProjectile].hostile = true;
             Main.projectile[npcProjectile].netUpdate = true;
@@ -172,7 +172,7 @@ namespace prefixtest.Common.GlobalNPCs {
           newVelocity *= 1f - Main.rand.NextFloat(0.3f);
 
           //Create a projectile.
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, newVelocity, 14, (int)(npc.damage * 0.7), 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, newVelocity, 14, (int)(npc.damage * 0.7), 2f); //bullet
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
 
@@ -180,7 +180,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Sniper")) {
         if (AITimer % 240 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, npcToPlayer, 242, (int)(npc.damage * 1.4), 2f); //bullet high velocity
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, npcToPlayer, 242, (int)(npc.damage * 1.4), 2f); //bullet high velocity
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
           npcToPlayer *= 50f;
@@ -190,32 +190,32 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Volcanic")) {
         if (AITimer % 240 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 467, (int)(npc.damage * 1.2), 2f);
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 467, (int)(npc.damage * 1.2), 2f);
 
         }
 
       }
       if (prefix3.Contains("Umbra")) {
         if (AITimer % 240 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 468, (int)(npc.damage * 1.2), 2f);
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 468, (int)(npc.damage * 1.2), 2f);
 
         }
       }
       if (prefix3.Contains("Webbing")) {
         if (AITimer % 240 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 472, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 472, npc.damage, 2f); //bullet
 
         }
       }
       if (prefix3.Contains("Electric")) {
         if (AITimer % 240 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 435, (int)(npc.damage * 0.4), 2f);
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 435, (int)(npc.damage * 0.4), 2f);
 
         }
       }
       if (prefix3.Contains("Rioting")) {
         if (AITimer % 240 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 399, (int)(npc.damage * 0.9), 2f);
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 399, (int)(npc.damage * 0.9), 2f);
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].netUpdate = true;
@@ -224,13 +224,13 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Pirate")) {
         if (AITimer % 240 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 240, (int)(npc.damage * 1.2), 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 240, (int)(npc.damage * 1.2), 2f); //bullet
 
         }
       }
       if (prefix3.Contains("Night Hunter")) {
         if (AITimer % 240 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 246, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 246, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
 
@@ -241,7 +241,7 @@ namespace prefixtest.Common.GlobalNPCs {
           for (int i = 0; i < 3; i++) {
             Vector2 source2 = new Vector2(targetPlayer.position.X - 50 + (i * 50), targetPlayer.position.Y + 800f);
             Vector2 newVelocity = new Vector2(0, -25f);
-            npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), source2, newVelocity, 116, npc.damage, 2f); //bullet
+            npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), source2, newVelocity, 116, npc.damage, 2f); //bullet
             Main.projectile[npcProjectile].friendly = false;
             Main.projectile[npcProjectile].hostile = true;
             Main.projectile[npcProjectile].netUpdate = true;
@@ -253,7 +253,7 @@ namespace prefixtest.Common.GlobalNPCs {
         if (AITimer % 240 == 0) {
           for (int i = 0; i < 3; i++) {
             Vector2 newVelocity = new Vector2(Main.rand.NextFloat(-15f, 15f), Main.rand.NextFloat(0f, -3f));
-            npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, newVelocity, 668, npc.damage, 2f); //bullet
+            npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, newVelocity, 668, npc.damage, 2f); //bullet
             Main.projectile[npcProjectile].friendly = false;
             Main.projectile[npcProjectile].hostile = true;
             Main.projectile[npcProjectile].netUpdate = true;
@@ -263,13 +263,13 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Hellish")) {
         if (AITimer % 240 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 291, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 291, npc.damage, 2f); //bullet
 
         }
       }
       if (prefix3.Contains("Vampire Hunter")) {
         if (AITimer % 30 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 304, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 304, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
 
@@ -277,7 +277,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Cyborg")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 466, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 466, npc.damage, 2f); //bullet
 
         }
       }
@@ -291,7 +291,7 @@ namespace prefixtest.Common.GlobalNPCs {
             204,
             205
           });
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), type, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), type, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].friendly = false;
           Main.projectile[npcProjectile].hostile = true;
 
@@ -307,7 +307,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
           for (int i = 0; i < numberProjectiles; i++) {
             Vector2 perturbedSpeed = velocity.RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .2f; // Watch out for dividing by 0 if there is only 1 projectile.
-            npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, perturbedSpeed, 206, npc.damage, 2f); //
+            npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, perturbedSpeed, 206, npc.damage, 2f); //
             Main.projectile[npcProjectile].friendly = false;
             Main.projectile[npcProjectile].hostile = true;
             Main.projectile[npcProjectile].netUpdate = true;
@@ -318,7 +318,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Boomerang")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 6, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 6, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
@@ -327,7 +327,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Peddler")) {
         if (AITimer % 40 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 158, (int) (npc.damage * 0.4), 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 158, (int) (npc.damage * 0.4), 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
@@ -336,7 +336,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Demonic")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 44, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 44, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
@@ -345,7 +345,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Fungal")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 131, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 131, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
@@ -354,7 +354,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Fishy")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 190, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 190, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
@@ -363,7 +363,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Floral")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 221, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 221, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
@@ -372,7 +372,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Ballistician")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 680, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 680, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
@@ -381,7 +381,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Hemomancer")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 756, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 756, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
@@ -390,7 +390,7 @@ namespace prefixtest.Common.GlobalNPCs {
       }
       if (prefix3.Contains("Ninja")) {
         if (AITimer % 120 == 0) {
-          npcProjectile = Projectile.NewProjectile(npc.GetProjectileSpawnSource(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 3, npc.damage, 2f); //bullet
+          npcProjectile = Projectile.NewProjectile(npc.GetSource_FromAI(), npc.position, new Vector2(npcToPlayer.X , npcToPlayer.Y ), 3, npc.damage, 2f); //bullet
           Main.projectile[npcProjectile].hostile = true;
           Main.projectile[npcProjectile].friendly = false;
 
@@ -407,7 +407,7 @@ namespace prefixtest.Common.GlobalNPCs {
 
 
 
-      // 				Projectile.NewProjectile(NPC.GetProjectileSpawnSource(), position, -Vector2.UnitY, type, damage, 0f, Main.myPlayer);
+      // 				Projectile.NewProjectile(NPC.GetSource_FromAI(), position, -Vector2.UnitY, type, damage, 0f, Main.myPlayer);
 
       // npc.scale = 1.5f;
       // npc.color = Color.ForestGreen;
