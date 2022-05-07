@@ -36,28 +36,36 @@ namespace prefixtest.Items.Tokens.tier2
 		switch (x)
 		{
 				case 0:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<earthcharm>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<earthcharm>(), 1);
+						new CommonDrop(ModContent.ItemType<earthcharm>(), 1, 1, 1, 1);
 						break;
 				case 1:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<shotgunshot>(), 999);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<shotgunshot>(), 999);
+						new CommonDrop(ModContent.ItemType<shotgunshot>(), 1, 1, 999, 999);
 						break;
 				case 2:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<gemstave>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<gemstave>(), 1);
+						new CommonDrop(ModContent.ItemType<gemstave>(), 1, 1, 1, 1);
 						break;
 				case 3:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<heavycrossbow>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<heavycrossbow>(), 1);
+						new CommonDrop(ModContent.ItemType<heavycrossbow>(), 1, 1, 1, 1);
 						break;
 				case 4:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<rimefrost>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<rimefrost>(), 1);
+						new CommonDrop(ModContent.ItemType<rimefrost>(), 1, 1, 1, 1);
 						break;
 				case 5:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<shotgunblade>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<shotgunblade>(), 1);
+						new CommonDrop(ModContent.ItemType<shotgunblade>(), 1, 1, 1, 1);
 						break;
 				case 6:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<vampireknife>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<vampireknife>(), 1);
+						new CommonDrop(ModContent.ItemType<vampireknife>(), 1, 1, 1, 1);
 						break;
 				case 7:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5));
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5));
+						new CommonDrop(ModContent.ItemType<soulofchance>(), 1, 1, 2, 5);
 						break;
 		}
 		return true;

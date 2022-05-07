@@ -36,31 +36,43 @@ namespace prefixtest.Items.Tokens.tier1
 		switch (x)
 		{
 				case 0:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<starcharm>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<starcharm>(), 1);
+						//break;
+						new CommonDrop(ModContent.ItemType<starcharm>(), 1, 1, 1, 1);
 						break;
 				case 1:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hookshot>(), 999);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hookshot>(), 999);
+						// break;
+						new CommonDrop(ModContent.ItemType<hookshot>(), 1, 1, 999, 999);
 						break;
 				case 2:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<anchorage>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<anchorage>(), 1);
+						// break;
+						new CommonDrop(ModContent.ItemType<anchorage>(), 1, 1, 1, 1);
 						break;
 				case 3:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<equalizer>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<equalizer>(), 1);
+						new CommonDrop(ModContent.ItemType<equalizer>(), 1, 1, 1, 1);
 						break;
 				case 4:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<gunblade1>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<gunblade1>(), 1);
+						new CommonDrop(ModContent.ItemType<gunblade1>(), 1, 1, 1, 1);
 						break;
 				case 5:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hybridblade1>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hybridblade1>(), 1);
+						new CommonDrop(ModContent.ItemType<hybridblade1>(), 1, 1, 1, 1);
 						break;
 				case 6:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<omnirang>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<omnirang>(), 1);
+						new CommonDrop(ModContent.ItemType<omnirang>(), 1, 1, 1, 1);
 						break;
 				case 7:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<volleybow>(), 1);
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<volleybow>(), 1);
+						new CommonDrop(ModContent.ItemType<volleybow>(), 1, 1, 1, 1);
 						break;
 				case 8:
-						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5));
+						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5));
+						new CommonDrop(ModContent.ItemType<soulofchance>(), 1, 1, 2, 5);
 						break;
 		}
 		return true;
