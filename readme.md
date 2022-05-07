@@ -7,6 +7,8 @@ A remake of my favorite terraria mod of all time (prefixes for enemies) that sad
 
 **WHAT DOES IT DO:** Any hostile enemy in the game has a chance to spawn with (possibly multiple) prefixes/modifiers that enhances their attacks. For example, a zombie can have a prefix that makes it have more armor and health, and also shoots fireballs at you every 5 seconds. Prefixed mobs also drop extra cool and customized loot. Kill rare enemies to get progression-based loot tokens that drop super strong weapons! 
 
+This mod adds another random and cool loot aspect of the game, as you can get really cool modded and vanilla items that progress as the game progresses. Additional prefixes are unlocked with game progression - and watch out for the dangerous suffixes, with game-changing abilities.
+
 **You can fully configure the settings** (Spawn chance, loot, etc.) after downloading! Simply click on the cog in the bottom right of the mod in your mod manager.
 
 There are currently:
