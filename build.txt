@@ -1,3 +1,6 @@
 displayName = Modifiers For Enemies
 author = saleguas
-version = 0.1.16
+version = 1.0.0
+homepage = https://forums.terraria.org/index.php?threads/1-4-modifiers-for-enemies.112273/
+hideCode = false
+buildIgnore = *.gif

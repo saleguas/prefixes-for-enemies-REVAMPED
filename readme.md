@@ -28,6 +28,8 @@ meaning there are a total of 28 * 26 * 28 * 7 *2 =
 I'll update this with a wiki as soon as I can.
 
 # CHANGELOG:
+v1.0.0:
+- distribution changes and full release
 v0.1.15:
 - Updated to tmodloader stable 1.4
 - more balance changes

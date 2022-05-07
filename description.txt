@@ -24,6 +24,9 @@ Did I mention, prefixes can STACK! That means you could encounter a burning blue
 I'll update this with a wiki as soon as I can.
 
 CHANGELOG:
+v1.0.0:
+- distribution changes and full release
+
 v0.1.15:
 - Updated to tmodloader stable 1.4
 - more balance changes
