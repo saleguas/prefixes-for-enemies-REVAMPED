@@ -23,6 +23,9 @@ Original Idea and many concepts belong to Hiccup251 and Jofairden. There are fun
 I'll update this with a wiki as soon as I can.
 
 CHANGELOG:
+v0.1.13:
+- Updated to tmodloader stable 1.4
+- more balance changes
 v0.1.12:
 - changed name from "Prefixes for Enemies" to "Modifiers For Enemies"
 v0.1.9:
