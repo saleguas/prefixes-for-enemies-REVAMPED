@@ -84,7 +84,7 @@ namespace prefixtest.Common.GlobalNPCs {
             {
                 int summonType = Main.rand.Next(new int[] { 3, 21, 201, 202, 203, 449, 450, 451, 452 });
 
-                int n = NPC.NewNPC(NPC.GetSpawnSourceForNPCFromNPCAI(), (int)npc.position.X + Main.rand.Next(-300, 300), (int)npc.position.Y - 100, summonType);
+                int n = NPC.NewNPC(npc.GetSpawnSourceForNPCFromNPCAI(), (int)npc.position.X + Main.rand.Next(-300, 300), (int)npc.position.Y - 100, summonType);
                 Main.npc[n].value = 0;
                 npc.netUpdate = true;
 
