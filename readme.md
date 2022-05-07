@@ -1,8 +1,8 @@
-[1.4 Alpha] MODIFIERS FOR ENEMIES!
+# [1.4 Alpha] MODIFIERS FOR ENEMIES!
 
 A remake of my favorite terraria mod of all time (prefixes for enemies) that sadly became out of date in tmodloader v0.10.
 
-[c/ff9eb4:WHAT DOES IT DO:] Any hostile enemy in the game has a chance to spawn with (possibly multiple) prefixes/modifiers that enhances their attacks. For example, a zombie can have a prefix that makes it have more armor and health, and also shoots fireballs at you every 5 seconds. Prefixed mobs also drop extra cool and customized loot. Kill rare enemies to get progression-based loot tokens that drop super strong weapons!
+[c/ff9eb4:WHAT DOES IT DO:] Any hostile enemy in the game has a chance to spawn with (possibly multiple) prefixes/modifiers that enhances their attacks. For example, a zombie can have a prefix that makes it have more armor and health, and also shoots fireballs at you every 5 seconds. Prefixed mobs also drop extra cool and customized loot. Kill rare enemies to get progression-based loot tokens that drop super strong weapons! 
 
 [c/ff9eb4:You can fully configure the settings] (Spawn chance, loot, etc.) after downloading! Simply click on the cog in the bottom right of the mod in your mod manager.
 
@@ -22,7 +22,7 @@ Original Idea and many concepts belong to Hiccup251 and Jofairden. There are fun
 
 I'll update this with a wiki as soon as I can.
 
-CHANGELOG:
+# CHANGELOG:
 v0.1.15:
 - Updated to tmodloader stable 1.4
 - more balance changes
