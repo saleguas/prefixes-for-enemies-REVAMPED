@@ -9,6 +9,7 @@ A remake of my favorite terraria mod of all time (prefixes for enemies) that sad
 
 This mod adds another random and cool loot aspect of the game, as you can get really cool modded and vanilla items that progress as the game progresses. Additional prefixes are unlocked with game progression - and watch out for the dangerous suffixes, with game-changing abilities.
 
+
 There are currently:
  - 27 possible base stat changes
  - 25 special effects
@@ -19,6 +20,7 @@ meaning there are a total of 28 * 26 * 28 * 7 *2 =
 
 [c/ff9eb4:285,376 variations of any given enemy]
 
+Did I mention, prefixes can STACK! That means you could encounter a burning blue slime, or a Burning Electrified Magma-Spitter Rare Blue Slime The Immortal! Both the effects and the LOOT can stack, so with bigger risk comes bigger reward!
 I'll update this with a wiki as soon as I can.
 
 CHANGELOG:
