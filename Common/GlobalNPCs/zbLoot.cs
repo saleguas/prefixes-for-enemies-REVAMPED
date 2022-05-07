@@ -7,6 +7,8 @@ using Terraria.Localization;
 using prefixtest.Common.GlobalNPCs;
 using prefixtest.Items.MobDrops;
 using prefixtest.Items.Tokens;
+using Terraria.GameContent.ItemDropRules;
+
 // I have "random" letters appended to the beginning of each of these files b/c the game reads them in alphabetical order.
 // statchanges first, then spceial effects, then projecitles
 namespace prefixtest.Common.GlobalNPCs

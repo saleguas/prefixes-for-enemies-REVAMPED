@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using prefixtest.Items.Tokens.tier2.Weapons;
 using prefixtest.Items.Tokens.tier2.Accessories;
 using prefixtest.Items.Tokens.tier2.Consumable;
+using Terraria.GameContent.ItemDropRules;
 
 namespace prefixtest.Items.Tokens.tier2
 {

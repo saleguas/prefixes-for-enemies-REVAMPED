@@ -11,6 +11,7 @@ using prefixtest.Items.Tokens.tier2;
 using prefixtest.Items.Tokens.tier3;
 using prefixtest.Items.Tokens.tier4;
 using prefixtest.Items.Tokens.tier5;
+using Terraria.GameContent.ItemDropRules;
 
 namespace prefixtest.Common.GlobalNPCs
 {

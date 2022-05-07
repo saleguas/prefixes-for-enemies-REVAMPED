@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using prefixtest.Items.Tokens.tier5;
+using Terraria.GameContent.ItemDropRules;
 
 
 namespace prefixtest.Items.Tokens.tier5
