@@ -1,82 +1,103 @@
+using System;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using System;
+
 namespace prefixtest.Items.Tokens.tier3.Weapons
 {
-	public class brokenengine : ModItem
-	{
-		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("Broken Engine"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("This is a modded gun.");
-		}
+    public class brokenengine : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Broken Engine"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            Tooltip.SetDefault("This is a modded gun.");
+        }
 
-		public override void SetDefaults() {
-			// Common Properties
-			Item.width = 14; // Hitbox width of the item.
-			Item.height = 14; // Hitbox height of the item.
-			Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
+        public override void SetDefaults()
+        {
+            // Common Properties
+            Item.width = 14; // Hitbox width of the item.
+            Item.height = 14; // Hitbox height of the item.
+            Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
 
-			// Use Properties
-			Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
-			Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
-			Item.useStyle = 5; // How you use the item (swinging, holding out, etc.)
-			Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
-			Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
+            // Use Properties
+            Item.useTime = 8; // The item's use time in ticks (60 ticks == 1 second.)
+            Item.useAnimation = 8; // The length of the item's use animation in ticks (60 ticks == 1 second.)
+            Item.useStyle = 5; // How you use the item (swinging, holding out, etc.)
+            Item.autoReuse = true; // Whether or not you can hold click to automatically use it again.
+            Item.UseSound = SoundID.Item11; // The sound that this item plays when used.
 
-			// Weapon Properties
-			Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
-			Item.damage = 44; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
-			Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
-			Item.noMelee = true; // So the item's animation doesn't do damage.
-			Item.crit = 66;
+            // Weapon Properties
+            Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
+            Item.damage = 44; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+            Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
+            Item.noMelee = true; // So the item's animation doesn't do damage.
+            Item.crit = 66;
 
-			// Gun Properties
-			Item.shoot = 85; // For some reason, all the guns in the vanilla source have this.
-			Item.shootSpeed = 8f; // The speed of the projectile (measured in pixels per frame.)
-		}
+            // Gun Properties
+            Item.shoot = 85; // For some reason, all the guns in the vanilla source have this.
+            Item.shootSpeed = 8f; // The speed of the projectile (measured in pixels per frame.)
+        }
 
-public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source, Vector2 position, Vector2 velocity, int type, int damage, float knockback){			// Here we randomly set type to either the original (as defined by the ammo), a vanilla projectile, or a mod projectile.
-			int newType = Main.rand.Next(new int[] {34, 15, 504 });
-      Vector2 angle = new Vector2(velocity.X + Main.rand.NextFloat(-10f, 10f), velocity.Y + Main.rand.NextFloat(-10f, 10f));
+        public override bool
+        Shoot(
+            Player player,
+            EntitySource_ItemUse_WithAmmo source,
+            Vector2 position,
+            Vector2 velocity,
+            int type,
+            int damage,
+            float knockback
+        )
+        {
+            // Here we randomly set type to either the original (as defined by the ammo), a vanilla projectile, or a mod projectile.
+            int newType = Main.rand.Next(new int[] { 34, 15, 504 });
+            Vector2 angle =
+                new Vector2(velocity.X + Main.rand.NextFloat(-10f, 10f),
+                    velocity.Y + Main.rand.NextFloat(-10f, 10f));
 
-      if (Main.rand.Next(3) == 0)
-        Projectile.NewProjectile(source, position, angle, newType, damage, knockback, player.whoAmI);
+            if (Main.rand.Next(3) == 0)
+                Projectile
+                    .NewProjectile(source,
+                    position,
+                    angle,
+                    newType,
+                    damage,
+                    knockback,
+                    player.whoAmI);
 
-      return true;
+            return true;
+        }
 
-		}
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<soulofchance>(3);
+            recipe.AddIngredient<SapphireToken>(1);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
+        }
 
-		public override void AddRecipes()
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient<soulofchance>(3);
-			recipe.AddIngredient<SapphireToken>(1);
-			recipe.AddTile(TileID.WorkBenches);
-			recipe.Register();
-		}
+        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+        // This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
 
-		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-		// This method lets you adjust position of the gun in the player's hands. Play with these values until it looks good with your graphics.
-
-
-		/*
+        /*
 		* Feel free to uncomment any of the examples below to see what they do
 		*/
 
-		// What if I wanted it to work like Uzi, replacing regular bullets with High Velocity Bullets?
-		// Uzi/Molten Fury style: Replace normal Bullets with High Velocity
-	// public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
-	// 		if (type == ProjectileID.Bullet) { // or ProjectileID.WoodenArrowFriendly
-	// 			type = 207; // or ProjectileID.FireArrow;
-	// 		}
-	// 	}
+        // What if I wanted it to work like Uzi, replacing regular bullets with High Velocity Bullets?
+        // Uzi/Molten Fury style: Replace normal Bullets with High Velocity
+        // public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
+        // 		if (type == ProjectileID.Bullet) { // or ProjectileID.WoodenArrowFriendly
+        // 			type = 207; // or ProjectileID.FireArrow;
+        // 		}
+        // 	}
 
-		// What if I wanted multiple projectiles in a even spread? (Vampire Knives)
-		// Even Arc style: Multiple Projectile, Even Spread
-		/*public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+        // What if I wanted multiple projectiles in a even spread? (Vampire Knives)
+        // Even Arc style: Multiple Projectile, Even Spread
+        /*public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
 			float numberProjectiles = 3 + Main.rand.Next(3); // 3, 4, or 5 shots
 			float rotation = MathHelper.ToRadians(45);
 
@@ -90,9 +111,9 @@ public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source,
 			return false; // return false to stop vanilla from calling Projectile.NewProjectile.
 		}*/
 
-		// How can I make the shots appear out of the muzzle exactly?
-		// Also, when I do this, how do I prevent shooting through tiles?
-		/*public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
+        // How can I make the shots appear out of the muzzle exactly?
+        // Also, when I do this, how do I prevent shooting through tiles?
+        /*public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
 			Vector2 muzzleOffset = Vector2.Normalize(velocity) * 25f;
 
 			if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0)) {
@@ -100,9 +121,9 @@ public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source,
 			}
 		}*/
 
-		// How can I get a "Clockwork Assault Rifle" effect?
-		// 3 round burst, only consume 1 ammo for burst. Delay between bursts, use reuseDelay
-		/*	The following changes to SetDefaults()
+        // How can I get a "Clockwork Assault Rifle" effect?
+        // 3 round burst, only consume 1 ammo for burst. Delay between bursts, use reuseDelay
+        /*	The following changes to SetDefaults()
 			item.useAnimation = 12;
 			item.useTime = 4; // one third of useAnimation
 			item.reuseDelay = 14;
@@ -112,8 +133,8 @@ public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source,
 			return !(player.itemAnimation < item.useAnimation - 2);
 		}*/
 
-		// How can I shoot 2 different projectiles at the same time?
-		/*public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
+        // How can I shoot 2 different projectiles at the same time?
+        /*public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
 			// Here we manually spawn the 2nd projectile, manually specifying the projectile type that we wish to shoot.
 			Projectile.NewProjectile(source, position, velocity, ProjectileID.GrenadeI, damage, knockback, player.whoAmI);
 
@@ -121,10 +142,10 @@ public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo  source,
 			return true;
 		}*/
 
-		// How can I choose between several projectiles randomly?
-		/*public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
+        // How can I choose between several projectiles randomly?
+        /*public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback) {
 			// Here we randomly set type to either the original (as defined by the ammo), a vanilla projectile, or a mod projectile.
 			type = Main.rand.Next(new int[] { type, ProjectileID.GoldenBullet, ProjectileType<Projectiles.ExampleBullet>() });
 		}*/
-	}
+    }
 }

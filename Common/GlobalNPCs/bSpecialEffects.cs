@@ -36,7 +36,7 @@ namespace prefixtest.Common.GlobalNPCs
         {
             // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
             Random random = new Random();
-            int roll2 = random.Next(1, 2); // creates a number from 1 to n-1
+            int roll2 = random.Next(1, 26); // creates a number from 1 to n-1
             switch (roll2)
             {
                 case 1:
@@ -233,7 +233,7 @@ namespace prefixtest.Common.GlobalNPCs
             //       {
             //           if (target.inventory[i].type >= 71 && target.inventory[i].type <= 74)
             //           {
-            //               int num2 = Item.NewItem((int)target.position.X, (int)target.position.Y, target.width, target.height, target.inventory[i].type, 1, false, 0, false, false);
+            //               int num2 = Item.NewItem(npc.GetSource_Loot(), (int)target.position.X, (int)target.position.Y, target.width, target.height, target.inventory[i].type, 1, false, 0, false, false);
             //               int num3 = (int)(target.inventory[i].stack * .9);
             //               num3 = target.inventory[i].stack - num3;
             //               target.inventory[i].stack -= num3;

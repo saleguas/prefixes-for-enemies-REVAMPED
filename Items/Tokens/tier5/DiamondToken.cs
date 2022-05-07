@@ -36,8 +36,8 @@ namespace prefixtest.Items.Tokens.tier5
 		switch (x)
 		{
 				case 0:
-						//Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<unstableelement>(), 1);
-						new CommonDrop(ModContent.ItemType<unstableelement>(), 1, 1, 1, 1);
+						Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<unstableelement>(), 1);
+						// new CommonDrop(ModContent.ItemType<unstableelement>(), 1, 1, 1, 1);
 						break;
 		}
 		return true;

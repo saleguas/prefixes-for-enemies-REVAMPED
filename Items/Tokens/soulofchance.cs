@@ -55,7 +55,7 @@ namespace prefixtest.Items.Tokens
 	// {
 	// 	public override void NPCLoot(NPC npc) {
 	// 		if (Main.player[Player.FindClosest(npc.position, npc.width, npc.height)].GetModPlayer<ExamplePlayer>().ZoneExample) { // Drop this item only in the ExampleBiome.
-	// 			Item.NewItem(npc.getRect(), ItemType<ExampleSoul>()); // get the npc's hitbox rectangle and spawn an item of choice
+	// 			Item.NewItem(npc.GetSource_Loot(), npc.getRect(), ItemType<ExampleSoul>()); // get the npc's hitbox rectangle and spawn an item of choice
 	// 		}
 	// 	}
 	// }

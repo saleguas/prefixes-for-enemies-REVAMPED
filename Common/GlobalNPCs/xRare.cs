@@ -90,36 +90,36 @@ namespace prefixtest.Common.GlobalNPCs
         {
             if (NPC.downedMoonlord)
             {
-                //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DiamondToken>());
-                new CommonDrop(ModContent.ItemType<DiamondToken>(), 1, 1, 1, 1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DiamondToken>());
+                // new CommonDrop(ModContent.ItemType<DiamondToken>(), 1, 1, 1, 1);
             }
             else if (NPC.downedPlantBoss)
             {
-                //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EmeraldToken>());
-                new CommonDrop(ModContent.ItemType<EmeraldToken>(), 1, 1, 1, 1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EmeraldToken>());
+                // new CommonDrop(ModContent.ItemType<EmeraldToken>(), 1, 1, 1, 1);
             }
             else if (Main.hardMode)
             {
-                //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
-                new CommonDrop(ModContent.ItemType<SapphireToken>(),
-                    1,
-                    1,
-                    1,
-                    1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
+                // new CommonDrop(ModContent.ItemType<SapphireToken>(),
+                    // 1,
+                    // 1,
+                    // 1,
+                    // 1);
             }
             else if (NPC.downedBoss3 || NPC.downedQueenBee)
             {
-                //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TopazToken>());
-                new CommonDrop(ModContent.ItemType<TopazToken>(), 1, 1, 1, 1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TopazToken>());
+                // new CommonDrop(ModContent.ItemType<TopazToken>(), 1, 1, 1, 1);
             }
             else
             {
-                //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AmethystToken>());
-                new CommonDrop(ModContent.ItemType<AmethystToken>(),
-                    1,
-                    1,
-                    1,
-                    1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AmethystToken>());
+                // new CommonDrop(ModContent.ItemType<AmethystToken>(),
+                    // 1,
+                    // 1,
+                    // 1,
+                    // 1);
             }
             //TODO: Add the rest of the vanilla drop rules!!
         }
