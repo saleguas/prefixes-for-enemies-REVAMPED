@@ -177,79 +177,99 @@ namespace prefixtest.Common.GlobalNPCs
         	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.GuideVoodooDoll, 1);
 			new CommonDrop(ItemID.GuideVoodooDoll, 1, 1, 1, 1);
         if(Main.rand.Next(3) == 0)
-          Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.ClothierVoodooDoll, 1);
+          //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.ClothierVoodooDoll, 1);
+		  new CommonDrop(ItemID.ClothierVoodooDoll, 1, 1, 1, 1);
       }
 
       //
 
       if(prefix.Contains("Armored")){
         if(Main.rand.Next(3) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.ArmorPolish, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.ArmorPolish, 1);
+			new CommonDrop(ItemID.ArmorPolish, 1, 1, 1, 1);
         if(Main.rand.Next(3) == 0)
-          Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SharkToothNecklace, 1);
+          //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SharkToothNecklace, 1);
+		  new CommonDrop(ItemID.SharkToothNecklace, 1, 1, 1, 1);
 
       }
 			if(prefix.Contains("Colossal")){
         if(Main.rand.Next(10) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Gladius, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Gladius, 1);
+			new CommonDrop(ItemID.Gladius, 1, 1, 1, 1);
         if(Main.rand.Next(10) == 0 && Main.hardMode)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BreakerBlade, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BreakerBlade, 1);
+			new CommonDrop(ItemID.BreakerBlade, 1, 1, 1, 1);
 
       }
 			if(prefix.Contains("Enduring")){
         if(Main.hardMode){
           if(Main.rand.Next(3) == 0)
-          	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronskinPotion, 1);
+          	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.IronskinPotion, 1);
+			new CommonDrop(ItemID.IronskinPotion, 1, 1, 1, 4);
           }
       }
 			if(prefix.Contains("Wing Clipper")){
         if(Main.hardMode){
           if(Main.rand.Next(2) == 0)
-          	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofFlight, Main.rand.Next(1, 4));
+          	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofFlight, Main.rand.Next(1, 4));
+			new CommonDrop(ItemID.SoulofFlight, 1, 1, 1, 4);
           }
       }
 
 
 			if(prefix.Contains("Hellfire")){
         if(Main.rand.Next(8) == 0 && Main.hardMode)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.InfernoFork, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.InfernoFork, 1);
+			new CommonDrop(ItemID.InfernoFork, 1, 1, 1, 1);
         if(Main.rand.Next(4) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.InfernoPotion, Main.rand.Next(1, 3));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.InfernoPotion, Main.rand.Next(1, 3));
+			new CommonDrop(ItemID.InfernoPotion, 1, 1, 1, 3);
         if(Main.rand.Next(4) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Hellstone, Main.rand.Next(10, 20));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Hellstone, Main.rand.Next(10, 20));
+			new CommonDrop(ItemID.Hellstone, 1, 1, 10, 20);
 
       }
 			if(prefix.Contains("Electrified")){
         if(Main.rand.Next(3) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Wire, Main.rand.Next(10, 20));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Wire, Main.rand.Next(10, 20));
+			new CommonDrop(ItemID.Wire, 1, 1, 10, 20);
         if(Main.rand.Next(3) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MartianConduitPlating, Main.rand.Next(10, 20));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MartianConduitPlating, Main.rand.Next(10, 20));
+			new CommonDrop(ItemID.MartianConduitPlating, 1, 1, 10, 20);
 
       }
 			if(prefix.Contains("Dark")){
         if(Main.rand.Next(10) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DemonScythe, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DemonScythe, 1);
+			new CommonDrop(ItemID.DemonScythe, 1, 1, 1, 1);
         if(Main.rand.Next(10) == 0 && (NPC.downedBoss3 || NPC.downedQueenBee))
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BookofSkulls, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BookofSkulls, 1);
+			new CommonDrop(ItemID.BookofSkulls, 1, 1, 1, 1);
         if(Main.rand.Next(10) == 0 && Main.hardMode)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.UnholyTrident, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.UnholyTrident, 1);
+			new CommonDrop(ItemID.UnholyTrident, 1, 1, 1, 1);
 
       }
 			if(prefix.Contains("Hexing")){
         if(Main.hardMode){
           if(Main.rand.Next(8) == 0)
-          	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.AncientBattleArmorMaterial, 1);
+          	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.AncientBattleArmorMaterial, 1);
+			new CommonDrop(ItemID.AncientBattleArmorMaterial, 1, 1, 1, 1);
           if(Main.rand.Next(8) == 0)
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DarkShard, 1);
+            //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DarkShard, 1);
+			new CommonDrop(ItemID.DarkShard, 1, 1, 1, 1);
           if(Main.rand.Next(8) == 0)
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BandofStarpower, 1);
+            //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BandofStarpower, 1);
+			new CommonDrop(ItemID.BandofStarpower, 1, 1, 1, 1);
         }
       }
 			if(prefix.Contains("Slowing")){
         if(Main.rand.Next(8) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SpikyBall, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SpikyBall, 1);
+			new CommonDrop(ItemID.SpikyBall, 1, 1, 10, 20);
         if(Main.rand.Next(8) == 0)
-          Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BallOHurt, 1);
+          //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BallOHurt, 1);
+		  new CommonDrop(ItemID.BallOHurt, 1, 1, 1, 1);
       }
 
 
@@ -257,99 +277,128 @@ namespace prefixtest.Common.GlobalNPCs
 
       if(prefix.Contains("Petrifying")){
       	if(Main.rand.Next(6) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MedusaHead, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MedusaHead, 1);
+			new CommonDrop(ItemID.MedusaHead, 1, 1, 1, 1);
         if(Main.rand.Next(2) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Marble, Main.rand.Next(10, 30));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Marble, Main.rand.Next(10, 30));
+			new CommonDrop(ItemID.Marble, 1, 1, 10, 30);
 
       }
 			if(prefix.Contains("Vampiric")){
         if(Main.rand.Next(5) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BloodWater, Main.rand.Next(10, 20));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BloodWater, Main.rand.Next(10, 20));
+			new CommonDrop(ItemID.BloodWater, 1, 1, 10, 20);
         if(Main.rand.Next(5) == 0 && Main.hardMode)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MoonShell, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MoonShell, 1);
+			new CommonDrop(ItemID.MoonShell, 1, 1, 1, 1);
         if(Main.rand.Next(5) == 0 && Main.hardMode)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MoonStone, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MoonStone, 1);
+			new CommonDrop(ItemID.MoonStone, 1, 1, 1, 1);
 
       }
 			if(prefix.Contains("Forceful")){
         if(Main.rand.Next(10) == 0 && Main.hardMode)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SlapHand, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SlapHand, 1);
+			new CommonDrop(ItemID.SlapHand, 1, 1, 1, 1);
         if(Main.rand.Next(10) == 0 && Main.hardMode)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.KOCannon, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.KOCannon, 1);
+			new CommonDrop(ItemID.KOCannon, 1, 1, 1, 1);
         if(Main.rand.Next(4) == 0 && Main.hardMode)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.TurtleShell, Main.rand.Next(1, 3));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.TurtleShell, Main.rand.Next(1, 3));
+			new CommonDrop(ItemID.KOCannon, 1, 1, 1, 3);
 
       }
 			if(prefix.Contains("Launcher")){
         if(Main.hardMode){
           if(Main.rand.Next(4) == 0 && Main.hardMode)
-          	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.TurtleShell, Main.rand.Next(1, 3));
+          	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.TurtleShell, Main.rand.Next(1, 3));
+			new CommonDrop(ItemID.TurtleShell, 1, 1, 1, 3);
         }
       }
 			if(prefix.Contains("Cutpurse")){
         if(Main.rand.Next(15) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DiscountCard, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DiscountCard, 1);
+			new CommonDrop(ItemID.DiscountCard, 1, 1, 1, 1);
 				if(Main.rand.Next(15) == 0)
-	        Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LuckyCoin, 1);
+	        		//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LuckyCoin, 1);
+					new CommonDrop(ItemID.LuckyCoin, 1, 1, 1, 1);
       }
       if(prefix.Contains("Shotgunning")){
         if(Main.rand.Next(9) == 0 && NPC.downedPlantBoss)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Shotgun, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Shotgun, 1);
+			new CommonDrop(ItemID.Shotgun, 1, 1, 1, 1);
         if(Main.rand.Next(4) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Boomstick, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Boomstick, 1);
+			new CommonDrop(ItemID.Boomstick, 1, 1, 1, 1);
 
       }
 			if(prefix.Contains("Volcanic")){
         if(Main.rand.Next(3) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Meteorite, Main.rand.Next(10, 20));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Meteorite, Main.rand.Next(10, 20));
+			new CommonDrop(ItemID.Meteorite, 1, 1, 10, 20);
         if(Main.rand.Next(6) == 0 && NPC.downedBoss3 || NPC.downedQueenBee)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Flamelash, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Flamelash, 1);
+			new CommonDrop(ItemID.Flamelash, 1, 1, 1, 1);
         if(Main.rand.Next(3) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.HellfireArrow, Main.rand.Next(10, 20));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.HellfireArrow, Main.rand.Next(10, 20));
+			new CommonDrop(ItemID.HellfireArrow, 1, 1, 10, 20);
 
       }
 			if(prefix.Contains("Umbra")){
         if(Main.rand.Next(4) == 0 && NPC.downedBoss3 || NPC.downedQueenBee)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DarkLance, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.DarkLance, 1);
+			new CommonDrop(ItemID.DarkLance, 1, 1, 1, 1);
         if(Main.rand.Next(8) == 0 && NPC.downedBoss3 || NPC.downedQueenBee)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.NightsEdge, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.NightsEdge, 1);
+			new CommonDrop(ItemID.NightsEdge, 1, 1, 1, 1);
         if(Main.rand.Next(2) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Deathweed, Main.rand.Next(1, 5));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Deathweed, Main.rand.Next(1, 5));
+			new CommonDrop(ItemID.Deathweed, 1, 1, 1, 5);
 
       }
 			if(prefix.Contains("Webbing")){
           if(Main.rand.Next(4) == 0)
-          	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.WebSlinger, 1);
+          	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.WebSlinger, 1);
+			new CommonDrop(ItemID.WebSlinger, 1, 1, 1, 1);
           if(Main.rand.Next(4) == 0)
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Cobweb, Main.rand.Next(10, 50));
+            //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Cobweb, Main.rand.Next(10, 50));
+			new CommonDrop(ItemID.WebSlinger, 1, 1, 10, 50);
 
       }
 			if(prefix.Contains("Rioting")){
         if(Main.rand.Next(2) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MolotovCocktail, Main.rand.Next(5, 22));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.MolotovCocktail, Main.rand.Next(5, 22));
+			new CommonDrop(ItemID.MolotovCocktail, 1, 1, 5, 22);
       }
       if(prefix.Contains("Pirate")){
         if(Main.rand.Next(2) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Cannonball, Main.rand.Next(10, 50));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Cannonball, Main.rand.Next(10, 50));
+			new CommonDrop(ItemID.Cannonball, 1, 1, 10, 50);
         if(Main.rand.Next(5) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Cannon, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.Cannon, 1);
+			new CommonDrop(ItemID.Cannon, 1, 1, 1, 1);
         if(Main.rand.Next(3) == 0)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.EyePatch, 1);
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.EyePatch, 1);
+			new CommonDrop(ItemID.EyePatch, 1, 1, 1, 1);
 
       }
 			if(prefix.Contains("Night Hunter")){
           if(Main.rand.Next(4) == 0)
-          	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.NightOwlPotion, 3);
+          	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.NightOwlPotion, 3);
+			new CommonDrop(ItemID.NightOwlPotion, 1, 1, 1, 3);
           if(Main.rand.Next(4) == 0)
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.StyngerBolt, 1);
+            //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.StyngerBolt, 1);
+			new CommonDrop(ItemID.StyngerBolt, 1, 1, 1, 1);
           // if(Main.rand.Next(4) == 0)
           //   Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.BandofStarpower, 1);
       }
 			if(prefix.Contains("Infinite")){
         if(Main.rand.Next(3) == 0 && NPC.downedMechBossAny)
-        	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.HallowedBar, Main.rand.Next(2, 5));
+        	//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.HallowedBar, Main.rand.Next(2, 5));
+			new CommonDrop(ItemID.HallowedBar, 1, 1, 2, 5);
         if(Main.rand.Next(3) == 0 && Main.hardMode)
-          Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LightShard, 1);
+          //Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.LightShard, 1);
+		  new CommonDrop(ItemID.LightShard, 1, 1, 1, 1);
         if(Main.rand.Next(3) == 0 && Main.hardMode)
           Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ItemID.SoulofLight, Main.rand.Next(2, 5));
       }
