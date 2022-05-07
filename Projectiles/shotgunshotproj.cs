@@ -41,7 +41,7 @@ namespace prefixtest.Projectiles
         // Decrease velocity randomly for nicer visuals.
         newVelocity *= 1f - Main.rand.NextFloat(0.3f);
         //Create a projectile.
-        Projectile.NewProjectileDirect(Projectile.GetProjectileSource_FromThis(), Projectile.position, newVelocity, 14, 13, 5, Projectile.owner); // 13 damage 5 knockback
+        Projectile.NewProjectileDirect(Projectile.GetSource_FromThis(), Projectile.position, newVelocity, 14, 13, 5, Projectile.owner); // 13 damage 5 knockback
       }
 			Projectile.netUpdate = true;
 

@@ -52,14 +52,14 @@ class quazarproj : ModProjectile
       //   for(double i = 0; i < 9; i++){
       //     float newX = (float)(Math.Cos(angle*i) * radius);
       //     float newY = (float)(Math.Sin(angle*i) * radius);
-      //     Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Projectile.position, new Vector2(newX, newY), 207, Projectile.damage, 2f, Projectile.owner);
+      //     Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, new Vector2(newX, newY), 207, Projectile.damage, 2f, Projectile.owner);
       //   }
       // }
       if(AITimer % 5 == 0){
         i += 35;
         float newX = (float)(Math.Cos(angle*i) * radius);
         float newY = (float)(Math.Sin(angle*i) * radius);
-        Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Projectile.position, new Vector2(newX, newY), 207, Projectile.damage, 2f, Projectile.owner);
+        Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, new Vector2(newX, newY), 207, Projectile.damage, 2f, Projectile.owner);
       }
 
 			// If found, change the velocity of the projectile and turn it in the direction of the target
@@ -79,8 +79,8 @@ class quazarproj : ModProjectile
     //     list.Add(target);
     //     Vector2 upProj = new Vector2(Projectile.velocity.X, Projectile.velocity.Y + 12f);
     //     Vector2 downProj = new Vector2(Projectile.velocity.X, Projectile.velocity.Y - 12f);
-    //     Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Projectile.position, upProj, Projectile.type, damage, knockback, Projectile.owner);
-    //     Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Projectile.position, downProj, Projectile.type, damage, knockback, Projectile.owner);
+    //     Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, upProj, Projectile.type, damage, knockback, Projectile.owner);
+    //     Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, downProj, Projectile.type, damage, knockback, Projectile.owner);
     //   }
 		// }
 

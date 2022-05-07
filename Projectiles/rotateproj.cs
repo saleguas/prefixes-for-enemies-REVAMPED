@@ -35,7 +35,7 @@ class rotateproj : ModProjectile
 
     public override void AI() {
       if(timer % 20 == 0){
-        int a = Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Main.player[Projectile.owner].position + new Vector2(50f, 0f), new Vector2(0, 0), 3, 15, Projectile.owner);
+        int a = Projectile.NewProjectile(Projectile.GetSource_FromThis(), Main.player[Projectile.owner].position + new Vector2(50f, 0f), new Vector2(0, 0), 3, 15, Projectile.owner);
         Main.projectile[a].timeLeft = 500;
         projs.Add(Main.projectile[a]);
       }
@@ -69,8 +69,8 @@ class rotateproj : ModProjectile
     //     list.Add(target);
     //     Vector2 upProj = new Vector2(Projectile.velocity.X, Projectile.velocity.Y + 12f);
     //     Vector2 downProj = new Vector2(Projectile.velocity.X, Projectile.velocity.Y - 12f);
-    //     Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Projectile.position, upProj, Projectile.type, damage, knockback, Projectile.owner);
-    //     Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Projectile.position, downProj, Projectile.type, damage, knockback, Projectile.owner);
+    //     Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, upProj, Projectile.type, damage, knockback, Projectile.owner);
+    //     Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.position, downProj, Projectile.type, damage, knockback, Projectile.owner);
     //   }
 		// }
 
