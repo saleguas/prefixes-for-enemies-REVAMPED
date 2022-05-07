@@ -35,7 +35,7 @@ namespace prefixtest.Items.Tokens.tier5
 		switch (x)
 		{
 				case 0:
-						Item.NewItem( player.position.X,  player.position.Y, player.width, player.height, ModContent.ItemType<unstableelement>(), 1);
+						Item.NewItem( (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<unstableelement>(), 1);
 						break;
 		}
 		return true;

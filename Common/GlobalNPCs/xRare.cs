@@ -80,25 +80,27 @@ namespace prefixtest.Common.GlobalNPCs
 
 
 			if (NPC.downedMoonlord){
-				new CommonDrop(ModContent.ItemType<DiamondToken>(), 1, 1, 1, 1); // Drop a stack of 10 to 15 torches with 2 in 5 chance (40% chance)
-				// Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height);
+				//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<DiamondToken>());
+				new CommonDrop(ModContent.ItemType<DiamondToken>(), 1,1,1,1);
 			}
 			else if (NPC.downedPlantBoss)
 			{
-				Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<EmeraldToken>());
-
+				//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<EmeraldToken>());
+				new CommonDrop(ModContent.ItemType<EmeraldToken>(), 1, 1, 1, 1);
 			}
 			else if (Main.hardMode)
 			{
-				Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
-
+				//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
+				new CommonDrop(ModContent.ItemType<SapphireToken>(), 1, 1, 1, 1);
 			}
 			else if (NPC.downedBoss3 || NPC.downedQueenBee)
 			{
-					Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<TopazToken>());
+				//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TopazToken>());
+				new CommonDrop(ModContent.ItemType<TopazToken>(), 1, 1, 1, 1);
 			}
 			else{
-				Item.NewItem(npc.position.X, npc.position.Y, npc.width, npc.height, ModContent.ItemType<AmethystToken>());
+				//Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AmethystToken>());
+				new CommonDrop(ModContent.ItemType<AmethystToken>(), 1, 1, 1, 1);
 			}
 			//TODO: Add the rest of the vanilla drop rules!!
 		}
