@@ -1,3 +1,4 @@
+![img](icon.png)
 # [1.4 Alpha] MODIFIERS FOR ENEMIES!
 
 A remake of my favorite terraria mod of all time (prefixes for enemies) that sadly became out of date in tmodloader v0.10. Original Idea and many concepts belong to Hiccup251 and Jofairden. 
