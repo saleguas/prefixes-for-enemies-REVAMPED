@@ -2,6 +2,7 @@
 # ![img](icon.png)  [1.4 Alpha] MODIFIERS FOR ENEMIES! ![img](icon.png)
 
 ![previewtest](preview.gif)
+
 A remake of my favorite terraria mod of all time (prefixes for enemies) that sadly became out of date in tmodloader v0.10. Original Idea and many concepts belong to Hiccup251 and Jofairden. 
 
 
@@ -66,3 +67,5 @@ Credits:
  - Main developer/Spriter: timetonic#5547
  - Assistant Developer: Stats Captain#3423
  - Assistant Spriter: Not Magolor#1191
+
+https://forums.terraria.org/index.php?threads/1-4-modifiers-for-enemies.112273/
