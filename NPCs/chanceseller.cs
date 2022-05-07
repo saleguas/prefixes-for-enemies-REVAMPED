@@ -21,6 +21,8 @@ using prefixtest.Items.Tokens.tier3.Consumable;
 using prefixtest.Items.Tokens.tier3;
 using prefixtest.Items.Tokens.tier4.Consumable;
 using prefixtest.Items.Tokens.tier4;
+using System.Collections.Generic;
+
 namespace prefixtest.NPCs
 {
 	// [AutoloadHead] and npc.townNPC are extremely important and absolutely both necessary for any Town NPC to work at all.
@@ -119,20 +121,14 @@ namespace prefixtest.NPCs
 		// Example Person needs a house built out of ExampleMod tiles. You can delete this whole method in your townNPC for the regular house conditions.
 
 
-		public override string TownNPCName() {
-			switch (WorldGen.genRand.Next(4)) {
-				case 0: // The cases are potential names for the NPC.
-					return "Otto von Bismarck";
-
-				case 1:
-					return "Leo von Caprivi";
-
-				case 2:
-					return "Julie";
-
-				default:
-					return "Arctophile";
-			}
+		public override List<string> SetNPCNameList() {
+			// return a List<string> of the names here
+			List<string> names = new List<string>();
+			names.Add("Otto von Bismarck");
+			names.Add("Leo von Caprivi");
+			names.Add("Julie");
+			names.Add("Arctophile");
+			return names;
 		}
 
 		public override void FindFrame(int frameHeight) {
