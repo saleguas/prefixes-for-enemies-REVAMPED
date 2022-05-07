@@ -1,10 +1,11 @@
 # [1.4 Alpha] MODIFIERS FOR ENEMIES!
 
-A remake of my favorite terraria mod of all time (prefixes for enemies) that sadly became out of date in tmodloader v0.10.
+A remake of my favorite terraria mod of all time (prefixes for enemies) that sadly became out of date in tmodloader v0.10. Original Idea and many concepts belong to Hiccup251 and Jofairden. 
 
-[c/ff9eb4:WHAT DOES IT DO:] Any hostile enemy in the game has a chance to spawn with (possibly multiple) prefixes/modifiers that enhances their attacks. For example, a zombie can have a prefix that makes it have more armor and health, and also shoots fireballs at you every 5 seconds. Prefixed mobs also drop extra cool and customized loot. Kill rare enemies to get progression-based loot tokens that drop super strong weapons! 
 
-[c/ff9eb4:You can fully configure the settings] (Spawn chance, loot, etc.) after downloading! Simply click on the cog in the bottom right of the mod in your mod manager.
+**WHAT DOES IT DO:** Any hostile enemy in the game has a chance to spawn with (possibly multiple) prefixes/modifiers that enhances their attacks. For example, a zombie can have a prefix that makes it have more armor and health, and also shoots fireballs at you every 5 seconds. Prefixed mobs also drop extra cool and customized loot. Kill rare enemies to get progression-based loot tokens that drop super strong weapons! 
+
+**You can fully configure the settings** (Spawn chance, loot, etc.) after downloading! Simply click on the cog in the bottom right of the mod in your mod manager.
 
 There are currently:
  - 27 possible base stat changes
@@ -14,11 +15,8 @@ There are currently:
  - And the chance of a rare enemy
 meaning there are a total of 28 * 26 * 28 * 7 *2 =
 
-[c/ff9eb4:285,376 variations of any given enemy]
+**285,376 variations of any given enemy**
 
-The mod is still being developed, as I'm trying to finish it before college, but should be fully functional for gameplay (multiplayer not tested, expect bugs).
-
-Original Idea and many concepts belong to Hiccup251 and Jofairden. There are fundamental similarities between this mod and the original prefixes for enemies, but also many differences. I tried to reach out to the original developers, but I could not get a response back; if there is any problem with any code/concepts, please contact me and I will adjust it accordingly.
 
 I'll update this with a wiki as soon as I can.
 
