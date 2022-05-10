@@ -9,7 +9,6 @@ A remake of my favorite terraria mod of all time (prefixes for enemies) that sad
 
 This mod adds another random and cool loot aspect of the game, as you can get really cool modded and vanilla items that progress as the game progresses. Additional prefixes are unlocked with game progression - and watch out for the dangerous suffixes, with game-changing abilities.
 
-
 There are currently:
  - 27 possible base stat changes
  - 25 special effects
