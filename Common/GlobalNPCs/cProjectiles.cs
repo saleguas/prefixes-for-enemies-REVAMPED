@@ -30,10 +30,7 @@ namespace prefixtest.Common.GlobalNPCs
             Random random = new Random();
             double roll1 = random.NextDouble();
 
-            return roll1 <=
-            (
-            double
-            )(ModContent.GetInstance<modconfig>().ProjectileChance * 0.01);
+            return roll1 <= (double)(ModContent.GetInstance<modconfig>().ProjectileChance * 0.01);
         }
 
         public override void SetDefaults(NPC npc)
