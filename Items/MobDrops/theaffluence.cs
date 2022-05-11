@@ -6,12 +6,12 @@ using Terraria.ModLoader;
 
 namespace prefixtest.Items.MobDrops
 {
-    public class peddlersplea : ModItem
+    public class theaffluence : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Peddler's Plea"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("Shoots a storm of copper coins.");
+            DisplayName.SetDefault("The Affluence"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+            Tooltip.SetDefault("Money is power.");
         }
 
         public override void SetDefaults()
@@ -19,7 +19,7 @@ namespace prefixtest.Items.MobDrops
             // Common Properties
             Item.width = 16; // Hitbox width of the item.
             Item.height = 32; // Hitbox height of the item.
-            Item.rare = ItemRarityID.Green; // The color that the item's name will be in-game.
+            Item.rare = ItemRarityID.Pink; // The color that the item's name will be in-game.
 
             // Use Properties
             Item.useTime = 2; // The item's use time in ticks (60 ticks == 1 second.)
@@ -30,7 +30,7 @@ namespace prefixtest.Items.MobDrops
 
             // Weapon Properties
             Item.DamageType = DamageClass.Ranged; // Sets the damage type to ranged.
-            Item.damage = 8; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+            Item.damage = 45; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 5f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
 
@@ -60,13 +60,59 @@ namespace prefixtest.Items.MobDrops
             Vector2 velocity2 =
                 new Vector2(velocity.X + Main.rand.NextFloat(-10f, 10f),
                     velocity.Y + Main.rand.NextFloat(-10f, 10f));
-            velocity2 = Vector2.Normalize(velocity2) * 4f;
+            velocity2 = Vector2.Normalize(velocity2) * 3f;
             int a =
                 Projectile
                     .NewProjectile(source,
                     position,
                     velocity2,
                     type,
+                    damage,
+                    knockback,
+                    player.whoAmI);
+
+
+            Vector2 velocity3 =
+                new Vector2(velocity.X + Main.rand.NextFloat(-50f, 50f),
+                    velocity.Y + Main.rand.NextFloat(-50f, 50f));
+
+            velocity3 = Vector2.Normalize(velocity3) * 4f;
+            int b =
+                Projectile
+                    .NewProjectile(source,
+                    position,
+                    velocity3,
+                    159,
+                    damage+10,
+                    knockback,
+                    player.whoAmI);
+
+            Vector2 velocity4 =
+                new Vector2(velocity.X + Main.rand.NextFloat(-5f, 5f),
+                    velocity.Y + Main.rand.NextFloat(-5f, 5f));
+            velocity4 = Vector2.Normalize(velocity4) * 6f;
+
+            int c =
+                Projectile
+                    .NewProjectile(source,
+                    position,
+                    velocity4,
+                    160,
+                    damage+10,
+                    knockback,
+                    player.whoAmI);
+
+            Vector2 velocity5 =
+                new Vector2(velocity.X + Main.rand.NextFloat(-2f, 2f),
+                    velocity.Y + Main.rand.NextFloat(-2f, 2f));
+
+            velocity5 = Vector2.Normalize(velocity5) * 7f;
+            int d =
+                Projectile
+                    .NewProjectile(source,
+                    position,
+                    velocity5,
+                    160,
                     damage,
                     knockback,
                     player.whoAmI);

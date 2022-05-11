@@ -123,6 +123,16 @@ namespace prefixtest.Common.GlobalNPCs
                 case 27:
                     prefix3 = "Sniper";
                     break;
+                case 28:
+                    prefix3 = "Dweller";
+                    break;
+                case 29:
+                    prefix3 = "Rich";
+                    break;
+                case 30:
+                    prefix3 = "Affluent";
+                    break;
+
             }
 
             npc.value *= 2f;
