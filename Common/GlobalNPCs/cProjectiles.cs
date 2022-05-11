@@ -630,8 +630,27 @@ namespace prefixtest.Common.GlobalNPCs
                             2f); //bullet
                     Main.projectile[npcProjectile].hostile = true;
                     Main.projectile[npcProjectile].friendly = false;
+                }
 
-                    
+                if (AITimer % 5 == 0)
+                {
+                    // Vector2 coppercoin = new Vector2(npc.Center.X + Main.rand.NextFloat(-50f, 50f), npc.Center.Y + Main.rand.NextFloat(-50f, 50f));
+                    // Vector2 direction = new Vector2(Main.rand.NextFloat(-25f, 25f), Main.rand.NextFloat(-25f, 25f));
+                    // int a = Projectile.NewProjectile(npc.GetSource_FromAI(), coppercoin, direction, 158, npc.damage, 1f);
+                    // Main.projectile[a].friendly = false;
+                    // Main.projectile[a].hostile = true;
+                    // Main.projectile[a].tileCollide = false;
+                    // Main.projectile[a].timeLeft = 120;
+
+                    // make a projectile spawn in a random position with a radius of 100f from the npc
+                    Vector2 position = new Vector2(npc.Center.X + Main.rand.NextFloat(-1000f, 1000f), npc.Center.Y + Main.rand.NextFloat(-1000f, 1000f));
+                    // the velocity should be 0 and remain alive for 3 seconds
+                    Vector2 velocity = new Vector2(0f, 0f);
+                    int a = Projectile.NewProjectile(npc.GetSource_FromAI(), position, velocity, 160, npc.damage, 1f);
+                    Main.projectile[a].hostile = true;
+                    Main.projectile[a].friendly = false;
+                    Main.projectile[a].timeLeft = 360;
+                    Main.projectile[a].tileCollide = false;
                 }
             }
             if (!nameChanged)

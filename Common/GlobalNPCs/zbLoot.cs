@@ -743,6 +743,11 @@ namespace prefixtest.Common.GlobalNPCs
                     // new CommonDrop(ItemID.MagmaStone, 1, 1, 1, 2);
                 }
             }
+            // see if suffix contains "The Affluent" if so drop modded item "theaffluence"
+            if (suffix.Contains("The Affluent"))
+            {
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<theaffluence>(), 1);
+            }
 
             npc.netUpdate = true;
 

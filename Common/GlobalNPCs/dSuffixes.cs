@@ -88,7 +88,7 @@ namespace prefixtest.Common.GlobalNPCs
 
             suffix1 = suffixes[random.Next(suffixes.Count)];
 
-            suffix1 = "The Affluent";
+            // suffix1 = "The Affluent";
             npc.value *= 4f;
         }
 
