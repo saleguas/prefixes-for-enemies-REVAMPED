@@ -28,7 +28,8 @@ namespace prefixtest.Common.GlobalNPCs
         private List<string> pre_golem_suffixes = new List<string>{
                 "The Cultist",
                 "The Sacrifice",
-                "The Fireborn"
+                "The Fireborn",
+                "The Affluent"
         };
         private List<string> pre_moonlord_suffixes = new List<string>
         {
@@ -276,6 +277,14 @@ namespace prefixtest.Common.GlobalNPCs
                 if (AITimer % 300 == 0)
                 {
                     explosionTimer = 10;
+                }
+            }
+
+            if(suffix1.Contains("The Affluent"))
+            {
+                if (AITimer % 300 == 0)
+                {
+                    
                 }
             }
 
