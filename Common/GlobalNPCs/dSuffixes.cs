@@ -49,7 +49,9 @@ namespace prefixtest.Common.GlobalNPCs
         private int explosionTimer = 0;
 
         private List<Player> floating = new List<Player>();
-        
+
+        private bool statsChanged = false;
+
 
         public override bool AppliesToEntity(NPC npc, bool lateInstatiation)
         {
@@ -60,7 +62,7 @@ namespace prefixtest.Common.GlobalNPCs
             npc.netUpdate = true;
 
             return roll1 <=
-            (double)(ModContent.GetInstance<modconfig>().SuffixChance * 0.01);
+            (double)(ModContent.GetInstance<modconfig>().SuffixChance * 0.01 / 2f);
         }
 
         public override void SetDefaults(NPC npc)
@@ -86,6 +88,7 @@ namespace prefixtest.Common.GlobalNPCs
 
             suffix1 = suffixes[random.Next(suffixes.Count)];
 
+            suffix1 = "The Affluent";
             npc.value *= 4f;
         }
 
@@ -121,9 +124,9 @@ namespace prefixtest.Common.GlobalNPCs
                         int n =
                             NPC
                                 .NewNPC(npc.GetSource_FromAI(),
-                                (int) npc.position.X +
+                                (int)npc.position.X +
                                 Main.rand.Next(-300, 300),
-                                (int) npc.position.Y - 100,
+                                (int)npc.position.Y - 100,
                                 summonType,
                                 npc.whoAmI);
                         Main.npc[n].value = 0;
@@ -134,13 +137,13 @@ namespace prefixtest.Common.GlobalNPCs
 
             if (suffix1.Contains("The Sacrifice"))
             {
-                if (AITimer % 600 == 0)
+                if (AITimer % 1200 == 0)
                 {
                     int n =
                         NPC
                             .NewNPC(npc.GetSource_FromAI(),
-                            (int) npc.position.X,
-                            (int) npc.position.Y,
+                            (int)npc.position.X,
+                            (int)npc.position.Y,
                             454,
                             npc.whoAmI);
                     if (!NPC.downedPlantBoss)
@@ -223,7 +226,7 @@ namespace prefixtest.Common.GlobalNPCs
                             Vector2.DistanceSquared(player.Center, npc.Center);
                         if (Math.Abs(sqrDistanceToTarget) < 1000000f)
                         {
-                            floating.Add (player);
+                            floating.Add(player);
                             floatTimer = 180;
                         }
                     }
@@ -280,12 +283,72 @@ namespace prefixtest.Common.GlobalNPCs
                 }
             }
 
-            if(suffix1.Contains("The Affluent"))
+            if (suffix1.Contains("The Affluent"))
             {
-                if (AITimer % 300 == 0)
+                if (AITimer % 3 == 0)
                 {
+                    Vector2 coppercoin = new Vector2(npc.Center.X + Main.rand.NextFloat(-50f, 50f), npc.Center.Y + Main.rand.NextFloat(-50f, 50f));
+                    Vector2 direction = new Vector2(Main.rand.NextFloat(-25f, 25f), Main.rand.NextFloat(-25f, 25f));
+                    int a = Projectile.NewProjectile(npc.GetSource_FromAI(), coppercoin, direction, 158, npc.damage, 1f);
+                    Main.projectile[a].friendly = false;
+                    Main.projectile[a].hostile = true;
+                    Main.projectile[a].tileCollide = false;
+                    Main.projectile[a].timeLeft = 120;
+                }
+
+                if (AITimer % 100 == 0)
+                {
+
+                    Vector2 velocity = new Vector2(npcToPlayer.X + Main.rand.NextFloat(-5f, 5f), npcToPlayer.Y + Main.rand.NextFloat(-5f, 5f));
+                    // multiply the normalized value by a random velocity
+                    velocity = Vector2.Normalize(velocity) * 5f;
+                
+                    int b =
+                        Projectile
+                            .NewProjectile(npc.GetSource_FromAI(),
+                            npc.position,
+                            velocity,
+                            159,
+                            (int)(npc.damage),
+                            2f); //bullet
+                    Main.projectile[b].hostile = true;
+                    Main.projectile[b].friendly = false;
+
                     
                 }
+
+                if (AITimer % 3 == 0)
+                {
+                    // Vector2 coppercoin = new Vector2(npc.Center.X + Main.rand.NextFloat(-50f, 50f), npc.Center.Y + Main.rand.NextFloat(-50f, 50f));
+                    // Vector2 direction = new Vector2(Main.rand.NextFloat(-25f, 25f), Main.rand.NextFloat(-25f, 25f));
+                    // int a = Projectile.NewProjectile(npc.GetSource_FromAI(), coppercoin, direction, 158, npc.damage, 1f);
+                    // Main.projectile[a].friendly = false;
+                    // Main.projectile[a].hostile = true;
+                    // Main.projectile[a].tileCollide = false;
+                    // Main.projectile[a].timeLeft = 120;
+
+                    // make a projectile spawn in a random position with a radius of 100f from the npc
+                    Vector2 position = new Vector2(npc.Center.X + Main.rand.NextFloat(-1000f, 1000f), npc.Center.Y + Main.rand.NextFloat(-1000f, 1000f));
+                    // the velocity should be 0 and remain alive for 3 seconds
+                    Vector2 velocity = new Vector2(0f, 0f);
+                    int a = Projectile.NewProjectile(npc.GetSource_FromAI(), position, velocity, 160, npc.damage, 1f);
+                    Main.projectile[a].hostile = true;
+                    Main.projectile[a].friendly = false;
+                    Main.projectile[a].timeLeft = 360;
+                    Main.projectile[a].tileCollide = false;
+                }
+                // triple the health of the npc
+                if(!statsChanged){
+                    Main.npc[npc.whoAmI].lifeMax *= 3;
+                    Main.npc[npc.whoAmI].life *= 3;
+                    Main.npc[npc.whoAmI].defense *= 2;
+
+                // 10x the value of the npc
+                    npc.value *= 10f;
+                    statsChanged = true;
+
+                }
+
             }
 
             // npc.scale = 1.5f;
