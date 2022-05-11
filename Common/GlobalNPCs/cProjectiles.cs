@@ -97,7 +97,6 @@ namespace prefixtest.Common.GlobalNPCs
 
             prefix3 = prefixes[random.Next(prefixes.Count)];
 
-            // prefix3 = "Rich";
             npc.value *= 2f;
         }
 
