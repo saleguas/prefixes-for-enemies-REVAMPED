@@ -15,6 +15,24 @@ namespace prefixtest.Common.GlobalNPCs
 {
     public class dSuffixes : GlobalNPC
     {
+
+        private List<string> pre_skeletron_suffixes = new List<string>{
+                "The Immortal",
+                "The Necromancer",
+                "The Psyker",
+                "The Soul Eater",
+        };
+        private List<string> pre_wof_suffixes = new List<string>
+        {
+        };
+        private List<string> pre_golem_suffixes = new List<string>{
+                "The Cultist",
+                "The Sacrifice",
+                "The Fireborn"
+        };
+        private List<string> pre_moonlord_suffixes = new List<string>
+        {
+        };
         public override bool InstancePerEntity => true;
 
         private string suffix1 = "";
@@ -30,6 +48,7 @@ namespace prefixtest.Common.GlobalNPCs
         private int explosionTimer = 0;
 
         private List<Player> floating = new List<Player>();
+        
 
         public override bool AppliesToEntity(NPC npc, bool lateInstatiation)
         {
@@ -46,34 +65,26 @@ namespace prefixtest.Common.GlobalNPCs
         public override void SetDefaults(NPC npc)
         {
             // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
-            int upLimit = 4;
-            if (Main.hardMode) upLimit = 7;
-            Random random = new Random();
-            int roll2 = random.Next(0, upLimit); // creates a number from 1 to n-1
-            switch (roll2)
+            List<string> suffixes = new List<string>();
+            suffixes.AddRange(pre_skeletron_suffixes);
+            if (NPC.downedBoss3)
             {
-                case 0:
-                    suffix1 = "The Immortal";
-                    break;
-                case 1:
-                    suffix1 = "The Necromancer";
-                    break;
-                case 2:
-                    suffix1 = "The Psyker";
-                    break;
-                case 3:
-                    suffix1 = "The Soul Eater";
-                    break;
-                case 4:
-                    suffix1 = "The Cultist";
-                    break;
-                case 5:
-                    suffix1 = "The Sacrifice";
-                    break;
-                case 6:
-                    suffix1 = "The Fireborn";
-                    break;
+                suffixes.AddRange(pre_wof_suffixes);
             }
+            if (Main.hardMode)
+            {
+                suffixes.AddRange(pre_golem_suffixes);
+            }
+            if (NPC.downedGolemBoss)
+            {
+                suffixes.AddRange(pre_moonlord_suffixes);
+            }
+
+            Random random = new Random();
+            // make a List of all the prefixes
+
+            suffix1 = suffixes[random.Next(suffixes.Count)];
+
             npc.value *= 4f;
         }
 
