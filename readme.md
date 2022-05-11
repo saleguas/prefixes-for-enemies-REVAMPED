@@ -64,7 +64,7 @@ TODO:
  - Optimize for multiplayer
 
 Credits:
- - Main developer/Spriter: timetonic#5547
+ - Main developer/Spriter: saleguas
  - Assistant Developer: Stats Captain#3423
  - Assistant Spriter: Not Magolor#1191
 
