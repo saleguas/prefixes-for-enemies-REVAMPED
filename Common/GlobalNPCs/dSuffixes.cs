@@ -152,7 +152,8 @@ namespace prefixtest.Common.GlobalNPCs
                         Main.npc[n].defense = 0;
                     }
                     npc.life = 0;
-                    SoundEngine.PlaySound(15, npc.position, 0);
+                    SoundEngine.PlaySound(SoundID.Roar, npc.position);
+                    // SoundEngine.PlaySound(15, npc.position, 0);
                 }
             }
             if (suffix1.Contains("The Soul Eater"))
@@ -370,7 +371,7 @@ namespace prefixtest.Common.GlobalNPCs
                 lives--;
                 npc.damage = (int)(npc.damage * 1.2);
                 npc.life = npc.lifeMax;
-                SoundEngine.PlaySound(15, npc.position, 0);
+                SoundEngine.PlaySound(SoundID.Roar, npc.position);
                 return false;
             }
             return true;

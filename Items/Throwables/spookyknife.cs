@@ -50,7 +50,9 @@ namespace prefixtest.Items.Throwables
             // Because we're skipping sound playback on use animation start, we have to play it ourselves whenever the item is actually used.
             if (!Main.dedServ)
             {
-                SoundEngine.PlaySound(Item.UseSound, player.Center);
+
+                SoundEngine.PlaySound(SoundID.AchievementComplete, player.position);
+                
             }
 
             return null;

@@ -77,7 +77,7 @@ namespace prefixtest.Items.Tokens.tier1.Weapons
             return base.CanUseItem(player);
         }
 
-        public override bool CanBeConsumedAsAmmo(Player player)
+        public override bool CanBeConsumedAsAmmo(Item weapon, Player player)
         {
             if (player.altFunctionUse == 2)
             {

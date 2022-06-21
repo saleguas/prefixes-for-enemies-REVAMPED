@@ -23,6 +23,9 @@ Did I mention, prefixes can STACK! That means you could encounter a burning blue
 I'll update this with a wiki as soon as I can.
 
 CHANGELOG:
+
+v1.0.11: 
+- Updated for full release!
 v1.0.5:
 - added new mob drops and more projectiles / suffixes
 - cleaned up code
