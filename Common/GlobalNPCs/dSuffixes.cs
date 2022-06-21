@@ -303,7 +303,7 @@ namespace prefixtest.Common.GlobalNPCs
                     Vector2 velocity = new Vector2(npcToPlayer.X + Main.rand.NextFloat(-5f, 5f), npcToPlayer.Y + Main.rand.NextFloat(-5f, 5f));
                     // multiply the normalized value by a random velocity
                     velocity = Vector2.Normalize(velocity) * 5f;
-                
+
                     int b =
                         Projectile
                             .NewProjectile(npc.GetSource_FromAI(),
@@ -315,7 +315,7 @@ namespace prefixtest.Common.GlobalNPCs
                     Main.projectile[b].hostile = true;
                     Main.projectile[b].friendly = false;
 
-                    
+
                 }
 
                 if (AITimer % 3 == 0)
@@ -339,12 +339,13 @@ namespace prefixtest.Common.GlobalNPCs
                     Main.projectile[a].tileCollide = false;
                 }
                 // triple the health of the npc
-                if(!statsChanged){
+                if (!statsChanged)
+                {
                     Main.npc[npc.whoAmI].lifeMax *= 3;
                     Main.npc[npc.whoAmI].life *= 3;
                     Main.npc[npc.whoAmI].defense *= 2;
 
-                // 10x the value of the npc
+                    // 10x the value of the npc
                     npc.value *= 10f;
                     statsChanged = true;
 

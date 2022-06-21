@@ -4,20 +4,20 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using prefixtest.buffs;
 
-namespace prefixtest.Items.Testing
+namespace prefixtest.Items.Tokens.tier2.Consumable
 {
-	public class spineltonic : ModItem
+	public class hellFireTincture : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Spinel Tonic"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			DisplayName.SetDefault("Hellfire Tincture"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
             Tooltip.SetDefault("Burn EVERYTHING in a radius around you.");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
 		}
 
 		public override void SetDefaults() {
-			Item.width = 20;
-			Item.height = 26;
+			Item.width = 32;
+			Item.height = 32;
 			Item.useStyle = ItemUseStyleID.DrinkLiquid;
 			Item.useAnimation = 15;
 			Item.useTime = 15;
@@ -27,7 +27,7 @@ namespace prefixtest.Items.Testing
 			Item.consumable = true;
 			Item.rare = ItemRarityID.Orange;
 			Item.value = Item.buyPrice(gold: 1);
-			Item.buffType = ModContent.BuffType<buffs.spineltonicburn>(); // Specify an existing buff to be applied when used.
+			Item.buffType = ModContent.BuffType<buffs.hellFireTinctureBurn>(); // Specify an existing buff to be applied when used.
 			Item.buffTime = 5400; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
 		}
 	}

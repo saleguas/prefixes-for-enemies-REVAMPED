@@ -52,7 +52,7 @@ namespace prefixtest.Items.Throwables
             {
 
                 SoundEngine.PlaySound(SoundID.AchievementComplete, player.position);
-                
+
             }
 
             return null;

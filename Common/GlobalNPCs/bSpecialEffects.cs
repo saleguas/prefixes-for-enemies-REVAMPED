@@ -119,9 +119,9 @@ namespace prefixtest.Common.GlobalNPCs
                     prefix2 = "Cutpurse";
                     break;
 
-                // case 26:
-                // 	prefix2 = "Teleporting";
-                // 	break;
+                    // case 26:
+                    // 	prefix2 = "Teleporting";
+                    // 	break;
             }
             npc.netUpdate = true;
             npc.value *= 4f;
@@ -206,8 +206,8 @@ namespace prefixtest.Common.GlobalNPCs
             {
                 npc.life += damage;
                 CombatText
-                    .NewText(new Rectangle((int) npc.position.X,
-                        (int) npc.position.Y - 50,
+                    .NewText(new Rectangle((int)npc.position.X,
+                        (int)npc.position.Y - 50,
                         npc.width,
                         npc.height),
                     new Color(20, 120, 20, 200),
@@ -228,34 +228,34 @@ namespace prefixtest.Common.GlobalNPCs
             }
 
             if (prefix2.Contains("Cutpurse"))
-              {
-                  for (int i = 0; i < 59; i++)
-                  {
-                      if (target.inventory[i].type >= 71 && target.inventory[i].type <= 74)
-                      {
-                          int num2 = Item.NewItem(npc.GetSource_Loot(), (int)target.position.X, (int)target.position.Y, target.width, target.height, target.inventory[i].type, 1, false, 0, false, false);
-                          int num3 = (int)(target.inventory[i].stack * .9);
-                          num3 = target.inventory[i].stack - num3;
-                          target.inventory[i].stack -= num3;
-                          if (target.inventory[i].stack <= 0)
-                          {
-                              target.inventory[i] = new Item();
-                          }
-                          Main.item[num2].stack = num3;
-                          Main.item[num2].velocity.Y = (float)Main.rand.Next(-20, 1) * 0.2f;
-                          Main.item[num2].velocity.X = (float)Main.rand.Next(-20, 21) * 0.2f;
-                          Main.item[num2].noGrabDelay = 100;
-                          if (Main.netMode == 1)
-                          {
-                              NetMessage.SendData(21, -1, -1, null, num2, 0f, 0f, 0f, 0, 0, 0);
-                          }
-                          if (i == 58)
-                          {
-                              Main.mouseItem = target.inventory[i].Clone();
-                          }
-                      }
-                  }
+            {
+                for (int i = 0; i < 59; i++)
+                {
+                    if (target.inventory[i].type >= 71 && target.inventory[i].type <= 74)
+                    {
+                        int num2 = Item.NewItem(npc.GetSource_Loot(), (int)target.position.X, (int)target.position.Y, target.width, target.height, target.inventory[i].type, 1, false, 0, false, false);
+                        int num3 = (int)(target.inventory[i].stack * .9);
+                        num3 = target.inventory[i].stack - num3;
+                        target.inventory[i].stack -= num3;
+                        if (target.inventory[i].stack <= 0)
+                        {
+                            target.inventory[i] = new Item();
+                        }
+                        Main.item[num2].stack = num3;
+                        Main.item[num2].velocity.Y = (float)Main.rand.Next(-20, 1) * 0.2f;
+                        Main.item[num2].velocity.X = (float)Main.rand.Next(-20, 21) * 0.2f;
+                        Main.item[num2].noGrabDelay = 100;
+                        if (Main.netMode == 1)
+                        {
+                            NetMessage.SendData(21, -1, -1, null, num2, 0f, 0f, 0f, 0, 0, 0);
+                        }
+                        if (i == 58)
+                        {
+                            Main.mouseItem = target.inventory[i].Clone();
+                        }
+                    }
                 }
+            }
             npc.netUpdate = true;
         }
 
@@ -271,8 +271,8 @@ namespace prefixtest.Common.GlobalNPCs
                 damage += target.statMana / 4;
                 target.statMana /= 2;
                 CombatText
-                    .NewText(new Rectangle((int) target.position.X,
-                        (int) target.position.Y - 50,
+                    .NewText(new Rectangle((int)target.position.X,
+                        (int)target.position.Y - 50,
                         target.width,
                         target.height),
                     new Color(20, 20, 120, 200),
@@ -352,8 +352,8 @@ namespace prefixtest.Common.GlobalNPCs
                     int n =
                         NPC
                             .NewNPC(npc.GetSource_FromAI(),
-                            (int) npc.position.X,
-                            (int) npc.position.Y,
+                            (int)npc.position.X,
+                            (int)npc.position.Y,
                             npc.type,
                             npc.whoAmI);
                     Main.npc[n].velocity.X = Main.rand.Next(-3, 4);

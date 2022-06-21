@@ -11,13 +11,13 @@ using Terraria.ModLoader;
 namespace prefixtest.buffs
 {
 
-    public class spineltonicburn : ModBuff
+    public class hellFireTinctureBurn : ModBuff
     {
         private int firetimer = 0;
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Tonic Affliction");
+            DisplayName.SetDefault("Hellfire Tincture");
             Description.SetDefault("Your soul is ablaze");
             Main.buffNoTimeDisplay[Type] = false;
             Main.debuff[Type] = true; //Add this so the nurse doesn't remove the buff when healing
@@ -25,6 +25,16 @@ namespace prefixtest.buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
+            // make a for loop that gets n points on a circle around the player
+            for (int i = 0; i < 360; i += 5)
+            {
+                // calculate the x and y of the point
+                float x = player.position.X + (float)Math.Cos(i) * 500f;
+                float y = player.position.Y + (float)Math.Sin(i) * 500f;
+                Vector2 dustPos = new Vector2(x, y);
+                // spawn a firework at that point
+                Dust dust = Dust.NewDustDirect(dustPos, player.width, player.height, 59);
+            }
             if (firetimer % 20 == 0)
             {
                 for (int k = 0; k < Main.maxPlayers; k++)
@@ -32,7 +42,7 @@ namespace prefixtest.buffs
                     Player nearestPlayer = Main.player[k];
                     float sqrDistanceToTarget =
                         Vector2.DistanceSquared(nearestPlayer.Center, player.Center);
-                    if (Math.Abs(sqrDistanceToTarget) < 1000000f)
+                    if (Math.Abs(sqrDistanceToTarget) < 250000f)
                     {
                         int damageAmt = ((int)Math.Ceiling(nearestPlayer.statLifeMax2 * 0.01f));
 
@@ -49,7 +59,7 @@ namespace prefixtest.buffs
                 NPC nearestNPC = Main.npc[k];
                 float sqrDistanceToTarget =
                     Vector2.DistanceSquared(nearestNPC.Center, player.Center);
-                if (Math.Abs(sqrDistanceToTarget) < 1000000f)
+                if (Math.Abs(sqrDistanceToTarget) < 250000f)
                 {
                     int damageAmt = ((int)Math.Ceiling(nearestNPC.lifeMax * 0.01f / 20f));
                     if (nearestNPC.life >= damageAmt * 2)
@@ -60,5 +70,6 @@ namespace prefixtest.buffs
 
             firetimer = (firetimer + 1) % 90000;
         }
+        // draw dust
     }
 }

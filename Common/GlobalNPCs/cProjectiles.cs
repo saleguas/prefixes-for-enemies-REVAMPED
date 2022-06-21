@@ -596,7 +596,7 @@ namespace prefixtest.Common.GlobalNPCs
                     Vector2 velocity = new Vector2(npcToPlayer.X + Main.rand.NextFloat(-5f, 5f), npcToPlayer.Y + Main.rand.NextFloat(-5f, 5f));
                     // multiply the normalized value by a random velocity
                     velocity = Vector2.Normalize(velocity) * 3f;
-                
+
                     npcProjectile =
                         Projectile
                             .NewProjectile(npc.GetSource_FromAI(),
@@ -608,7 +608,7 @@ namespace prefixtest.Common.GlobalNPCs
                     Main.projectile[npcProjectile].hostile = true;
                     Main.projectile[npcProjectile].friendly = false;
 
-                    
+
                 }
             }
             if (prefix3.Contains("Rich"))
@@ -619,7 +619,7 @@ namespace prefixtest.Common.GlobalNPCs
                     Vector2 velocity = new Vector2(npcToPlayer.X + Main.rand.NextFloat(-5f, 5f), npcToPlayer.Y + Main.rand.NextFloat(-5f, 5f));
                     // multiply the normalized value by a random velocity
                     velocity = Vector2.Normalize(velocity) * 5f;
-                
+
                     npcProjectile =
                         Projectile
                             .NewProjectile(npc.GetSource_FromAI(),
