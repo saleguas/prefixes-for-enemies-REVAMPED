@@ -76,43 +76,18 @@ namespace prefixtest.Items.Tokens.tier3
                     break;
                 case 5:
                     Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hourglass>(), 1);
-                    // new CommonDrop(ModContent.ItemType<hourglass>(),
-                    //     1,
-                    //     1,
-                    //     1,
-                    //     1);
                     break;
                 case 6:
                     Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<purifierresolve>(), 1);
-                    // new CommonDrop(ModContent.ItemType<purifierresolve>(),
-                    //     1,
-                    //     1,
-                    //     1,
-                    //     1);
                     break;
                 case 7:
                     Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<seatofcommand>(), 1);
-                    // new CommonDrop(ModContent.ItemType<seatofcommand>(),
-                    //     1,
-                    //     1,
-                    //     1,
-                    //     1);
                     break;
                 case 8:
                     Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<tuningfork>(), 1);
-                    // new CommonDrop(ModContent.ItemType<tuningfork>(),
-                    //     1,
-                    //     1,
-                    //     1,
-                    //     1);
                     break;
                 case 9:
                     Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5));
-                    // new CommonDrop(ModContent.ItemType<soulofchance>(),
-                    //     1,
-                    //     1,
-                    //     2,
-                    //     5);
                     break;
             }
             return true;

@@ -17,6 +17,7 @@ namespace prefixtest.Common.GlobalNPCs
 
         private bool nameChanged = false;
 
+
         public override bool AppliesToEntity(NPC npc, bool lateInstatiation)
         {
             if (npc.townNPC == true || npc.friendly == true) return false;

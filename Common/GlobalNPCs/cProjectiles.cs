@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Collections;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -23,6 +25,45 @@ namespace prefixtest.Common.GlobalNPCs
 
         private int npcProjectile = 0;
 
+        private List<string> pre_skeletron_prefixes = new List<string>{
+            "Gunner",
+            "Webbing",
+            "Vampire Hunter",
+            "Cyborg",
+            "Grave Robber",
+            "Grassy",
+            "Boomerang",
+            "Peddler",
+            "Demonic",
+            "Fungal",
+            "Fishy",
+            "Floral",
+            "Ballistician",
+            "Hemomancer",
+            "Ninja",
+            "Volcanic",
+        };
+        private List<string> pre_wof_prefixes = new List<string>
+        {
+            "Dweller",
+        };
+        private List<string> pre_golem_prefixes = new List<string>{
+            "Umbra",
+            "Electric",
+            "Rioting",
+            "Pirate",
+            "Night Hunter",
+            "Infinite",
+            "Infernal",
+            "Hellish",
+            "Shotgunning",
+            "Machine Gunning",
+            "Sniper",
+            "Rich",
+        };
+        private List<string> pre_moonlord_prefixes = new List<string>
+        {
+        };
         public override bool AppliesToEntity(NPC npc, bool lateInstatiation)
         {
             if (npc.townNPC == true || npc.friendly == true) return false;
@@ -30,103 +71,31 @@ namespace prefixtest.Common.GlobalNPCs
             Random random = new Random();
             double roll1 = random.NextDouble();
 
-            return roll1 <=
-            (
-            double
-            )(ModContent.GetInstance<modconfig>().ProjectileChance * 0.01);
+            return roll1 <= (double)(ModContent.GetInstance<modconfig>().ProjectileChance * 0.01);
         }
 
         public override void SetDefaults(NPC npc)
         {
             // Main.NewText($"{npc.GivenName}  {npc.FullName} {npc.getName()}");
-            int upLimit = 16;
-            if (Main.hardMode) upLimit = 28;
-            Random random = new Random();
-            int roll2 = random.Next(1, upLimit); // creates a number from 1 to n-1
-            switch (roll2)
+            List<string> prefixes = new List<string>();
+            prefixes.AddRange(pre_skeletron_prefixes);
+            if (NPC.downedBoss3)
             {
-                case 1:
-                    prefix3 = "Gunner";
-                    break;
-                case 2:
-                    prefix3 = "Webbing";
-                    break;
-                case 3:
-                    prefix3 = "Vampire Hunter";
-                    break;
-                case 4:
-                    prefix3 = "Cyborg";
-                    break;
-                case 5:
-                    prefix3 = "Grave Robber";
-                    break;
-                case 6:
-                    prefix3 = "Grassy";
-                    break;
-                case 7:
-                    prefix3 = "Boomerang";
-                    break;
-                case 8:
-                    prefix3 = "Peddler";
-                    break;
-                case 9:
-                    prefix3 = "Demonic";
-                    break;
-                case 10:
-                    prefix3 = "Fungal";
-                    break;
-                case 11:
-                    prefix3 = "Fishy";
-                    break;
-                case 12:
-                    prefix3 = "Floral";
-                    break;
-                case 13:
-                    prefix3 = "Ballistician";
-                    break;
-                case 14:
-                    prefix3 = "Hemomancer";
-                    break;
-                case 15:
-                    prefix3 = "Ninja";
-                    break;
-                case 16:
-                    prefix3 = "Volcanic";
-                    break;
-                case 17:
-                    prefix3 = "Umbra";
-                    break;
-                case 18:
-                    prefix3 = "Electric";
-                    break;
-                case 19:
-                    prefix3 = "Rioting";
-                    break;
-                case 20:
-                    prefix3 = "Pirate";
-                    break;
-                case 21:
-                    prefix3 = "Night Hunter";
-                    break;
-                case 22:
-                    prefix3 = "Infinite";
-                    break;
-                case 23:
-                    prefix3 = "Infernal";
-                    break;
-                case 24:
-                    prefix3 = "Hellish";
-                    break;
-                case 25:
-                    prefix3 = "Shotgunning";
-                    break;
-                case 26:
-                    prefix3 = "Machine Gunning";
-                    break;
-                case 27:
-                    prefix3 = "Sniper";
-                    break;
+                prefixes.AddRange(pre_wof_prefixes);
             }
+            if (Main.hardMode)
+            {
+                prefixes.AddRange(pre_golem_prefixes);
+            }
+            if (NPC.downedGolemBoss)
+            {
+                prefixes.AddRange(pre_moonlord_prefixes);
+            }
+
+            Random random = new Random();
+            // make a List of all the prefixes
+
+            prefix3 = prefixes[random.Next(prefixes.Count)];
 
             npc.value *= 2f;
         }
@@ -617,6 +586,71 @@ namespace prefixtest.Common.GlobalNPCs
                             2f); //bullet
                     Main.projectile[npcProjectile].hostile = true;
                     Main.projectile[npcProjectile].friendly = false;
+                }
+            }
+            if (prefix3.Contains("Dweller"))
+            {
+                if (AITimer % 20 == 0)
+                {
+
+                    Vector2 velocity = new Vector2(npcToPlayer.X + Main.rand.NextFloat(-5f, 5f), npcToPlayer.Y + Main.rand.NextFloat(-5f, 5f));
+                    // multiply the normalized value by a random velocity
+                    velocity = Vector2.Normalize(velocity) * 3f;
+
+                    npcProjectile =
+                        Projectile
+                            .NewProjectile(npc.GetSource_FromAI(),
+                            npc.position,
+                            velocity,
+                            159,
+                            (int)(npc.damage * 0.65),
+                            2f); //bullet
+                    Main.projectile[npcProjectile].hostile = true;
+                    Main.projectile[npcProjectile].friendly = false;
+
+
+                }
+            }
+            if (prefix3.Contains("Rich"))
+            {
+                if (AITimer % 10 == 0)
+                {
+
+                    Vector2 velocity = new Vector2(npcToPlayer.X + Main.rand.NextFloat(-5f, 5f), npcToPlayer.Y + Main.rand.NextFloat(-5f, 5f));
+                    // multiply the normalized value by a random velocity
+                    velocity = Vector2.Normalize(velocity) * 5f;
+
+                    npcProjectile =
+                        Projectile
+                            .NewProjectile(npc.GetSource_FromAI(),
+                            npc.position,
+                            velocity,
+                            160,
+                            (int)(npc.damage),
+                            2f); //bullet
+                    Main.projectile[npcProjectile].hostile = true;
+                    Main.projectile[npcProjectile].friendly = false;
+                }
+
+                if (AITimer % 5 == 0)
+                {
+                    // Vector2 coppercoin = new Vector2(npc.Center.X + Main.rand.NextFloat(-50f, 50f), npc.Center.Y + Main.rand.NextFloat(-50f, 50f));
+                    // Vector2 direction = new Vector2(Main.rand.NextFloat(-25f, 25f), Main.rand.NextFloat(-25f, 25f));
+                    // int a = Projectile.NewProjectile(npc.GetSource_FromAI(), coppercoin, direction, 158, npc.damage, 1f);
+                    // Main.projectile[a].friendly = false;
+                    // Main.projectile[a].hostile = true;
+                    // Main.projectile[a].tileCollide = false;
+                    // Main.projectile[a].timeLeft = 120;
+
+                    // make a projectile spawn in a random position with a radius of 100f from the npc
+                    Vector2 position = new Vector2(npc.Center.X + Main.rand.NextFloat(-1000f, 1000f), npc.Center.Y + Main.rand.NextFloat(-1000f, 1000f));
+                    // the velocity should be 0 and remain alive for 3 seconds
+                    Vector2 velocity = new Vector2(0f, 0f);
+                    int a = Projectile.NewProjectile(npc.GetSource_FromAI(), position, velocity, 160, npc.damage, 1f);
+                    Main.projectile[a].hostile = true;
+                    Main.projectile[a].friendly = false;
+                    Main.projectile[a].timeLeft = 360;
+                    Main.projectile[a].tileCollide = false;
                 }
             }
             if (!nameChanged)

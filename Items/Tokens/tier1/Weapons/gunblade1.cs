@@ -45,7 +45,7 @@ namespace prefixtest.Items.Tokens.tier1.Weapons
         }
 
         // This method gets called when firing your weapon/sword.
-        public override bool CanBeConsumedAsAmmo(Player player)
+        public override bool CanBeConsumedAsAmmo(Item weapon, Player player)
         {
             return true;
         }

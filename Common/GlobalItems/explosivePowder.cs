@@ -6,27 +6,32 @@ using Terraria.ModLoader;
 using prefixtest.Items.Tokens.tier4;
 namespace prefixtest.Common.GlobalItems
 {
-	// This file shows a very simple example of a GlobalItem class. GlobalItem hooks are called on all items in the game and are suitable for sweeping changes like
-	// adding additional data to all items in the game. Here we simply adjust the damage of the Copper Shortsword item, as it is simple to understand.
-	// See other GlobalItem classes in ExampleMod to see other ways that GlobalItem can be used.
-	public class explosivePowder : GlobalItem
-	{
-		public override bool AppliesToEntity(Item item, bool lateInstatiation) {
-			return item.type == ItemID.ExplosivePowder;
-		}
+    // This file shows a very simple example of a GlobalItem class. GlobalItem hooks are called on all items in the game and are suitable for sweeping changes like
+    // adding additional data to all items in the game. Here we simply adjust the damage of the Copper Shortsword item, as it is simple to understand.
+    // See other GlobalItem classes in ExampleMod to see other ways that GlobalItem can be used.
+    public class explosivePowder : GlobalItem
+    {
+        public override bool AppliesToEntity(Item item, bool lateInstatiation)
+        {
+            return item.type == ItemID.ExplosivePowder;
+        }
 
-		public override void SetDefaults(Item item) {
-			item.ammo = ItemID.ExplosivePowder;
-      item.shoot = 668;
-      item.consumable = true;
-			item.maxStack = 999;
-		}
+        public override void SetDefaults(Item item)
+        {
+            item.ammo = ItemID.ExplosivePowder;
+            item.shoot = 668;
+            item.consumable = true;
+            item.maxStack = 999;
+        }
 
-    public override bool CanBeConsumedAsAmmo(Item item, Player player){
-      return true;
+        public override bool CanBeConsumedAsAmmo(Item item, Item weapon, Player player)
+        {
+            return true;
+        }
+
+
+
+
+
     }
-
-
-
-	}
 }

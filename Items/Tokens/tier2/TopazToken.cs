@@ -34,8 +34,8 @@ namespace prefixtest.Items.Tokens.tier2
 
         public override bool? UseItem(Player player)
         {
-            //tier 1 loot
-            int x = Main.rand.Next(0, 8);
+            //tier 2 loot
+            int x = Main.rand.Next(0, 9);
             switch (x)
             {
                 case 0:
@@ -98,6 +98,10 @@ namespace prefixtest.Items.Tokens.tier2
                     //     2,
                     //     5);
                     break;
+                case 8:
+                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hellFireTincture>(), Main.rand.Next(2, 5));
+                    break;
+
             }
             return true;
         }

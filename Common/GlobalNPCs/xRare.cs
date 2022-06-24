@@ -102,10 +102,10 @@ namespace prefixtest.Common.GlobalNPCs
             {
                 Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SapphireToken>());
                 // new CommonDrop(ModContent.ItemType<SapphireToken>(),
-                    // 1,
-                    // 1,
-                    // 1,
-                    // 1);
+                // 1,
+                // 1,
+                // 1,
+                // 1);
             }
             else if (NPC.downedBoss3 || NPC.downedQueenBee)
             {
@@ -116,10 +116,10 @@ namespace prefixtest.Common.GlobalNPCs
             {
                 Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<AmethystToken>());
                 // new CommonDrop(ModContent.ItemType<AmethystToken>(),
-                    // 1,
-                    // 1,
-                    // 1,
-                    // 1);
+                // 1,
+                // 1,
+                // 1,
+                // 1);
             }
             //TODO: Add the rest of the vanilla drop rules!!
         }
