@@ -48,6 +48,7 @@ namespace prefixtest.Items.Tokens.tier2.Accessories
 			Recipe recipe = CreateRecipe();
 			recipe.AddIngredient<soulofchance>(3);
 			recipe.AddIngredient<TopazToken>(1);
+			recipe.AddIngredient<Glass>(10);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
 		}
