@@ -10,7 +10,7 @@ namespace prefixtest.Items.Tokens.tier2.Accessories
 	public class earthcharm : ModItem
 	{
 		public override void SetStaticDefaults() {
-      DisplayName.SetDefault("Earth Charm"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+      		DisplayName.SetDefault("Earth Charm"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
 			Tooltip.SetDefault("+5 Life Regen \n+60 Max Life");
 		}
 
@@ -31,7 +31,7 @@ namespace prefixtest.Items.Tokens.tier2.Accessories
 			// In this case, we're multiplying by 1.20f, which will mean a 20% damage increase after every additive modifier (and a number of multiplicative modifiers) are applied.
 			// Since we're using DamageClass.Generic, this bonus applies to ALL damage the player deals.
 			player.statLifeMax2 += 60;
-      player.lifeRegen += 5;
+      		player.lifeRegen += 5;
       // player.AddBuff(BuffID.ShadowDodge, 5);
 
 
