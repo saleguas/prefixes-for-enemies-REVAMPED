@@ -60,6 +60,7 @@ namespace prefixtest.Common.GlobalNPCs
             Random random = new Random();
             double roll1 = random.NextDouble();
             npc.netUpdate = true;
+            
 
             return roll1 <=
             (double)(ModContent.GetInstance<modconfig>().SuffixChance * 0.01);
