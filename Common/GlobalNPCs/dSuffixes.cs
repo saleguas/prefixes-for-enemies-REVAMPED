@@ -62,7 +62,7 @@ namespace prefixtest.Common.GlobalNPCs
             npc.netUpdate = true;
 
             return roll1 <=
-            (double)(ModContent.GetInstance<modconfig>().SuffixChance * 0.01 / 2f);
+            (double)(ModContent.GetInstance<modconfig>().SuffixChance * 0.01);
         }
 
         public override void SetDefaults(NPC npc)
