@@ -1,15 +1,8 @@
 using System;
-using System.IO;
-using System.Collections;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
-using Terraria.ModLoader.IO;
-using Terraria.Utilities;
-using prefixtest.Common.GlobalNPCs;
 
 namespace prefixtest.Common.GlobalNPCs
 {
@@ -30,25 +23,25 @@ namespace prefixtest.Common.GlobalNPCs
             "Webbing",
             "Vampire Hunter",
             "Cyborg",
-            "Grave Robber",
             "Grassy",
             "Boomerang",
             "Peddler",
             "Demonic",
             "Fungal",
             "Fishy",
-            "Floral",
             "Ballistician",
             "Hemomancer",
             "Ninja",
-            "Volcanic",
         };
         private List<string> pre_wof_prefixes = new List<string>
         {
             "Dweller",
+            "Grave Robber",
+            "Volcanic",
         };
         private List<string> pre_golem_prefixes = new List<string>{
             "Umbra",
+            "Floral",
             "Electric",
             "Rioting",
             "Pirate",
@@ -120,7 +113,7 @@ namespace prefixtest.Common.GlobalNPCs
                             npc.position,
                             npcToPlayer,
                             14,
-                            npc.damage,
+                            (int) (npc.damage*0.8),
                             2f); //bullet
                     Main.projectile[npcProjectile].friendly = false;
                     Main.projectile[npcProjectile].hostile = true;
@@ -149,7 +142,7 @@ namespace prefixtest.Common.GlobalNPCs
                                 npc.position,
                                 newVelocity,
                                 14,
-                                (int)(npc.damage * 0.7),
+                                (int)(npc.damage * 0.4),
                                 2f); //bullet
                         Main.projectile[npcProjectile].friendly = false;
                         Main.projectile[npcProjectile].hostile = true;

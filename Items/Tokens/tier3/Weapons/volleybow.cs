@@ -6,7 +6,7 @@ using Terraria.ModLoader;
 using prefixtest.Items.Tokens;
 using prefixtest.Items.Tokens.tier1;
 
-namespace prefixtest.Items.Tokens.tier1.Weapons
+namespace prefixtest.Items.Tokens.tier3.Weapons
 {
     public class volleybow : ModItem
     {

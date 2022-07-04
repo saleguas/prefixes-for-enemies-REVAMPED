@@ -42,7 +42,7 @@ namespace prefixtest.Items.Tokens.tier3.Consumable
             Recipe recipe = CreateRecipe(999);
             recipe.AddIngredient<soulofchance>(3);
             recipe.AddIngredient<SapphireToken>(1);
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
 

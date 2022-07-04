@@ -102,7 +102,7 @@ namespace prefixtest.Common.GlobalNPCs
             Vector2 npcToPlayer = targetPlayer.position - npc.position;
             if (suffix1.Contains("The Necromancer") && npc.value != 0)
             {
-                if (AITimer % 300 == 0)
+                if (AITimer % 600 == 0)
                 {
                     int x = Main.rand.Next(1, 5);
                     for (int i = 0; i < x; i++)

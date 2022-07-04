@@ -5,11 +5,28 @@ using Terraria.ModLoader;
 using prefixtest.Items.Tokens.tier2.Accessories;
 using prefixtest.Items.Tokens.tier2.Consumable;
 using prefixtest.Items.Tokens.tier2.Weapons;
+using System;
+using System.Collections.Generic;
+using prefixtest.Items.Tokens.tier3;
 
 namespace prefixtest.Items.Tokens.tier2
 {
     public class TopazToken : ModItem
     {
+        
+        private List<Tuple<int, int>> possible_drops = new List<Tuple<int, int>>{
+            new Tuple<int, int>(ModContent.ItemType<earthcharm>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<shotgunshot>(), 999),
+            new Tuple<int, int>(ModContent.ItemType<gemstave>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<heavycrossbow>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<rimefrost>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<shotgunblade>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<vampireknife>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<shapedglass>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5)),
+            new Tuple<int, int>(ModContent.ItemType<hellFireTincture>(), Main.rand.Next(2, 5)),
+
+        };
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Topaz Loot Token");
@@ -31,42 +48,20 @@ namespace prefixtest.Items.Tokens.tier2
             Item.useAnimation = 40;
             Item.useTime = 40;
         }
+        public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<SapphireToken>(1);
+			recipe.Register();
+		}
 
         public override bool? UseItem(Player player)
         {
-            //tier 2 loot
-            int x = Main.rand.Next(0, 9);
-            switch (x)
-            {
-                case 0:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<earthcharm>(), 1);
-                    break;
-                case 1:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<shotgunshot>(), 999);
-                    break;
-                case 2:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<gemstave>(), 1);
-                    break;
-                case 3:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<heavycrossbow>(), 1);
-                    break;
-                case 4:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<rimefrost>(), 1);
-                    break;
-                case 5:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<shotgunblade>(), 1);
-                    break;
-                case 6:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<vampireknife>(), 1);
-                    break;
-                case 7:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5));
-                    break;
-                case 8:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hellFireTincture>(), Main.rand.Next(2, 5));
-                    break;
-
-            }
+            // drop a random item from the list:
+            int chosen_item = Main.rand.Next(possible_drops.Count);
+            int item_type = possible_drops[chosen_item].Item1;
+            int item_stack = possible_drops[chosen_item].Item2;
+            Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, item_type, item_stack);
             return true;
         }
     }

@@ -25,7 +25,15 @@ I'll update this with a wiki as soon as I can.
 Please understand this makes the game more challenging at the cost of more rewards. 
 
 CHANGELOG:
+v1.1.1:
+- allowed tokens to be crafted down
+- cleaned up code 
+- added more content :)
+- more balance changes
 
+v1.1.0:
+- nerfed various prefixes, including floral, necromancer and gunning.
+- re-balanced volley bow
 v1.0.13:
 - Added some more items
 

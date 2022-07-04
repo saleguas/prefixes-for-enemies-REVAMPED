@@ -45,7 +45,7 @@ namespace prefixtest.Items.Testing
             recipe.AddIngredient<soulofchance>(3);
 
             // recipe.AddIngredient<EmeraldToken>(1);
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
 

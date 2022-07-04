@@ -1,15 +1,28 @@
 using Terraria;
-using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using prefixtest.Items.Tokens.tier1.Accessories;
 using prefixtest.Items.Tokens.tier1.Consumable;
 using prefixtest.Items.Tokens.tier1.Weapons;
-
+using System.Collections.Generic;
+using System;
+using prefixtest.Items.Tokens.tier2;
 namespace prefixtest.Items.Tokens.tier1
 {
     public class AmethystToken : ModItem
     {
+        // make a list of all the items to be dropped by the token:
+        private List<Tuple<int, int>> possible_drops = new List<Tuple<int, int>>{
+            new Tuple<int, int>(ModContent.ItemType<starcharm>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<hookshot>(), 999),
+            new Tuple<int, int>(ModContent.ItemType<anchorage>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<equalizer>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<gunblade1>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<hybridblade1>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<omnirang>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5)),
+
+        };
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Amethyst Loot Token");
@@ -31,85 +44,21 @@ namespace prefixtest.Items.Tokens.tier1
             Item.useAnimation = 40;
             Item.useTime = 40;
         }
+        public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<TopazToken>(1);
+			recipe.Register();
+		}
 
         public override bool? UseItem(Player player)
         {
-            //tier 1 loot
-            int x = Main.rand.Next(0, 9);
-            switch (x)
-            {
-                case 0:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<starcharm>(), 1);
-                    //break;
-                    // new CommonDrop(ModContent.ItemType<starcharm>(),
-                        // 1,
-                        // 1,
-                        // 1,
-                        // 1);
-                    break;
-                case 1:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hookshot>(), 999);
-                    // break;
-                    // new CommonDrop(ModContent.ItemType<hookshot>(),
-                        // 1,
-                        // 1,
-                        // 999,
-                        // 999);
-                    break;
-                case 2:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<anchorage>(), 1);
-                    // break;
-                    // new CommonDrop(ModContent.ItemType<anchorage>(),
-                        // 1,
-                        // 1,
-                        // 1,
-                        // 1);
-                    break;
-                case 3:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<equalizer>(), 1);
-                    // new CommonDrop(ModContent.ItemType<equalizer>(),
-                        // 1,
-                        // 1,
-                        // 1,
-                        // 1);
-                    break;
-                case 4:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<gunblade1>(), 1);
-                    // new CommonDrop(ModContent.ItemType<gunblade1>(),
-                        // 1,
-                        // 1,
-                        // 1,
-                        // 1);
-                    break;
-                case 5:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hybridblade1>(), 1);
-                    // new CommonDrop(ModContent.ItemType<hybridblade1>(),
-                        // 1,
-                        // 1,
-                        // 1,
-                        // 1);
-                    break;
-                case 6:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<omnirang>(), 1);
-                    // new CommonDrop(ModContent.ItemType<omnirang>(), 1, 1, 1, 1);
-                    break;
-                case 7:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<volleybow>(), 1);
-                    // new CommonDrop(ModContent.ItemType<volleybow>(),
-                        // 1,
-                        // 1,
-                        // 1,
-                        // 1);
-                    break;
-                case 8:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5));
-                    // new CommonDrop(ModContent.ItemType<soulofchance>(),
-                        // 1,
-                        // 1,
-                        // 2,
-                        // 5);
-                    break;
-            }
+            
+            // drop a random item from the list:
+            int chosen_item = Main.rand.Next(possible_drops.Count);
+            int item_type = possible_drops[chosen_item].Item1;
+            int item_stack = possible_drops[chosen_item].Item2;
+            Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, item_type, item_stack);
             return true;
         }
     }

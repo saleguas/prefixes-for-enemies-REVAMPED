@@ -41,7 +41,7 @@ namespace prefixtest.Items.Tokens.tier4.Consumable
 			Recipe recipe = CreateRecipe(999);
 			recipe.AddIngredient<soulofchance>(3);
 			recipe.AddIngredient<EmeraldToken>(1);
-			recipe.AddTile(TileID.WorkBenches);
+			recipe.AddTile(TileID.MythrilAnvil);
 			recipe.Register();
 		}
 

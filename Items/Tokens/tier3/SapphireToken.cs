@@ -5,11 +5,27 @@ using Terraria.ModLoader;
 using prefixtest.Items.Tokens.tier3.Accessories;
 using prefixtest.Items.Tokens.tier3.Consumable;
 using prefixtest.Items.Tokens.tier3.Weapons;
-
+using System;
+using System.Collections.Generic;
+using prefixtest.Items.Tokens.tier4;
 namespace prefixtest.Items.Tokens.tier3
 {
     public class SapphireToken : ModItem
     {
+        private List<Tuple<int, int>> possible_drops = new List<Tuple<int, int>>{
+            new Tuple<int, int>(ModContent.ItemType<vitalitycharm>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<slug>(), 999),
+            new Tuple<int, int>(ModContent.ItemType<brokenengine>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<ceaselesshunger>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<GhastlyKalis>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<hourglass>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<purifierresolve>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<seatofcommand>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<tuningfork>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5)),
+            new Tuple<int, int>(ModContent.ItemType<volleybow>(), 1),
+
+        };
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Sapphire Loot Token");
@@ -32,64 +48,20 @@ namespace prefixtest.Items.Tokens.tier3
             Item.useTime = 40;
         }
 
+        public override void AddRecipes()
+		{
+			Recipe recipe = CreateRecipe();
+			recipe.AddIngredient<EmeraldToken>(1);
+			recipe.Register();
+		}
+
         public override bool? UseItem(Player player)
         {
-            //tier 1 loot
-            int x = Main.rand.Next(0, 10);
-            switch (x)
-            {
-                case 0:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<vitalitycharm>(), 1);
-                    // new CommonDrop(ModContent.ItemType<vitalitycharm>(),
-                    //     1,
-                    //     1,
-                    //     1,
-                    //     1);
-                    break;
-                case 1:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<slug>(), 999);
-                    // new CommonDrop(ModContent.ItemType<slug>(), 1, 1, 999, 999);
-                    break;
-                case 2:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<brokenengine>(), 1);
-                    // new CommonDrop(ModContent.ItemType<brokenengine>(),
-                    //     1,
-                    //     1,
-                    //     1,
-                    //     1);
-                    break;
-                case 3:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<ceaselesshunger>(), 1);
-                    // new CommonDrop(ModContent.ItemType<ceaselesshunger>(),
-                    //     1,
-                    //     1,
-                    //     1,
-                    //     1);
-                    break;
-                case 4:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<GhastlyKalis>(), 1);
-                    // new CommonDrop(ModContent.ItemType<GhastlyKalis>(),
-                    //     1,
-                    //     1,
-                    //     1,
-                    //     1);
-                    break;
-                case 5:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<hourglass>(), 1);
-                    break;
-                case 6:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<purifierresolve>(), 1);
-                    break;
-                case 7:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<seatofcommand>(), 1);
-                    break;
-                case 8:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<tuningfork>(), 1);
-                    break;
-                case 9:
-                    Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5));
-                    break;
-            }
+            // drop a random item from the list:
+            int chosen_item = Main.rand.Next(possible_drops.Count);
+            int item_type = possible_drops[chosen_item].Item1;
+            int item_stack = possible_drops[chosen_item].Item2;
+            Item.NewItem(player.GetSource_Misc("PlayerDropItemCheck"),  (int)  player.position.X,  (int) player.position.Y, player.width, player.height, item_type, item_stack);
             return true;
         }
     }
