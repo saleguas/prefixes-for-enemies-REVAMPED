@@ -4,7 +4,7 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using prefixtest.buffs;
 
-namespace prefixtest.Items.Testing
+namespace prefixtest.Items.Tokens.tier3.Consumable
 {
 	public class spinelTonic : ModItem
 	{

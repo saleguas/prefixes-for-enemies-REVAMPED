@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using prefixtest.Items.Tokens;
 
-namespace prefixtest.Items.Testing
+namespace prefixtest.Items.Tokens.tier3.Consumable
 {
     // This Example class demonstrates how to make your own weapon ammo.
     // Used by ExampleCustomAmmoGun
@@ -43,7 +43,6 @@ namespace prefixtest.Items.Testing
         {
             Recipe recipe = CreateRecipe(999);
             recipe.AddIngredient<soulofchance>(3);
-
             // recipe.AddIngredient<EmeraldToken>(1);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();

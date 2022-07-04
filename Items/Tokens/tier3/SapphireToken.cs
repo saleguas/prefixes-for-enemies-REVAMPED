@@ -24,6 +24,9 @@ namespace prefixtest.Items.Tokens.tier3
             new Tuple<int, int>(ModContent.ItemType<tuningfork>(), 1),
             new Tuple<int, int>(ModContent.ItemType<soulofchance>(), Main.rand.Next(2, 5)),
             new Tuple<int, int>(ModContent.ItemType<volleybow>(), 1),
+            new Tuple<int, int>(ModContent.ItemType<spinelTonic>(), Main.rand.Next(2, 5)),
+            new Tuple<int, int>(ModContent.ItemType<divinefolley>(), 999),
+
 
         };
         public override void SetStaticDefaults()
