@@ -35,9 +35,9 @@ namespace prefixtest.Common.GlobalNPCs
         };
         private List<string> pre_wof_prefixes = new List<string>
         {
-            "Dweller",
             "Grave Robber",
             "Volcanic",
+            "Dweller"
         };
         private List<string> pre_golem_prefixes = new List<string>{
             "Umbra",

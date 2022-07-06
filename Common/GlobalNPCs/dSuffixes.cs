@@ -29,10 +29,10 @@ namespace prefixtest.Common.GlobalNPCs
                 "The Cultist",
                 "The Sacrifice",
                 "The Fireborn",
-                "The Affluent"
         };
         private List<string> pre_moonlord_suffixes = new List<string>
         {
+            "The Affluent"
         };
         public override bool InstancePerEntity => true;
 
