@@ -44,10 +44,11 @@ namespace prefixtest.Common.GlobalNPCs
                         prefix +
                         " " +
                         npc.FullName +
-                        " " +
+                        "" +
                         suffix;
                 nameChanged = true;
                 npc.netUpdate = true;
+
             }
         }
 
