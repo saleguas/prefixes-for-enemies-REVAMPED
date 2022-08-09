@@ -35,17 +35,17 @@ namespace prefixtest.Common.GlobalNPCs
             // npc.scale = 1.5f;
             // npc.color = Color.ForestGreen;
             prefix = npc.GetGlobalNPC<prefixString>().prefix;
-            if (prefix == "") return;
+            suffix = npc.GetGlobalNPC<prefixString>().suffix;
+            if (prefix == "" && suffix=="") return;
 
             if (!nameChanged)
             {
                 npc.GivenName =
-                    npc.GetGlobalNPC<prefixString>().prefix =
-                        npc.GetGlobalNPC<prefixString>().prefix +
+                        prefix +
                         " " +
                         npc.FullName +
                         " " +
-                        npc.GetGlobalNPC<prefixString>().suffix;
+                        suffix;
                 nameChanged = true;
                 npc.netUpdate = true;
             }
