@@ -11,7 +11,7 @@ namespace prefixtest.Items.Tokens.tier2.Accessories
 	{
 		public override void SetStaticDefaults() {
       		DisplayName.SetDefault("Shaped Glass"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("For those that live on the edge");
+			Tooltip.SetDefault("Increases ALL damage by 20%\nDecreases defense by 25%");
 		}
 
 		public override void SetDefaults() {

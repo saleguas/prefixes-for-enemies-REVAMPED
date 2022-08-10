@@ -27,6 +27,9 @@ Please understand this makes the game more challenging at the cost of more rewar
 CHANGELOG:
 v1.1.5:
 - fixed issue where town NPCs and critters were having modifiers
+- adjusted items to fit more into curve( rimefrost, anchorage )
+- updated tooltips to actually make sense
+
 v1.1.4:
 - fixed issue where suffixes weren't showing
 

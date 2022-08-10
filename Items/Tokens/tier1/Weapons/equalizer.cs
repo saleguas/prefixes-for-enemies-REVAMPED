@@ -13,7 +13,7 @@ namespace prefixtest.Items.Tokens.tier1.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("The Equalizer"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("This is a modded gun.");
+            Tooltip.SetDefault("Shoot a heavy homing bullet");
         }
 
         public override void SetDefaults()

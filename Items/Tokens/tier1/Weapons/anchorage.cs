@@ -13,7 +13,7 @@ namespace prefixtest.Items.Tokens.tier1.Weapons
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Anchorage"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-            Tooltip.SetDefault("Shoots a volley of arrows.");
+            Tooltip.SetDefault("Dock the ship!");
         }
 
         public override void SetDefaults()
@@ -33,7 +33,7 @@ namespace prefixtest.Items.Tokens.tier1.Weapons
 
             // Weapon Properties
             Item.DamageType = DamageClass.Magic; // Sets the damage type to ranged.
-            Item.damage = 38; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
+            Item.damage = 23; // Sets the item's damage. Note that projectiles shot by this weapon will use its and the used ammunition's damage added together.
             Item.knockBack = 18f; // Sets the item's knockback. Note that projectiles shot by this weapon will use its and the used ammunition's knockback added together.
             Item.noMelee = true; // So the item's animation doesn't do damage.
 
