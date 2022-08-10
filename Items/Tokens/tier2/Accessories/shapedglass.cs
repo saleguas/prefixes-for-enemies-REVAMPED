@@ -31,7 +31,9 @@ namespace prefixtest.Items.Tokens.tier2.Accessories
 			// In this case, we're multiplying by 1.20f, which will mean a 20% damage increase after every additive modifier (and a number of multiplicative modifiers) are applied.
 			// Since we're using DamageClass.Generic, this bonus applies to ALL damage the player deals.
             player.GetDamage(DamageClass.Generic) *= 1.20f;
-            player.statDefense /= 4;
+            // player.statDefense = player.statDefense - ((int) player.statDefense * 0.25f);
+			// reduce defense by 25%
+			player.statDefense = player.statDefense - (player.statDefense / 4);
       		
     
 
