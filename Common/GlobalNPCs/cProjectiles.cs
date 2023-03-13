@@ -57,6 +57,7 @@ namespace prefixtest.Common.GlobalNPCs
         private List<string> pre_moonlord_prefixes = new List<string>
         {
         };
+        
         public override bool AppliesToEntity(NPC npc, bool lateInstatiation)
         {
             if (npc.townNPC == true)
@@ -120,7 +121,7 @@ namespace prefixtest.Common.GlobalNPCs
                             npc.position,
                             npcToPlayer,
                             14,
-                            (int) (npc.damage*0.1),
+                            (int) (npc.damage*0.2),
                             2f); //bullet
                     Main.projectile[npcProjectile].friendly = false;
                     Main.projectile[npcProjectile].hostile = true;
@@ -159,8 +160,6 @@ namespace prefixtest.Common.GlobalNPCs
             }
             if (prefix3.Contains("Machine Gunning"))
             {
-                const int NumProjectiles = 4; //The humber of projectiles that this gun will shoot.
-
                 if (AITimer % 30 == 0)
                 {
                     Vector2 newVelocity =
@@ -176,7 +175,7 @@ namespace prefixtest.Common.GlobalNPCs
                             npc.position,
                             newVelocity,
                             14,
-                            (int)(npc.damage * 0.05),
+                            (int)(npc.damage * 0.1),
                             2f); //bullet
                     Main.projectile[npcProjectile].friendly = false;
                     Main.projectile[npcProjectile].hostile = true;
@@ -192,7 +191,7 @@ namespace prefixtest.Common.GlobalNPCs
                             npc.position,
                             npcToPlayer,
                             242,
-                            (int)(npc.damage * 0.5),
+                            (int)(npc.damage * 0.7),
                             2f); //bullet high velocity
                     Main.projectile[npcProjectile].friendly = false;
                     Main.projectile[npcProjectile].hostile = true;
@@ -209,7 +208,7 @@ namespace prefixtest.Common.GlobalNPCs
                             npc.position,
                             new Vector2(npcToPlayer.X, npcToPlayer.Y),
                             467,
-                            (int)(npc.damage * 0.3),
+                            (int)(npc.damage * 0.4),
                             2f);
                 }
             }
@@ -223,7 +222,7 @@ namespace prefixtest.Common.GlobalNPCs
                             npc.position,
                             new Vector2(npcToPlayer.X, npcToPlayer.Y),
                             468,
-                            (int)(npc.damage * 0.3),
+                            (int)(npc.damage * 0.4),
                             2f);
                 }
             }
@@ -251,7 +250,7 @@ namespace prefixtest.Common.GlobalNPCs
                             npc.position,
                             new Vector2(npcToPlayer.X, npcToPlayer.Y),
                             435,
-                            (int)(npc.damage * 0.3),
+                            (int)(npc.damage * 0.5),
                             2f);
                 }
             }
@@ -265,7 +264,7 @@ namespace prefixtest.Common.GlobalNPCs
                             npc.position,
                             new Vector2(npcToPlayer.X, npcToPlayer.Y),
                             399,
-                            (int)(npc.damage * 0.3),
+                            (int)(npc.damage * 0.5),
                             2f);
                     Main.projectile[npcProjectile].friendly = false;
                     Main.projectile[npcProjectile].hostile = true;
@@ -296,7 +295,7 @@ namespace prefixtest.Common.GlobalNPCs
                             npc.position,
                             new Vector2(npcToPlayer.X, npcToPlayer.Y),
                             246,
-                            (int)(npc.damage * 0.3),
+                            (int)(npc.damage * 0.7),
                             2f); //bullet
                     Main.projectile[npcProjectile].friendly = false;
                     Main.projectile[npcProjectile].hostile = true;
@@ -318,7 +317,7 @@ namespace prefixtest.Common.GlobalNPCs
                                 source2,
                                 newVelocity,
                                 116,
-                                (int)(npc.damage * 0.3),
+                                (int)(npc.damage * 0.8),
                                 2f); //bullet
                         Main.projectile[npcProjectile].friendly = false;
                         Main.projectile[npcProjectile].hostile = true;
