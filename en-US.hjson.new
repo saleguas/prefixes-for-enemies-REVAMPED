@@ -1,0 +1,390 @@
+
+Mods: {
+	prefixtest: {
+		Buffs: {
+			hellFireTinctureBurn: {
+				DisplayName: Hellfire Tincture
+				Description: Your soul is ablaze
+			}
+
+			infinitymight: {
+				DisplayName: Infinity Might
+				Description: Grants +10 defense and 20% more damage.
+			}
+
+			spinelTonicBuff: {
+				DisplayName: Spinel Tonic Buff
+				Description: Massive Boost to all stats, at a cost...
+			}
+		}
+
+		Items: {
+			dwellerdelight: {
+				DisplayName: Dweller's Delight
+				Tooltip: Shoots a storm of copper and silver coins.
+			}
+
+			peddlersplea: {
+				DisplayName: Peddler's Plea
+				Tooltip: Shoots a storm of copper coins.
+			}
+
+			rake: {
+				DisplayName: Rake
+				Tooltip: Uses explosive powder as ammunition
+			}
+
+			theaffluence: {
+				DisplayName: The Affluence
+				Tooltip: Money is power.
+			}
+
+			wealthywilt: {
+				DisplayName: Wealthy Wilt
+				Tooltip: Mow your enemies down.
+			}
+
+			glacialstorm: {
+				DisplayName: Glacial Storm
+				Tooltip: Summon a frozen rain upon your foes
+			}
+
+			quartzstaff: {
+				DisplayName: TEST ITEM
+				Tooltip: Shoots a heavy stynger bolt
+			}
+
+			runeblast: {
+				DisplayName: Rune blast
+				Tooltip: Shoots a volley of arrows.
+			}
+
+			spookyknife: {
+				DisplayName: spookyknife
+				Tooltip: This is a modded spear
+			}
+
+			soulofchance: {
+				DisplayName: Soul of Chance
+				Tooltip: "'The essence of rare creatures'"
+			}
+
+			soulshard: {
+				DisplayName: Soul Shard
+				Tooltip:
+					'''
+					A shard of pure chance.
+					Use to buy consumables from The Chancellor
+					'''
+			}
+
+			starcharm: {
+				DisplayName: Star Charm
+				Tooltip:
+					'''
+					5% Increased magic damage 
+					+60 Max Mana
+					'''
+			}
+
+			AmethystToken: {
+				DisplayName: Amethyst Loot Token
+				Tooltip:
+					'''
+					Claim a special reward! 
+					Drops from rare early-game enemies 
+					'''
+			}
+
+			hookshot: {
+				DisplayName: hookshot
+				Tooltip: If an enemy is directly below, this bullet will drop onto them.
+			}
+
+			anchorage: {
+				DisplayName: Anchorage
+				Tooltip: Dock the ship!
+			}
+
+			equalizer: {
+				DisplayName: The Equalizer
+				Tooltip: Shoot a heavy homing bullet
+			}
+
+			gunblade1: {
+				DisplayName: Gun Blade
+				Tooltip:
+					'''
+					Left click to swing. Right click to fire a bullet. 
+					The gun requires one use to switch between modes.
+					'''
+			}
+
+			hybridblade1: {
+				DisplayName: Hybrid Blade
+				Tooltip:
+					'''
+					Left click to swing. Right click to fire a bullet. 
+					The gun requires one use to switch between modes.
+					'''
+			}
+
+			omnirang: {
+				DisplayName: Omni-Rang
+				Tooltip:
+					'''
+					Good luck catching all of them
+					 Shoots 8 boomerangs.
+					'''
+			}
+
+			earthcharm: {
+				DisplayName: Earth Charm
+				Tooltip:
+					'''
+					+5 Life Regen 
+					+60 Max Life
+					'''
+			}
+
+			shapedglass: {
+				DisplayName: Shaped Glass
+				Tooltip:
+					'''
+					Increases ALL damage by 20%
+					Decreases defense by 25%
+					'''
+			}
+
+			hellFireTincture: {
+				DisplayName: Hellfire Tincture
+				Tooltip: Burn EVERYTHING in a radius around you.
+			}
+
+			shotgunshot: {
+				DisplayName: Shotgun Shot
+				Tooltip: Shoots multiple bullets in a shotgun-like spread.
+			}
+
+			TopazToken: {
+				DisplayName: Topaz Loot Token
+				Tooltip:
+					'''
+					Claim a special reward! 
+					Drops from rare post-skeleton enemies 
+					'''
+			}
+
+			gemstave: {
+				DisplayName: Gem Stave
+				Tooltip:
+					'''
+					Right click to switch modes. 
+					Channel the power of gems.
+					'''
+			}
+
+			heavycrossbow: {
+				DisplayName: Heavy Crossbow
+				Tooltip: Shoots a heavy stynger bolt
+			}
+
+			rimefrost: {
+				DisplayName: Rimefrost
+				Tooltip: Shoots a volley of crystals.
+			}
+
+			shotgunblade: {
+				DisplayName: Shotgun Blade
+				Tooltip:
+					'''
+					Left click to swing. Right click to fire a spread of bullets. 
+					The gun requires one use to switch between modes.
+					'''
+			}
+
+			vampireknife: {
+				DisplayName: Vampire Knife
+				Tooltip: Shoots a healing vampire knife.
+			}
+
+			elementscharm: {
+				DisplayName: Elements Charm
+				Tooltip:
+					'''
+					+5 Life Regen 
+					+60 Max Life
+					5% Increased Magic Damage
+					+60 Mana
+					Gives various regen buffs
+					'''
+			}
+
+			vitalitycharm: {
+				DisplayName: Vitality Charm
+				Tooltip: Grants Honey, Campfire, and Heart Lantern buffs
+			}
+
+			divinefolley: {
+				DisplayName: Divine Folley
+				Tooltip: Shoots a barrage of various arrows.
+			}
+
+			slug: {
+				DisplayName: Slug
+				Tooltip: Shoots an exploding cannonball.
+			}
+
+			spinelTonic: {
+				DisplayName: Spinel Tonic
+				Tooltip: Grants a massive boost to all stats, at a cost...
+			}
+
+			SapphireToken: {
+				DisplayName: Sapphire Loot Token
+				Tooltip:
+					'''
+					Claim a special reward! 
+					Drops from rare post-Wall-of-Flesh Enemies 
+					'''
+			}
+
+			brokenengine: {
+				DisplayName: Broken Engine
+				Tooltip: I wouldn't stand in front of it...
+			}
+
+			ceaselesshunger: {
+				DisplayName: Ceaseless Hunger
+				Tooltip:
+					'''
+					Consume your foes. 
+					 Shoots a swarm of ravenous skulls.
+					'''
+			}
+
+			GhastlyKalis: {
+				DisplayName: Ghastly Kalis
+				Tooltip: Grants invincibility and invisiblity while hitting enemies! However, it has very short range
+			}
+
+			hourglass: {
+				DisplayName: The Hourglass
+				Tooltip:
+					'''
+					Enter stasis for 5 seconds. 
+					 You cannot take damage in stasis, but you are stunned.
+					60 second cooldown.
+					'''
+			}
+
+			purifierresolve: {
+				DisplayName: Purifier's Resolve
+				Tooltip:
+					'''
+					Right click to dash towards your cursor every five seconds.
+					The distance traveled is based upon how far your cursor is from your character.
+					Hit an enemy to reset the cooldown on the dash.
+					"Keep movin' on."
+					'''
+			}
+
+			seatofcommand: {
+				DisplayName: The Seat of Command
+				Tooltip: Rain hell upon them.
+			}
+
+			tuningfork: {
+				DisplayName: Tuning Fork
+				Tooltip:
+					'''
+					Why are you using a tuning fork to fight?
+					 Hitting true melee charges up the fork, right click to release all charges!
+					'''
+			}
+
+			volleybow: {
+				DisplayName: Volley Bow
+				Tooltip: Shoots a volley of arrows.
+			}
+
+			starshot: {
+				DisplayName: Starshot
+				Tooltip: Rains crystal bullets from the sky.
+			}
+
+			EmeraldToken: {
+				DisplayName: Emerald Loot Token
+				Tooltip:
+					'''
+					Claim a special reward! 
+					Drops from rare post-Plantera enemies 
+					'''
+			}
+
+			blazereap4: {
+				DisplayName: Blaze Reap
+				Tooltip: Uses explosive powder as ammunition
+			}
+
+			dreamshatter: {
+				DisplayName: Dream Shatter
+				Tooltip: Judgement from below.
+			}
+
+			infinityedge: {
+				DisplayName: Infinite Edge
+				Tooltip:
+					'''
+					Smite your enemies. 
+					 Right click to call forth the heavens
+					'''
+			}
+
+			quazar: {
+				DisplayName: Quazar
+				Tooltip:
+					'''
+					Shoot a pulsing nanite. 
+					 Uses nanites as ammo
+					'''
+			}
+
+			theecho: {
+				DisplayName: The Echo
+				Tooltip:
+					'''
+					Shoots a projectile that splits upon hitting an enemy. 
+					 The new projectiles also have this effect.
+					'''
+			}
+
+			DiamondToken: {
+				DisplayName: Diamond Loot Token
+				Tooltip:
+					'''
+					Claim a special reward! 
+					Drops from rare early-game enemies 
+					'''
+			}
+
+			unstableelement: {
+				DisplayName: Unstable Element
+				Tooltip: Conjure pure power.
+			}
+		}
+
+		NPCs.chanceseller.DisplayName: The Chancellor
+
+		Projectiles: {
+			divinefolleyproj.DisplayName: Divine Folley
+			hookshotproj.DisplayName: hookshotproj
+			purifierproj.DisplayName: purifierproj
+			quazarproj.DisplayName: quazarproj
+			rotateproj.DisplayName: rotateproj
+			shotgunshotproj.DisplayName: Shotgun Shot
+			starshotproj.DisplayName: Starshot
+			theechoproj.DisplayName: theechoproj
+		}
+	}
+}

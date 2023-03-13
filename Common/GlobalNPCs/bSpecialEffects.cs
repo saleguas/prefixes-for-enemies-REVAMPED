@@ -20,7 +20,14 @@ namespace prefixtest.Common.GlobalNPCs
 
         public override bool AppliesToEntity(NPC npc, bool lateInstatiation)
         {
-            if (npc.townNPC == true || npc.friendly == true || npc.CountsAsACritter) return false;
+            if (npc.townNPC == true)
+                return false;
+            if (npc.friendly == true)
+                return false;
+            if (npc.boss == true)
+                return false;
+            if (npc.CountsAsACritter)
+                return false;
 
             Random random = new Random();
             double roll1 = random.NextDouble();
