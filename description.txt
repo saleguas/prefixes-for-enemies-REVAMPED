@@ -1,7 +1,5 @@
 [1.4 Alpha] MODIFIERS FOR ENEMIES!
 
-A remake of my favorite terraria mod of all time (prefixes for enemies) that sadly became out of date in tmodloader v0.10. Original Idea and many concepts belong to Hiccup251 and Jofairden. 
-
 
 [c/ff9eb4:WHAT DOES IT DO:] Any hostile enemy in the game has a chance to spawn with (possibly multiple) prefixes/modifiers that enhances their attacks. For example, a zombie can have a prefix that makes it have more armor and health, and also shoots fireballs at you every 5 seconds. Prefixed mobs also drop extra cool and customized loot. Kill rare enemies to get progression-based loot tokens that drop super strong weapons!
 
@@ -20,7 +18,6 @@ meaning there are a total of 28 * 26 * 28 * 7 *2 =
 [c/ff9eb4:285,376 variations of any given enemy]
 
 Did I mention, prefixes can STACK! That means you could encounter a burning blue slime, or a Burning Electrified Magma-Spitter Rare Blue Slime The Immortal! Both the effects and the LOOT can stack, so with bigger risk comes bigger reward!
-I'll update this with a wiki as soon as I can.
 
 Please understand this makes the game more challenging!
 
