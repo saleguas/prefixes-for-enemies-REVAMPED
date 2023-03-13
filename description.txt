@@ -22,7 +22,7 @@ meaning there are a total of 28 * 26 * 28 * 7 *2 =
 Did I mention, prefixes can STACK! That means you could encounter a burning blue slime, or a Burning Electrified Magma-Spitter Rare Blue Slime The Immortal! Both the effects and the LOOT can stack, so with bigger risk comes bigger reward!
 I'll update this with a wiki as soon as I can.
 
-Please understand this makes the game more challenging at the cost of more rewards. 
+Please understand this makes the game more challenging!
 
 CHANGELOG:
 v1.1.13:

@@ -21,21 +21,7 @@ namespace prefixtest.Common.GlobalNPCs
         private string prefix1 = "";
 
         private bool nameChanged = false;
-
-
-        public static bool can_apply_to_npc(NPC npc)
-        {
-            if (npc.townNPC == true)
-                return false;
-            if (npc.friendly == true)
-                return false;
-            if (npc.boss == true)
-                return false;
-            if (npc.CountsAsACritter)
-                return false;
-
-            return true;
-        }
+        
 
         public override bool AppliesToEntity(NPC npc, bool lateInstatiation)
         {
