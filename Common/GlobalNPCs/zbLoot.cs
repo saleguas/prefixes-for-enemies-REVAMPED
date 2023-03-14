@@ -535,9 +535,7 @@ namespace prefixtest.Common.GlobalNPCs
             {
                 if (Main.hardMode)
                 {
-                    dropItem(ItemID.SoulofLight, randnum(1, 6), 3);
-                    dropItem(ItemID.SoulofNight, randnum(1, 6), 3);
-                    dropItem(ItemID.SoulofFlight, randnum(1, 6), 3);
+
                     if (NPC.downedMechBossAny)
                     {
                         dropItem(ItemID.SoulofFright, randnum(1, 6), 3);
