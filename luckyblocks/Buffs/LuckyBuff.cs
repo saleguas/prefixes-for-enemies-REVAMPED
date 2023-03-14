@@ -31,9 +31,7 @@ namespace luckyblocks.Buffs
             {
                 timer = 300; // Reset the timer to 300 when the dust is inactive
 
-                // SpawnRandomBoss(player);
-                ArrowRain(player);
-                bunnySplosion(player);
+                ScrambleAllLocation(player);
 
                 player.ClearBuff(ModContent.BuffType<LuckyBuff>());
 
@@ -77,9 +75,33 @@ namespace luckyblocks.Buffs
             }
         }
 
-        public void MoneyRain(Player player)
+        public void MoneySpawn(Player player)
         {
 
+            Main.NewText("Money!", Color.Gold);
+
+            List<int> coin_ids = new List<int>{
+                ItemID.CopperCoin,
+                ItemID.SilverCoin,
+                ItemID.GoldCoin,
+            };
+
+            // randomly spawn coins around the player.
+
+            for (int i = 0; i < 100; i++)
+            {
+                int randomCoin = Main.rand.Next(coin_ids.Count);
+                int coinID = coin_ids[randomCoin];
+
+                Item.NewItem(
+                    new EntitySource_TileBreak(50, 50),
+                    (int)player.position.X + Main.rand.Next(-100, 100),
+                    (int)player.position.Y + Main.rand.Next(-200, 0),
+                    0,
+                    0,
+                    coinID
+                );
+            }
         }
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
@@ -106,13 +128,104 @@ namespace luckyblocks.Buffs
             int randomTime = Main.rand.Next(0, 54000);
 
             Main.time = randomTime;
-
         }
+
+        public void ScrambleAllLocation(Player player){
+            // Everyone has been teleported to a random location on the map.
+            Main.NewText("Everyone has been teleported to a random location on the map!", Color.Cyan);
+
+            // make a set to track which players have been teleported
+            HashSet<int> teleportedPlayers = new HashSet<int>();
+
+            foreach (Player p in Main.player)
+            {
+                // make sure player hasnt been teleported yet
+                if (teleportedPlayers.Contains(p.whoAmI)) continue;
+
+                // add player to the set
+                teleportedPlayers.Add(p.whoAmI);
+                int newX = Main.rand.Next(0, Main.maxTilesX-200);
+                int newY = Main.rand.Next(0, Main.maxTilesY-200);
+                p.Teleport(new Vector2(newX, newY));
+                Main.NewText(p.name + " has been teleported to " + newX + ", " + newY);
+            }
+        }
+        
+        public void ScrambleLocation(Player player){
+            // Player has been teleported to a random location on the map.
+            Main.NewText("You have been teleported to a random location on the map!", Color.Cyan);
+
+            player.Teleport(new Vector2(Main.rand.Next(0, Main.maxTilesX), Main.rand.Next(0, Main.maxTilesY)));
+        }
+
+
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                BAD EVENTS                                                               */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
+        public void Everyone1hp(Player player)
+        {
+            Main.NewText("Everyone is at 1 HP!", Color.Red);
+
+            foreach (Player p in Main.player)
+            {
+                p.statLife = 1;
+            }
+        }
+
+        public void EveryoneOnFire(Player player)
+        {
+            Main.NewText("Everyone is on fire!", Color.Red);
+
+            foreach (Player p in Main.player)
+            {
+                p.AddBuff(BuffID.OnFire, 300);
+            }
+        }
+        public void PlayerCombustion(Player player){
+            // player.name
+            player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " has exploded!"), 5000, 0);
+            Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+            float ceilingLimit = target.Y;
+            if (ceilingLimit > player.Center.Y - 200f)
+            {
+                ceilingLimit = player.Center.Y - 200f;
+            }
+
+            // Loop these functions 3 times.
+            for (int i = 0; i < 500; i++)
+            {
+                Vector2 heading = player.position - new Vector2(0, 1000);
+
+                if (heading.Y < 0f)
+                {
+                    heading.Y *= -1f;
+                }
+
+                if (heading.Y < 20f)
+                {
+                    heading.Y = 20f;
+                }
+
+                heading.Normalize();
+                heading *= new Vector2(10f, 10f).Length();
+                heading.Y += Main.rand.Next(-40, 41) * 1f;
+                heading.X += Main.rand.Next(-40, 41) * 1f;
+                int a =
+                    Projectile
+                        .NewProjectile(new EntitySource_TileBreak(50, 50),
+                        player.position,
+                        heading,
+                        ProjectileID.CultistBossFireBall, // fire arrow
+                        50, // damage
+                        5f// knockback
+                        );
+
+                Main.projectile[a].friendly = false;
+                Main.projectile[a].hostile = true;
+            }
+        }
         public void ArrowRain(Player player)
         {
 
