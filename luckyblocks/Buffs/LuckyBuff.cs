@@ -68,8 +68,12 @@ namespace luckyblocks.Buffs
                 // randomly pick a bunny from the list
                 int randomBunny = Main.rand.Next(bunnies.Count);
                 int bunnyID = bunnies[randomBunny];
-                
-                NPC.NewNPC(new EntitySource_TileBreak(50, 50), (int)player.position.X, (int)player.position.Y, bunnyID);
+
+                NPC.NewNPC(
+                    new EntitySource_TileBreak(50, 50),
+                     (int)player.position.X + Main.rand.Next(-100, 100),
+                    (int)player.position.Y + Main.rand.Next(-200, 0),
+                    bunnyID);
             }
         }
 
@@ -121,13 +125,12 @@ namespace luckyblocks.Buffs
             }
 
             // Loop these functions 3 times.
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 1500; i++)
             {
                 Vector2 position =
                     player.Center -
-                    new Vector2(Main.rand.NextFloat(401) * player.direction,
-                        600f);
-                position.Y -= 100 * i;
+                    new Vector2(Main.rand.NextFloat(-1000, 1000),
+                        Main.rand.NextFloat(500, 2500));
                 Vector2 heading = target - position;
 
                 if (heading.Y < 0f)
@@ -141,9 +144,9 @@ namespace luckyblocks.Buffs
                 }
 
                 heading.Normalize();
-                heading *= 1;
+                heading *= new Vector2(10f, 10f).Length();
                 heading.Y += Main.rand.Next(-40, 41) * 1f;
-                heading.X += Main.rand.Next(-40, 41) * 1f;
+                heading.X += Main.rand.Next(-5, 5) * 1f;
                 int a =
                     Projectile
                         .NewProjectile(new EntitySource_TileBreak(50, 50),
@@ -151,10 +154,8 @@ namespace luckyblocks.Buffs
                         heading,
                         2, // fire arrow
                         50, // damage
-                        5f, // knockback
-                        player.whoAmI,
-                        0f,
-                        ceilingLimit);
+                        5f// knockback
+                        );
 
                 Main.projectile[a].friendly = false;
                 Main.projectile[a].hostile = true;

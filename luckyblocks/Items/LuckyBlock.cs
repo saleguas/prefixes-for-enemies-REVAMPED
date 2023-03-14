@@ -60,7 +60,7 @@ namespace luckyblocks.Items
             {
                 // If the player using the item is the client
                 // (explicitely excluded serverside here)
-                SoundEngine.PlaySound(SoundID.Roar, player.position);
+                SoundEngine.PlaySound(SoundID.MaxMana, player.position);
 
                 // spawn a dust
                 Vector2 above_position = new Vector2(player.position.X, player.position.Y - 50f);
