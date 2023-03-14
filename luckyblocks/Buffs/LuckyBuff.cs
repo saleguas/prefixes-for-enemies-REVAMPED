@@ -31,16 +31,60 @@ namespace luckyblocks.Buffs
             {
                 timer = 300; // Reset the timer to 300 when the dust is inactive
 
-                ScrambleAllLocation(player);
+                SpawnRichMan(player);
 
                 player.ClearBuff(ModContent.BuffType<LuckyBuff>());
 
+            }
+
+
+            // draw gold dust around the player
+
+            for (int i = 0; i < 12; i++)
+            {
+                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                // the dust is drawn as a rectangle starting at 0,0 with a width and height of 30,30
+                // we need to offset the position by half the width and height to center the dust 
+                Vector2 dust_pos = player.position;
+                Dust d = Dust.NewDustDirect(dust_pos, player.width, player.height, DustID.IchorTorch);
+                d.noGravity = true;
+                // GemTopaz
             }
         }
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                    GOOD EVENTS                                                                   */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+        public void SpawnRichMan(Player player){
+            // spawn an NPC that drops a lot of money
+            // change it's value
+
+
+            int id = NPC.NewNPC(
+                new EntitySource_TileBreak(50, 50),
+                (int)player.position.X + Main.rand.Next(-1000, 1000),
+                (int)player.position.Y - 300,
+                NPCID.DemonTaxCollector);
+
+            NPC npc = Main.npc[id];
+
+            npc.value = Main.rand.Next(5000, 15000);
+
+            // give him a permanent buff
+            npc.AddBuff(BuffID.Midas, 999999);
+        }
+
+        public void HealAllPlayers(Player player)
+        {
+            Main.NewText("Everyone is healed!", Color.Green);
+
+            foreach (Player p in Main.player)
+            {
+                p.statLife = p.statLifeMax2;
+                p.HealEffect(p.statLifeMax2);
+            }
+        }
 
         public void bunnySplosion(Player player)
         {
@@ -144,10 +188,11 @@ namespace luckyblocks.Buffs
 
                 // add player to the set
                 teleportedPlayers.Add(p.whoAmI);
-                int newX = Main.rand.Next(0, Main.maxTilesX-200);
-                int newY = Main.rand.Next(0, Main.maxTilesY-200);
+
+                // teleport player
+                int newX = Main.rand.Next(0, Main.maxTilesX-200)*16;
+                int newY = Main.rand.Next(0, Main.maxTilesY-200)*16;
                 p.Teleport(new Vector2(newX, newY));
-                Main.NewText(p.name + " has been teleported to " + newX + ", " + newY);
             }
         }
         
@@ -155,7 +200,7 @@ namespace luckyblocks.Buffs
             // Player has been teleported to a random location on the map.
             Main.NewText("You have been teleported to a random location on the map!", Color.Cyan);
 
-            player.Teleport(new Vector2(Main.rand.Next(0, Main.maxTilesX), Main.rand.Next(0, Main.maxTilesY)));
+            player.Teleport(new Vector2(Main.rand.Next(0, Main.maxTilesX)*16, Main.rand.Next(0, Main.maxTilesY*16)*16));
         }
 
 
@@ -163,6 +208,44 @@ namespace luckyblocks.Buffs
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                BAD EVENTS                                                               */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+        public void EveryoneDropMoney(Player player){
+            Main.NewText("Everyone has dropped their money!", Color.Gold);
+
+            foreach (Player p in Main.player)
+            {
+                for (int i = 0; i < 59; i++)
+                {
+                    if (p.inventory[i].type >= 71 && p.inventory[i].type <= 74)
+                    {
+                        int num2 = Item.NewItem(p.GetSource_Loot(), (int)p.position.X, (int)p.position.Y, p.width, p.height, p.inventory[i].type, 1, false, 0, false, false);
+                        int num3 = (int)(p.inventory[i].stack * .01);
+                        num3 = p.inventory[i].stack - num3;
+                        p.inventory[i].stack -= num3;
+                        if (p.inventory[i].stack <= 0)
+                        {
+                            p.inventory[i] = new Item();
+                        }
+
+                        for (int j = 0; j < num3; j++)
+                        {
+                            int num4 = Item.NewItem(p.GetSource_Loot(), (int)p.position.X, (int)p.position.Y, p.width, p.height, p.inventory[i].type, 1, false, 0, false, false);
+                            Main.item[num4].velocity.Y = (float)Main.rand.Next(-20, 1) * 0.5f;
+                            Main.item[num4].velocity.X = (float)Main.rand.Next(-20, 21) * 0.5f;
+                            Main.item[num4].noGrabDelay = 100;
+                            if (Main.netMode == 1)
+                            {
+                                NetMessage.SendData(21, -1, -1, null, num4, 0f, 0f, 0f, 0, 0, 0);
+                            }
+                            if (i == 58)
+                            {
+                                Main.mouseItem = p.inventory[i].Clone();
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         public void Everyone1hp(Player player)
         {

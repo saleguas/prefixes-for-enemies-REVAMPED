@@ -23,16 +23,15 @@ namespace luckyblocks.Dusts
             {
 
                 dust.position.Y -= 0.2f; // Move the dust upwards by 0.2 pixels per frame
-                for (int i = 0; i < 12; i++)
-                {
-                    Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
-                    // the dust is drawn as a rectangle starting at 0,0 with a width and height of 30,30
-                    // we need to offset the position by half the width and height to center the dust 
-                    Vector2 dust_pos = dust.position + new Vector2(15, 15);
-                    Dust d = Dust.NewDustPerfect(dust_pos + speed * 100, DustID.IchorTorch, speed * 2, Scale: 1.5f);
-                    d.noGravity = true;
-                    // GemTopaz
-                }
+                
+                Vector2 speed = Main.rand.NextVector2CircularEdge(1f, 1f);
+                // the dust is drawn as a rectangle starting at 0,0 with a width and height of 30,30
+                // we need to offset the position by half the width and height to center the dust 
+                Vector2 dust_pos = dust.position + new Vector2(15, 15);
+                Dust d = Dust.NewDustPerfect(dust_pos + speed * 100, DustID.IchorTorch, speed * 2, Scale: 1.5f);
+                d.noGravity = true;
+                // GemTopaz
+                
 
                 timer--;
                 if (timer <= 0)
