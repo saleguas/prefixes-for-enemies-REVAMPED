@@ -8,6 +8,8 @@ namespace luckyblocks.Dusts
     public class LuckySpawn : ModDust
     {
 
+        private int timer = 300; // 300 frames = 5 seconds
+
         public override void OnSpawn(Dust dust)
         {
             dust.noGravity = true;
