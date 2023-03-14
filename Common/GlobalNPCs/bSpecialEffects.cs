@@ -46,7 +46,7 @@ namespace prefixtest.Common.GlobalNPCs
             int roll2 = random.Next(1, 26); // creates a number from 1 to n-1
 
             // add config to test if a prefix is working
-            string force_prefix = "Burning";
+            string force_prefix = "";
 
             if (force_prefix != "")
             {

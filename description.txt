@@ -23,8 +23,9 @@ Please understand this makes the game more challenging!
 
 CHANGELOG:
 v1.1.13:
-- Rebalance patch! Bosses can no longer get modifiers.
+- Bosses can no longer get modifiers.
 - Balanced numbers on projectiles. You won't get oneshot by a spider web anymore.
+- Fixed drop rates. You won't be getting absurd loot as often anymore.
 
 v1.1.5:
 - fixed issue where town NPCs and critters were having modifiers
