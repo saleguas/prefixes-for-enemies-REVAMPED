@@ -120,7 +120,9 @@ namespace prefixtest.Common.GlobalNPCs
 
             if (prefix.Contains("Tough"))
             {
-                dropItem(ItemID.Shackle, 1, 3);
+                dropItem(ItemID.Shackle, 1, 5);
+                dropItem(ItemID.IronskinPotion, randnum(1, 2), 4);
+                dropItem(ItemID.StoneBlock, randnum(20, 40), 4);
             }
 
             if (prefix.Contains("Sus"))
@@ -157,8 +159,14 @@ namespace prefixtest.Common.GlobalNPCs
             {
                 if (Main.hardMode)
                 {
-                    dropItem(ItemID.AvengerEmblem, 1, 3);
+                    dropItem(ItemID.AvengerEmblem, 1, 9);
                 }
+
+                dropItem(ItemID.BandofRegeneration, 1, 9);
+                dropItem(ItemID.Explosives, randnum(1, 4), 6);
+                dropItem(ItemID.Bomb, randnum(1, 4), 4);
+                dropItem(ItemID.Grenade, randnum(1, 4), 4);
+
             }
 
             if (prefix.Contains("Wing Clipper"))
@@ -188,10 +196,10 @@ namespace prefixtest.Common.GlobalNPCs
 
             if (prefix.Contains("Magebane"))
             {
-                if (Main.rand.Next(3) == 0)
-                    dropItem(ItemID.MoonLordLegs, 1, 1);
 
-                dropItem(ItemID.ManaPotion, randnum(4, 9), 2);
+                dropItem(ItemID.ManaPotion, randnum(4, 9), 4);
+                dropItem(ItemID.ManaCrystal, randnum(1, 3), 9);
+                dropItem(ItemID.MoonLordLegs, 1, 9);
             }
 
             if (prefix.Contains("Voodoo"))
@@ -205,35 +213,55 @@ namespace prefixtest.Common.GlobalNPCs
 
             if (prefix.Contains("Armored"))
             {
-                if (Main.rand.Next(3) == 0)
-                    dropItem(ItemID.ArmorPolish, 1, 1);
 
-                if (Main.rand.Next(3) == 0)
-                    dropItem(ItemID.SharkToothNecklace, 1, 1);
+                dropItem(ItemID.IronskinPotion, randnum(1, 4), 4); // Ironskin Potion, drops 1-4 with a 50% chance
+                dropItem(ItemID.ArmorPolish, 1, 5); // Armor Polish, drops 1 with a 1/5 chance
+                dropItem(ItemID.SharkToothNecklace, 1, 5); // Shark Tooth Necklace, drops 1 with a 1/5 chance
+                dropItem(ItemID.ArmorStatue, 1, 5); // Armor Statue, drops 1 with a 1/5 chance
+                dropItem(ItemID.Shackle, 1, 5); // Shackle, drops 1 with a 1/5 chance
+
+                if (Main.hardMode)
+                {
+                    dropItem(ItemID.PaladinsShield, 1, 100); // Paladin's Shield, drops 1 with a 1/10 chance
+                }
             }
 
             if (prefix.Contains("Colossal"))
             {
-                if (Main.rand.Next(10) == 0)
-                    dropItem(ItemID.Gladius, 1, 1);
 
-                if (Main.rand.Next(10) == 0 && Main.hardMode)
-                    dropItem(ItemID.BreakerBlade, 1, 1);
+                if (Main.hardMode)
+                {
+                    dropItem(ItemID.BreakerBlade, 1, 10);
+                    dropItem(ItemID.TitaniumBar, randnum(1, 5), 10); // Titanium Bar, drops 1-5 with a 50% chance
+                    dropItem(ItemID.GiantHarpyFeather, 1, 10); // Giant Harpy Feather, drops 1 with a 1/5 chance
+                    dropItem(ItemID.HerculesBeetle, 1, 10); // Hercules Beetle, drops 1 with a 1/10 chance
+                }
+
+                dropItem(ItemID.BoneSword, 1, 10);
+                dropItem(ItemID.Bone, randnum(10, 20), 5);
+                dropItem(ItemID.Gladius, 1, 10);
+
             }
 
             if (prefix.Contains("Enduring"))
             {
-                if (Main.hardMode)
-                {
-                    dropItem(ItemID.IronskinPotion, 1, 3);
-                }
+                dropItem(ItemID.Valor, 1, 10);
+                dropItem(ItemID.EndurancePotion, randnum(1, 4), 4);
+                dropItem(ItemID.LifeCrystal, randnum(1, 3), 10);
+
             }
             if (prefix.Contains("Wing Clipper"))
             {
                 if (Main.hardMode)
                 {
                     dropItem(ItemID.SoulofFlight, randnum(1, 4), 2);
+                    dropItem(ItemID.GiantHarpyFeather, 1, 30);
+                    dropItem(ItemID.IceFeather, 1, 30);
+                    dropItem(ItemID.BoneFeather, 1, 30);
+                    dropItem(ItemID.FireFeather, 1, 30);
                 }
+                
+                dropItem(ItemID.Feather, randnum(10, 20), 4);   
             }
 
             if (prefix.Contains("Hellfire"))
@@ -244,6 +272,10 @@ namespace prefixtest.Common.GlobalNPCs
                     dropItem(ItemID.InfernoPotion, randnum(1, 3), 4);
                     dropItem(ItemID.Hellstone, randnum(10, 20), 4);
                 }
+
+                dropItem(ItemID.LavaBucket, randnum(1, 3), 7);
+                dropItem(ItemID.Hellstone, randnum(5, 10), 6);
+                dropItem(ItemID.Obsidian, randnum(5, 10), 6);
             }
             if (prefix.Contains("Electrified"))
             {
@@ -297,7 +329,8 @@ namespace prefixtest.Common.GlobalNPCs
 
             if (prefix.Contains("Forceful"))
             {
-                if (Main.hardMode){
+                if (Main.hardMode)
+                {
                     dropItem(ItemID.SlapHand, 1, 10); // item, amount, chance
                     dropItem(ItemID.KOCannon, 1, 10);
                     dropItem(ItemID.TurtleShell, randnum(1, 3), 10);
@@ -307,7 +340,7 @@ namespace prefixtest.Common.GlobalNPCs
             {
                 if (Main.hardMode)
                 {
-                    dropItem(ItemID.TurtleShell, randnum(1, 3), 4); 
+                    dropItem(ItemID.TurtleShell, randnum(1, 3), 4);
                 }
             }
             if (prefix.Contains("Cutpurse"))
@@ -428,7 +461,7 @@ namespace prefixtest.Common.GlobalNPCs
             {
                 dropItem(ItemID.GlowingMushroom, randnum(1, 8), 3);
                 if (Main.hardMode)
-                    dropItem(ItemID.TruffleWorm, 1, 7); 
+                    dropItem(ItemID.TruffleWorm, 1, 7);
             }
             if (prefix.Contains("Fishy"))
             {
@@ -442,7 +475,7 @@ namespace prefixtest.Common.GlobalNPCs
                 if (Main.hardMode)
                     dropItem(ItemID.OrichalcumOre, randnum(1, 19), 3);
 
-                    
+
             }
             if (prefix.Contains("Hemomancer"))
             {
@@ -563,7 +596,7 @@ namespace prefixtest.Common.GlobalNPCs
             /*                                                                   GENERAL LOOT                                                                   */
             /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-            
+
             double roll4 = Main.rand.NextDouble();
             int crateType = ItemID.WoodenCrate;
             if (roll4 <= 0.01)
