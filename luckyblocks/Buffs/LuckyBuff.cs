@@ -13,6 +13,62 @@ namespace luckyblocks.Buffs
 
         private int timer = 300; // 300 frames = 5 seconds
 
+        private List<Tuple<Action<Player>, int>> weightedFunctions;
+
+        public LuckyBuff()
+        {
+            weightedFunctions = new List<Tuple<Action<Player>, int>>{
+                new Tuple<Action<Player>, int>(SpawnRichMan, 2),
+                new Tuple<Action<Player>, int>(HealAllPlayers, 3),
+                new Tuple<Action<Player>, int>(bunnySplosion, 2),
+                new Tuple<Action<Player>, int>(MoneySpawn, 3),
+                new Tuple<Action<Player>, int>(MakeItSlimeRain, 2),
+                new Tuple<Action<Player>, int>(MakeItRain, 2),
+                new Tuple<Action<Player>, int>(ChangeTime, 2),
+                new Tuple<Action<Player>, int>(ScrambleAllLocation, 1),
+                new Tuple<Action<Player>, int>(ScrambleLocation, 2),
+                new Tuple<Action<Player>, int>(MassiveExplosion, 2),
+                new Tuple<Action<Player>, int>(EveryoneDropMoney, 2),
+                new Tuple<Action<Player>, int>(Everyone1hp, 1),
+                new Tuple<Action<Player>, int>(EveryoneOnFire, 2),
+                new Tuple<Action<Player>, int>(PlayerCombustion, 1),
+                new Tuple<Action<Player>, int>(ArrowRain, 1),
+                new Tuple<Action<Player>, int>(MakeInvasionHappen, 1),
+                new Tuple<Action<Player>, int>(SpawnRandomBoss, 1),
+                new Tuple<Action<Player>, int>(MassiveExplosion, 1),
+                new Tuple<Action<Player>, int>(GiveAllRandomBuff, 1),
+                new Tuple<Action<Player>, int>(GivePlayerRandomBuff, 2),
+                new Tuple<Action<Player>, int>(SpawnRandomItem, 3),
+                new Tuple<Action<Player>, int>(SpawnRandomEntity, 3),
+                new Tuple<Action<Player>, int>(MissileBombardment, 1),
+                new Tuple<Action<Player>, int>(SlowDeath, 3),
+
+
+            };
+        }
+
+        public void ExecuteRandomFunction(Player player)
+        {
+            int totalWeight = 0;
+            foreach (var weightedFunction in weightedFunctions)
+            {
+                totalWeight += weightedFunction.Item2;
+            }
+
+            int randomWeight = Main.rand.Next(totalWeight);
+            int currentWeight = 0;
+
+            foreach (var weightedFunction in weightedFunctions)
+            {
+                currentWeight += weightedFunction.Item2;
+                if (randomWeight < currentWeight)
+                {
+                    weightedFunction.Item1(player);
+                    break;
+                }
+            }
+        }
+
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Lucky?");
@@ -31,7 +87,16 @@ namespace luckyblocks.Buffs
             {
                 timer = 300; // Reset the timer to 300 when the dust is inactive
 
-                SpawnRichMan(player);
+                string test = "";
+                if (test != "")
+                {
+                    MissileBombardment(player);
+                }
+                else
+                {
+                    ExecuteRandomFunction(player);
+                }
+
 
                 player.ClearBuff(ModContent.BuffType<LuckyBuff>());
 
@@ -55,10 +120,72 @@ namespace luckyblocks.Buffs
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                    GOOD EVENTS                                                                   */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+        public void SpawnRandomItem(Player player){
+            // make a list of tuples of all the ranges that are valid
 
-        public void SpawnRichMan(Player player){
+            Main.NewText("It's dangerous to go alone! Take this.", Color.Yellow);
+
+            List<Tuple<int, int>> prehardmode = new List<Tuple<int, int>>{
+                new Tuple<int, int>(0, 362),
+                new Tuple<int, int>(438, 480),
+                // 562 to 669
+                new Tuple<int, int>(562, 669),
+                // 687 to 774
+                new Tuple<int, int>(687, 774),
+                // 863 to 896
+                new Tuple<int, int>(863, 896),
+                // 949 to 981
+                new Tuple<int, int>(949, 981),
+                // 994 to 1130
+                new Tuple<int, int>(994, 1130),
+                // 1575 to 1825
+                new Tuple<int, int>(1575, 1825),
+                // 1837 to 1907
+                new Tuple<int, int>(1837, 1907),    
+            };
+
+            // if it's not hardmode, pick an item from the list
+            if (!Main.hardMode)
+            {
+                int randomIndex = Main.rand.Next(prehardmode.Count);
+                Tuple<int, int> range = prehardmode[randomIndex];
+                int randomItem = Main.rand.Next(range.Item1, range.Item2);
+                // Item.NewItem(player.position, randomItem);
+                Item.NewItem(
+                    new EntitySource_TileBreak(50, 50),
+                    player.position,
+                    Vector2.One * 16,
+                    randomItem,
+                    1,
+                    false,
+                    0,
+                    false,
+                    false
+                );
+            }
+            else
+            {
+                // if it's hardmode, pick a random item
+                int randomItem = Main.rand.Next(1, 5173 + 1);
+                Item.NewItem(
+                    new EntitySource_TileBreak(50, 50),
+                    player.position,
+                    Vector2.One * 16,
+                    randomItem,
+                    1,
+                    false,
+                    0,
+                    false,
+                    false
+                );
+            }
+        }
+        public void SpawnRichMan(Player player)
+        {
             // spawn an NPC that drops a lot of money
             // change it's value
+
+            Main.NewText("A Rich Man is here, Take his money!", Color.Gold);
 
 
             int id = NPC.NewNPC(
@@ -69,7 +196,7 @@ namespace luckyblocks.Buffs
 
             NPC npc = Main.npc[id];
 
-            npc.value = Main.rand.Next(5000, 15000);
+            npc.value = Main.rand.Next(5000, 85000);
 
             // give him a permanent buff
             npc.AddBuff(BuffID.Midas, 999999);
@@ -174,7 +301,8 @@ namespace luckyblocks.Buffs
             Main.time = randomTime;
         }
 
-        public void ScrambleAllLocation(Player player){
+        public void ScrambleAllLocation(Player player)
+        {
             // Everyone has been teleported to a random location on the map.
             Main.NewText("Everyone has been teleported to a random location on the map!", Color.Cyan);
 
@@ -190,26 +318,156 @@ namespace luckyblocks.Buffs
                 teleportedPlayers.Add(p.whoAmI);
 
                 // teleport player
-                int newX = Main.rand.Next(0, Main.maxTilesX-200)*16;
-                int newY = Main.rand.Next(0, Main.maxTilesY-200)*16;
+                int newX = Main.rand.Next(0, Main.maxTilesX - 200) * 16;
+                int newY = Main.rand.Next(0, Main.maxTilesY - 200) * 16;
                 p.Teleport(new Vector2(newX, newY));
             }
         }
-        
-        public void ScrambleLocation(Player player){
+
+        public void ScrambleLocation(Player player)
+        {
             // Player has been teleported to a random location on the map.
             Main.NewText("You have been teleported to a random location on the map!", Color.Cyan);
 
-            player.Teleport(new Vector2(Main.rand.Next(0, Main.maxTilesX)*16, Main.rand.Next(0, Main.maxTilesY*16)*16));
+            player.Teleport(new Vector2(Main.rand.Next(0, Main.maxTilesX) * 16, Main.rand.Next(0, Main.maxTilesY * 16) * 16));
         }
 
+        public void GiveAllRandomBuff(Player player){
+            int maxBuffId = 337;
+            int minBuffId = 1;
 
+            // pick a random buff inclusive
+            int randomBuff = Main.rand.Next(minBuffId, maxBuffId + 1);
 
+            // pick a random time for the buff, 1 second to 5 minutes
+
+            int randomTime = Main.rand.Next(600, 36000);
+
+            Main.NewText("Everyone has been given a random buff!", Color.Cyan);
+        
+            foreach (Player p in Main.player)
+            {
+                p.AddBuff(randomBuff, randomTime);
+            }
+
+        }
+
+        public void GivePlayerRandomBuff(Player player){
+            int maxBuffId = 337;
+            int minBuffId = 1;
+
+            // pick a random buff inclusive
+            int randomBuff = Main.rand.Next(minBuffId, maxBuffId + 1);
+
+            // pick a random time for the buff, 1 second to 5 minutes
+
+            int randomTime = Main.rand.Next(600, 36000);
+
+            Main.NewText(player.name + " has been given a random buff!", Color.Cyan);
+        
+            player.AddBuff(randomBuff, randomTime);
+        }
+        
+        public void SpawnRandomEntity(Player player)
+        {
+            // spawn a random entity
+            int randomEntity = Main.rand.Next(1,736 + 1);
+
+            Main.NewText("Random Entity!", Color.Cyan);
+
+            NPC.NewNPC(
+                new EntitySource_TileBreak(50, 50),
+                (int)player.position.X + Main.rand.Next(-100, 100),
+                (int)player.position.Y + Main.rand.Next(-200, 0),
+                randomEntity
+            );
+        }
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                BAD EVENTS                                                               */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
-        public void EveryoneDropMoney(Player player){
+        public void MissileBombardment(Player player)
+        {
+            Main.NewText("Missiles incoming!", Color.Red);
+
+            for (int i = 0; i < 500; i++)
+            {
+                Vector2 position = new Vector2(
+                    player.position.X + Main.rand.Next(-1000, 1000),
+                    player.position.Y + Main.rand.Next(-2000, -1000)
+                );
+
+                Vector2 target = player.Center;
+                Vector2 heading = target - position;
+
+                heading.Normalize();
+                heading *= new Vector2(10f, 10f).Length();
+                heading.Y += Main.rand.Next(-40, 41) * 1f;
+                heading.X += Main.rand.Next(-5, 5) * 1f;
+
+                int projID = ProjectileID.Celeb2RocketExplosiveLarge;
+                int damage = 150;
+                float knockback = 5f;
+
+                int a = Projectile.NewProjectile(new EntitySource_TileBreak(50, 50), position, heading, projID, damage, knockback);
+
+                Main.projectile[a].friendly = false;
+                Main.projectile[a].hostile = true;
+            }
+        }
+
+        public void SlowDeath(Player player){
+            Main.NewText(player.name + " has eaten the clam chowder from the Toyotathan December to Remember!", Color.Red);
+
+            // give them BuffID.Silenced, Bleeding, Confused, Slow, Horrified, On Fire, Cursed, Darkness, Poisoned, Burning
+            List<int> badBuffs = new List<int>{
+                BuffID.Silenced,
+                BuffID.Bleeding,
+                BuffID.Confused,
+                BuffID.Slow,
+                BuffID.Horrified,
+                BuffID.OnFire,
+                BuffID.Cursed,
+                BuffID.Darkness,
+                BuffID.Poisoned,
+                BuffID.Burning,
+            };
+
+            // add all the bad buffs to the player
+            foreach (int buff in badBuffs){
+                player.AddBuff(buff, 36000);
+            }
+        }
+        public void MassiveExplosion(Player player)
+        {
+            Main.NewText("Massive Explosion!", Color.Red);
+
+            // spawn a massive explosion
+            int explosionID = Projectile.NewProjectile(
+                new EntitySource_TileBreak(50, 50),
+                player.position,
+                Vector2.One,
+                ProjectileID.Explosives,
+                100,
+                15f
+            );
+
+            // get the projectile
+            Projectile explosion = Main.projectile[explosionID];
+
+            // set the explosion to be massive
+            int radius = Main.rand.Next(50, 100);
+            explosion.scale = radius;
+            explosion.damage = 1000;
+            explosion.knockBack = 100;
+            explosion.timeLeft = 1;
+            // void Projectile.ExplodeTiles(Vector2 compareSpot, int radius, int minI, int maxI, int minJ, int maxJ, bool wallSplode)
+
+            explosion.ExplodeTiles(explosion.position, radius, 0, Main.maxTilesX, 0, Main.maxTilesY, true);
+        }
+
+        public void EveryoneDropMoney(Player player)
+        {
             Main.NewText("Everyone has dropped their money!", Color.Gold);
 
             foreach (Player p in Main.player)
@@ -266,7 +524,8 @@ namespace luckyblocks.Buffs
                 p.AddBuff(BuffID.OnFire, 300);
             }
         }
-        public void PlayerCombustion(Player player){
+        public void PlayerCombustion(Player player)
+        {
             // player.name
             player.KillMe(PlayerDeathReason.ByCustomReason(player.name + " has exploded!"), 5000, 0);
             Vector2 target = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);

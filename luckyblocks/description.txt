@@ -1,1 +1,20 @@
-Lucky Blocks! is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+[c/FFFF00:Lucky Blocks!]
+
+Remember lucky blocks from Minecraft? They're back, and in full swing! 
+
+[c/FFFF00:WHAT DOES IT DO:] Lucky Blocks are items that cause chaos when used. They will do some random event, which can range from helpful to disastrous. You might find yourself showered in riches, or face a horde of zombies. 
+
+[c/FFFF00:HOW TO GET THEM:] They can be obtained from the traveling merchant.
+
+There are currently 100+ different interactions, adding a whole new layer of excitement to your Terraria experience.
+
+CHANGELOG:
+v0.2.3:
+    - Added more rebalancing
+    - Fixed Icon Issue
+v0.2.2:
+    - Added more interactions
+    - Rebalanced some numbers
+
+v0.2.1:
+    - Release! Whoooo

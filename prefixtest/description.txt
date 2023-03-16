@@ -1,27 +1,30 @@
-[1.4 Alpha] MODIFIERS FOR ENEMIES!
+[c/FF0000:INFERNAL MOBS] - UNLEASH THE CHAOS!
 
+[c/ff9eb4:WHAT DOES IT DO:] Infernal Mobs brings a thrilling twist to your Terraria experience by adding unique prefixes/modifiers to any hostile enemy in the game. These enhancements can dramatically alter their attacks and make them more challenging to defeat. Imagine facing a zombie with increased armor, health, and the ability to shoot fireballs every 5 seconds! Triumph over these fearsome foes to earn extraordinary loot and game-progressing tokens that unlock powerful weapons.
 
-[c/ff9eb4:WHAT DOES IT DO:] Any hostile enemy in the game has a chance to spawn with (possibly multiple) prefixes/modifiers that enhances their attacks. For example, a zombie can have a prefix that makes it have more armor and health, and also shoots fireballs at you every 5 seconds. Prefixed mobs also drop extra cool and customized loot. Kill rare enemies to get progression-based loot tokens that drop super strong weapons!
+[c/ff9eb4:Customize your experience] with fully configurable settings (spawn chance, loot, etc.). Adjust the mod to your preference by clicking on the cog icon in the bottom right of the mod in your mod manager.
 
-[c/ff9eb4:You can fully configure the settings] (Spawn chance, loot, etc.) after downloading! Simply click on the cog in the bottom right of the mod in your mod manager.
+Infernal Mobs takes the excitement of Terraria to new heights, introducing incredible modded and vanilla items that evolve as the game progresses. Experience the rush of unlocking additional prefixes, and beware of the perilous suffixes with game-changing abilities.
 
-This mod adds another random and cool loot aspect of the game, as you can get really cool modded and vanilla items that progress as the game progresses. Additional prefixes are unlocked with game progression - and watch out for the dangerous suffixes, with game-changing abilities.
+Currently, the mod offers:
 
-There are currently:
- - 27 possible base stat changes
- - 25 special effects
- - 27 possible projectile modifications
- - 7 possible suffixes
- - And the chance of a rare enemy
-meaning there are a total of 28 * 26 * 28 * 7 *2 =
+- 27 possible base stat changes
+- 25 special effects
+- 27 possible projectile modifications
+- 7 possible suffixes
+- And the chance of a rare enemy
+    
+Resulting in a staggering [c/ff9eb4:285,376 enemy variations].
 
-[c/ff9eb4:285,376 variations of any given enemy]
+And that's not all! Prefixes can STACK! Brace yourself for mind-blowing encounters like a [c:/ff9eb4:Burning Electrified Magma-Spitter Rare Blue Slime The Immortal!] Both effects and LOOT stack, so the greater the challenge, the greater the reward.
 
-Did I mention, prefixes can STACK! That means you could encounter a burning blue slime, or a Burning Electrified Magma-Spitter Rare Blue Slime The Immortal! Both the effects and the LOOT can stack, so with bigger risk comes bigger reward!
-
-Please understand this makes the game more challenging!
+Please note that Infernal Mobs makes the game more challenging.
 
 CHANGELOG:
+
+v1.1.16:
+- Changed name to "Infernal mobs" from "Modifiers for enemies"
+
 v1.1.13:
 - Bosses can no longer get modifiers.
 - Balanced numbers on projectiles. You won't get oneshot by a spider web anymore.
@@ -92,5 +95,3 @@ Credits:
  - Main developer/Spriter: saleguas
  - Assistant Developer: Stats Captain#3423
  - Assistant Spriter: Not Magolor#1191
-
-If you have any issues, please message Stats Captain#3423 on Discord.
