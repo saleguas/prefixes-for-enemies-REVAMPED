@@ -9,6 +9,12 @@ Remember lucky blocks from Minecraft? They're back, and in full swing!
 There are currently 100+ different interactions, adding a whole new layer of excitement to your Terraria experience.
 
 CHANGELOG:
+
+v0.2.9:
+    - rebalancing
+    - Added more events
+    - Fixed sound issues
+
 v0.2.3:
     - Added more rebalancing
     - Fixed Icon Issue

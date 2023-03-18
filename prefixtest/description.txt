@@ -22,6 +22,10 @@ Please note that Infernal Mobs makes the game more challenging.
 
 CHANGELOG:
 
+v1.1.17:
+- Rebalanced certain modifiers
+
+
 v1.1.16:
 - Changed name to "Infernal mobs" from "Modifiers for enemies"
 
