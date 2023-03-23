@@ -10,6 +10,9 @@ There are currently 100+ different interactions, adding a whole new layer of exc
 
 CHANGELOG:
 
+v0.2.14:
+    - fixed issue where players would be teleported outside of the world
+
 v0.2.9:
     - rebalancing
     - Added more events

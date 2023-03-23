@@ -19,7 +19,6 @@ namespace prefixtest.Common.GlobalNPCs
         private List<string> pre_skeletron_suffixes = new List<string>{
                 "The Immortal",
                 "The Necromancer",
-                "The Psyker",
                 "The Soul Eater",
         };
         private List<string> pre_wof_suffixes = new List<string>
@@ -29,6 +28,8 @@ namespace prefixtest.Common.GlobalNPCs
                 "The Cultist",
                 "The Sacrifice",
                 "The Fireborn",
+				"The Psyker",
+
         };
         private List<string> pre_moonlord_suffixes = new List<string>
         {

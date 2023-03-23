@@ -318,8 +318,8 @@ namespace luckyblocks.Buffs
                 teleportedPlayers.Add(p.whoAmI);
 
                 // teleport player
-                int newX = Main.rand.Next(0, Main.maxTilesX - 200) * 16;
-                int newY = Main.rand.Next(0, Main.maxTilesY - 200) * 16;
+                int newX = Main.rand.Next(100, Main.maxTilesX - 200) * 16;
+                int newY = Main.rand.Next(100, Main.maxTilesY - 200) * 16;
                 p.Teleport(new Vector2(newX, newY));
             }
         }
@@ -329,7 +329,7 @@ namespace luckyblocks.Buffs
             // Player has been teleported to a random location on the map.
             Main.NewText("You have been teleported to a random location on the map!", Color.Cyan);
 
-            player.Teleport(new Vector2(Main.rand.Next(0, Main.maxTilesX) * 16, Main.rand.Next(0, Main.maxTilesY * 16) * 16));
+            player.Teleport(new Vector2(Main.rand.Next(100, Main.maxTilesX- 200) * 16, Main.rand.Next(100, Main.maxTilesY - 200) * 16));
         }
 
         public void GiveAllRandomBuff(Player player){
