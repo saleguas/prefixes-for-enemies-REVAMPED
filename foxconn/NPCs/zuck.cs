@@ -8,16 +8,20 @@ using Terraria.DataStructures;
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Terraria.Audio;
 
 namespace foxconn.NPCs
 {
     // Party BlueSlime is a pretty basic clone of a vanilla NPC. To learn how to further adapt vanilla NPC behaviors, see https://github.com/tModLoader/tModLoader/wiki/Advanced-Vanilla-Code-Adaption#example-npc-npc-clone-with-modified-projectile-hoplite
-    public class lobster : ModNPC
+    public class zuck : ModNPC
     {
+
+        public ref float AI_Timer => ref NPC.ai[1];
+
         public override void SetStaticDefaults()
         {
             Main.npcFrameCount[Type] = 1;
-            DisplayName.SetDefault("FOXCONN 2019 WORKER");
+            DisplayName.SetDefault("o_o");
 
             NPCID.Sets.NPCBestiaryDrawModifiers value = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             { // Influences how the NPC looks in the Bestiary
@@ -32,8 +36,8 @@ namespace foxconn.NPCs
             NPC.height = 560;
             NPC.scale = 0.05f;
             NPC.damage = 1;
-            NPC.defense = 6;
-            NPC.lifeMax = 200;
+            NPC.defense = 1000;
+            NPC.lifeMax = 50;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             NPC.value = 60f;
@@ -70,33 +74,23 @@ namespace foxconn.NPCs
 
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            return SpawnCondition.OverworldDaySlime.Chance * 0.8f; // Spawn with 4/5th the chance of a regular BlueSlime.
+            return SpawnCondition.OverworldNightMonster.Chance * 0.8f; // Spawn with 4/5th the chance of a regular BlueSlime.
         }
 
         public override void AI()
         {
-            // shoot a projectile at the player
-            // make velocity player position - npc position normalized * 10
+            // set the npc's position to be behind and above the player at all times
+            // add some randomness to the position so that the npc doesn't always spawn in the same spot
+            int randomX = Main.rand.Next(-100, 100);
+            int randomY = Main.rand.Next(-100, 100);
+            NPC.position.X = Main.player[NPC.target].position.X - 100 + randomX;
+            NPC.position.Y = Main.player[NPC.target].position.Y - 100 + randomY;
 
-			if (NPC.life < NPC.lifeMax){
-				Vector2 velocity = Main.player[NPC.target].position - NPC.position;
-				velocity.Normalize();
+            // make sound
+            SoundEngine.PlaySound(new SoundStyle("foxconn/Sounds/zucker"));
+        
 
-				// Add randomness to the velocity vector
-				float randomMultiplier = Main.rand.NextFloat(0.8f, 1.2f);
-				velocity *= randomMultiplier;
-
-				velocity *= 10;
-
-				int a = Projectile.NewProjectile(
-					NPC.GetSource_FromAI(), // source
-					NPC.position, // position
-					velocity, // velocity
-					ProjectileID.UnholyTridentHostile, // type
-					200, // damage
-					10 // knockback
-				);
-        	}
+			
 		}
 
 
