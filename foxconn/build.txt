@@ -1,0 +1,3 @@
+displayName = FOXCONN RESIDENCY
+author = xi jinping
+version = 0.1
