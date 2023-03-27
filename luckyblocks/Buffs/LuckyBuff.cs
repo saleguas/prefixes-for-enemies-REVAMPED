@@ -138,6 +138,62 @@ namespace luckyblocks.Buffs
         // hardmode_ore_wood_armor - if hardmode
         // pre_hardmode_armor - all
 
+
+// public void concotionPackage()
+        // {
+        //     Main.NewText("The alchemist's newest batch! What did you get?", Color.Gold);
+
+        //     List<int> potion_ids = new List<int>{
+        //         ItemID.LesserHealingPotion,
+        //         ItemID.LesserManaPotion,
+        //         ItemID.HealingPotion,
+        //         ItemID.ManaPotion,
+        //         ItemID.LesserRestorationPotion,
+        //         ItemID.RestorationPotion,
+        //         //all potion buffs as ints
+        //         288, 289, 290, 291, 292, 293, 294,
+        //         295, 296, 297, 298, 299, 300, 301,
+        //         302, 303, 304, 305, 2322, 2323,
+        //         2324, 2325, 2326, 2327, 2328,
+        //         2329, 2344, 2345, 2346, 2347,
+        //         2348, 2349, 2350, 2351, 2352,
+        //         2353, 2354, 2355, 2356, 2359,
+        //         2756, 2997, 4870, 5211,
+            
+        //     };
+
+        //     if (Main.hardMode)
+        //     {
+        //         potion_ids = new List<int>{
+        //         //all potion buffs as ints
+        //         288, 289, 290, 291, 292, 293, 294,
+        //         295, 296, 297, 298, 299, 300, 301,
+        //         302, 303, 304, 305, 2322, 2323,
+        //         2324, 2325, 2326, 2327, 2328,
+        //         2329, 2344, 2345, 2346, 2347,
+        //         2348, 2349, 2350, 2351, 2352,
+        //         2353, 2354, 2355, 2356, 2359,
+        //         2756, 2997, 4870, 5211,
+        //         ItemID.GreaterHealingPotion,
+        //         ItemID.GreaterManaPotion,
+        //         ItemID.SuperHealingPotion,
+        //         };
+        //     }
+        //
+        //     for (int i = 0; i < 5; i++)
+        //     {
+        //         int randomPotion = Main.rand.Next(potion_ids.Count);
+        //         int potionID = potion_ids[randomPotion];
+
+        //         Item.NewItem(
+        //             new EntitySource_TileBreak(50, 50),
+        //             (int)player.position.X,
+        //             (int)player.position.Y,
+        //             potionID
+        //         );
+        //     }
+        // }
+
         public void GetRandomArmor(Player player)
         {
             Main.NewText("ooh, new shiny!", Color.Green);
