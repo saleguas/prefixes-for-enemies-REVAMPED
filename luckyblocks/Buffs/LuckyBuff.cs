@@ -96,7 +96,7 @@ namespace luckyblocks.Buffs
                 string test = "y";
                 if (test != "")
                 {
-                    BoulderfistOgre(player);
+                    GetRandomArmor(player);
                 }
                 else
                 {
@@ -126,6 +126,60 @@ namespace luckyblocks.Buffs
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                    GOOD EVENTS                                                                   */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+        // make function GetRandomArmor that returns a random armor piece
+        // following armor sets
+        // misc_armor - all
+        // magic_armor - all
+        // pre_plantera_armor - if any mech boss is defeated
+        // post_plantera_armor - if plantera is defeated
+        // hardmode_ore_wood_armor - if hardmode
+        // pre_hardmode_armor - all
+
+        public void GetRandomArmor(Player player)
+        {
+            Main.NewText("ooh, new shiny!", Color.Green);
+
+            List<int> armorList = new List<int>();
+
+            // Add all the armor sets
+            armorList.AddRange(misc_armor);
+            armorList.AddRange(magic_armor);
+            if (NPC.downedMechBossAny)
+            {
+                armorList.AddRange(pre_plantera_armor);
+            }
+            if (NPC.downedPlantBoss)
+            {
+                armorList.AddRange(post_plantera_armor);
+            }
+            if (Main.hardMode)
+            {
+                armorList.AddRange(hardmode_ore_wood_armor);
+            }
+            armorList.AddRange(pre_hardmode_armor);
+
+            // Pick a random armor piece from the list
+            int randomIndex = Main.rand.Next(armorList.Count);
+            int randomArmor = armorList[randomIndex];
+
+            int item = Item.NewItem(
+                new EntitySource_TileBreak(50, 50),
+                player.position,
+                Vector2.One * 16,
+                randomArmor,
+                1,
+                false,
+                0,
+                false,
+                false
+            );
+
+
+            NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item);
+        }
+
+
         public void SpawnRandomItem(Player player)
         {
             // make a list of tuples of all the ranges that are valid
@@ -329,6 +383,8 @@ namespace luckyblocks.Buffs
                 );
             }
         }
+
+        
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                    MISC EVENTS                                                                   */
@@ -883,7 +939,7 @@ namespace luckyblocks.Buffs
         };
 
 
-        private List<int> pre_skeletron_armor = new List<int>{
+        private List<int> pre_hardmode_armor = new List<int>{
             ItemID.MiningHelmet,
             ItemID.MiningShirt,
             ItemID.MiningPants,
@@ -989,5 +1045,12 @@ namespace luckyblocks.Buffs
             ItemID.MoltenBreastplate,
             ItemID.MoltenGreaves
         };
+    
+    // misc_armor
+    // magic_armor
+    // pre_plantera_armor
+    // post_plantera_armor
+    // hardmode_ore_wood_armor
+    // pre_hardmode_armor
     }
 }
