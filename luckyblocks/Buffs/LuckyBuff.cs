@@ -13,43 +13,129 @@ namespace luckyblocks.Buffs
 
         private int timer = 300; // 300 frames = 5 seconds
 
-        // these are the following prehardmode_armor sets
-        // Mining armor
-        // Wood armor
-        // Rich Mahogany armor
-        // Boreal Wood armor
-        // Palm Wood armor
-        // Ebonwood armor
-        // Shadewood armor
-        // Ash Wood armor
-        // Rain armor
-        // Snow armor
-        // Pink Snow armor
-        // Angler armor
-        // Cactus armor
-        // Copper armor
-        // Tin armor
-        // Pumpkin armor
-        // Ninja armor
-        // Iron armor
-        // Lead armor
-        // Silver armor
-        // Tungsten armor
-        // Gold armor
-        // Platinum armor
-        // Fossil armor
-        // Bee armor
-        // Obsidian armor
-        // Gladiator armor
-        // Meteor armor
-        // Jungle armor
-        // Ancient Cobalt armor
-        // Necro armor
-        // Shadow armor
-        // Ancient Shadow armor
-        // Crimson armor
-        // Molten armor
-        private List<int> prehardmode_armor = new List<int>{
+private List<int> magic_armor = new List<int>{
+ItemID.MagicHat,
+ItemID.WizardHat,
+ItemID.AmethystRobe,
+ItemID.TopazRobe,
+ItemID.SapphireRobe,
+ItemID.EmeraldRobe,
+ItemID.RubyRobe,
+ItemID.AmberRobe,
+ItemID.DiamondRobe,
+ItemID.MysticRobe
+};
+
+private List<int> pre_plantera_armor = new List<int>{
+    ItemID.SpiderMask,
+    ItemID.SpiderBreastplate,
+    ItemID.SpiderGreaves,
+    ItemID.FrostHelmet,
+    ItemID.FrostBreastplate,
+    ItemID.FrostLeggings,
+    ItemID.SquireGreatHelm,
+    ItemID.SquirePlating,
+    ItemID.SquireGreaves,
+    ItemID.MonkBrows,
+    ItemID.MonkShirt,
+    ItemID.MonkPants,
+    ItemID.HuntressWig,
+    ItemID.HuntressJerkin,
+    ItemID.HuntressPants,
+    ItemID.ApprenticeHat,
+    ItemID.ApprenticeRobe,
+    ItemID.ApprenticeTrousers,
+    // crystal assasin 4982-4984
+    4982,
+    4983,
+    4984,
+};
+
+private List<int> post_plantera_armor = new List<int>{
+    ItemID.BeetleHelmet,
+    ItemID.BeetleScaleMail,
+    ItemID.BeetleLeggings,
+    ItemID.TikiMask,
+    ItemID.TikiShirt,
+    ItemID.TikiPants,
+    ItemID.ShroomiteHelmet,
+    ItemID.ShroomiteBreastplate,
+    ItemID.ShroomiteLeggings,
+    ItemID.SpectreHood,
+    ItemID.SpectreRobe,
+    ItemID.SpectrePants,
+    ItemID.SpookyHelmet,
+    ItemID.SpookyBreastplate,
+    ItemID.SpookyLeggings,
+   // valhalla 3871-3873
+    3871,
+    3872,
+    3873,
+    // shinobi 3880- 3882
+    3880,
+    3881,
+    3882,
+    // forbidden set 3776-3778
+    3776,
+    3777,
+    3778,
+    // dark artist set 3874-3876
+    3874,
+    3875,
+    3876,
+    ItemID.VortexHelmet,
+    ItemID.VortexBreastplate,
+    ItemID.VortexLeggings,
+    ItemID.NebulaHelmet,
+    ItemID.NebulaBreastplate,
+    ItemID.NebulaLeggings,
+    ItemID.StardustHelmet,
+    ItemID.StardustBreastplate,
+    ItemID.StardustLeggings,
+    ItemID.SolarFlareHelmet,
+    ItemID.SolarFlareBreastplate,
+    ItemID.SolarFlareLeggings
+};
+
+
+private List<int> hardmode_ore_wood_armor = new List<int>{
+    ItemID.PalladiumHelmet,
+    ItemID.PalladiumBreastplate,
+    ItemID.PalladiumLeggings,
+    ItemID.CobaltHelmet,
+    ItemID.CobaltBreastplate,
+    ItemID.CobaltLeggings,
+    ItemID.MythrilHelmet,
+    ItemID.MythrilChainmail,
+    ItemID.MythrilGreaves,
+    ItemID.OrichalcumHelmet,
+    ItemID.OrichalcumBreastplate,
+    ItemID.OrichalcumLeggings,
+    ItemID.AdamantiteHelmet,
+    ItemID.AdamantiteBreastplate,
+    ItemID.AdamantiteLeggings,
+    ItemID.TitaniumHelmet,
+    ItemID.TitaniumBreastplate,
+    ItemID.TitaniumLeggings,
+    ItemID.HallowedHelmet,
+    ItemID.HallowedPlateMail,
+    ItemID.HallowedGreaves,
+    ItemID.AncientHallowedHelmet,
+    ItemID.AncientHallowedPlateMail,
+    ItemID.AncientHallowedGreaves,
+    ItemID.ChlorophyteHelmet,
+    ItemID.ChlorophytePlateMail,
+    ItemID.ChlorophyteGreaves,
+    ItemID.TurtleHelmet,
+    ItemID.TurtleScaleMail,
+    ItemID.TurtleLeggings,
+    ItemID.PearlwoodHelmet,
+    ItemID.PearlwoodBreastplate,
+    ItemID.PearlwoodGreaves,
+};
+
+
+        private List<int> pre_skeletron_armor = new List<int>{
     ItemID.MiningHelmet,
     ItemID.MiningShirt,
     ItemID.MiningPants,
