@@ -24,8 +24,6 @@ namespace luckyblocks.gnpcs
                 shop.item[nextSlot].shopCustomPrice = 10000;
                 nextSlot++;
             }
-            // do same for merchant
-
             
         }
 
