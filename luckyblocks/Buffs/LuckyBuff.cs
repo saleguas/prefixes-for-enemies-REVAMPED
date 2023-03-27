@@ -272,6 +272,9 @@ private List<int> hardmode_ore_wood_armor = new List<int>{
                 new Tuple<Action<Player>, int>(SpawnRandomEntity, 3),
                 new Tuple<Action<Player>, int>(MissileBombardment, 1),
                 new Tuple<Action<Player>, int>(SlowDeath, 3),
+                new Tuple<Action<Player>, int>(HealByOne, 2),
+                new Tuple<Action<Player>, int>(goldenAnimalSplosion, 1),
+                new Tuple<Action<Player>, int>(BoulderfistOgre, 2),
 
 
             };
@@ -317,10 +320,10 @@ private List<int> hardmode_ore_wood_armor = new List<int>{
             {
                 timer = 300; // Reset the timer to 300 when the dust is inactive
 
-                string test = "";
+                string test = "y";
                 if (test != "")
                 {
-                    MissileBombardment(player);
+                    BoulderfistOgre(player);
                 }
                 else
                 {
@@ -411,6 +414,19 @@ private List<int> hardmode_ore_wood_armor = new List<int>{
                 );
             }
         }
+
+        //heals all by one
+        public void HealByOne(Player player)
+        {
+            Main.NewText("Everyone is healed by, wait thats it?", Color.Green);
+
+            foreach (Player p in Main.player)
+            {
+                p.HealEffect(1);
+            }
+        
+        }
+
         public void SpawnRichMan(Player player)
         {
             // spawn an NPC that drops a lot of money
@@ -441,6 +457,41 @@ private List<int> hardmode_ore_wood_armor = new List<int>{
             {
                 p.statLife = p.statLifeMax2;
                 p.HealEffect(p.statLifeMax2);
+            }
+        }
+
+        public void goldenAnimalSplosion(Player player)
+        {
+            Main.NewText("Golden Animal Galore! Better have a net!", Color.Pink);
+
+            List<int> goldAnimals = new List<int>{
+                NPCID.GoldBunny,
+                NPCID.GoldBird,
+                NPCID.GoldButterfly,
+                NPCID.GoldFrog,
+                NPCID.GoldGrasshopper,
+                NPCID.GoldMouse,
+                NPCID.GoldWorm,
+                NPCID.SquirrelGold,
+                NPCID.GoldDragonfly,
+                NPCID.GoldLadyBug,
+                NPCID.GoldWaterStrider,
+                NPCID.GoldSeahorse,
+            };
+
+
+            //loop to spawn
+            for (int i = 0; i < 10; i++)
+            {
+                
+                int randomGold = Main.rand.Next(goldAnimals.Count);
+                int AnimalID = goldAnimals[randomGold];
+
+                NPC.NewNPC(
+                    new EntitySource_TileBreak(50, 50),
+                     (int)player.position.X + Main.rand.Next(-100, 100),
+                    (int)player.position.Y + Main.rand.Next(-200, 0),
+                    AnimalID);
             }
         }
 
@@ -618,6 +669,17 @@ private List<int> hardmode_ore_wood_armor = new List<int>{
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                BAD EVENTS                                                               */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+        public void BoulderfistOgre(Player player)
+        {
+            Main.NewText("ME HAS GOOD STATS FOR COST", Color.Red);
+
+             NPC.NewNPC(
+                new EntitySource_TileBreak(50, 50),
+                (int)player.position.X + Main.rand.Next(-100, 100),
+                (int)player.position.Y + Main.rand.Next(-50, 0),
+                577);
+            
+        }
 
         public void MissileBombardment(Player player)
         {
