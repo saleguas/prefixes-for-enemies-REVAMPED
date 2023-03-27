@@ -745,7 +745,24 @@ namespace luckyblocks.Buffs
             }
         }
 
-                private List<int> magic_armor = new List<int>{
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/*                                                               BEGIN LARGE CONSTANTS                                                              */
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+        private List<int> misc_armor = new List<int>{
+            ItemID.EmptyBucket,
+            ItemID.Goggles,
+            ItemID.DivingHelmet,
+            ItemID.NightVisionHelmet,
+            ItemID.VikingHelmet,
+            ItemID.UltrabrightHelmet,
+            ItemID.FlinxFurCoat,
+            ItemID.Gi,
+            ItemID.MoonLordLegs,
+            ItemID.GreenCap
+        };
+
+        private List<int> magic_armor = new List<int>{
             ItemID.MagicHat,
             ItemID.WizardHat,
             ItemID.AmethystRobe,
