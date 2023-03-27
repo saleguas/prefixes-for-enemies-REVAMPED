@@ -1,3 +1,0 @@
-displayName = Lucky Blocks!
-author = axebott
-version = 0.2.14
