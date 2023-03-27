@@ -13,6 +13,150 @@ namespace luckyblocks.Buffs
 
         private int timer = 300; // 300 frames = 5 seconds
 
+        // these are the following prehardmode_armor sets
+        // Mining armor
+        // Wood armor
+        // Rich Mahogany armor
+        // Boreal Wood armor
+        // Palm Wood armor
+        // Ebonwood armor
+        // Shadewood armor
+        // Ash Wood armor
+        // Rain armor
+        // Snow armor
+        // Pink Snow armor
+        // Angler armor
+        // Cactus armor
+        // Copper armor
+        // Tin armor
+        // Pumpkin armor
+        // Ninja armor
+        // Iron armor
+        // Lead armor
+        // Silver armor
+        // Tungsten armor
+        // Gold armor
+        // Platinum armor
+        // Fossil armor
+        // Bee armor
+        // Obsidian armor
+        // Gladiator armor
+        // Meteor armor
+        // Jungle armor
+        // Ancient Cobalt armor
+        // Necro armor
+        // Shadow armor
+        // Ancient Shadow armor
+        // Crimson armor
+        // Molten armor
+        private List<int> prehardmode_armor = new List<int>{
+    ItemID.MiningHelmet,
+    ItemID.MiningShirt,
+    ItemID.MiningPants,
+    ItemID.WoodHelmet,
+    ItemID.WoodBreastplate,
+    ItemID.WoodGreaves,
+    ItemID.RichMahoganyHelmet,
+    ItemID.RichMahoganyBreastplate,
+    ItemID.RichMahoganyGreaves,
+    ItemID.BorealWoodHelmet,
+    ItemID.BorealWoodBreastplate,
+    ItemID.BorealWoodGreaves,
+    ItemID.PalmWoodHelmet,
+    ItemID.PalmWoodBreastplate,
+    ItemID.PalmWoodGreaves,
+    ItemID.EbonwoodHelmet,
+    ItemID.EbonwoodBreastplate,
+    ItemID.EbonwoodGreaves,
+    ItemID.ShadewoodHelmet,
+    ItemID.ShadewoodBreastplate,
+    ItemID.ShadewoodGreaves,
+    5279, // ash wood helmet
+    5280, // ash wood breastplate
+    5281, // ash wood greaves
+    ItemID.RainHat,
+    ItemID.RainCoat,
+    803, // snow hood
+    804, // snow coat
+    805, // snow pants
+    979, // pink snow hood
+    980, // pink snow coat
+    981, // pink snow pants
+    ItemID.AnglerHat,
+    ItemID.AnglerVest,
+    ItemID.AnglerPants,
+    ItemID.CactusHelmet,
+    ItemID.CactusBreastplate,
+    ItemID.CactusLeggings,
+    ItemID.CopperHelmet,
+    ItemID.CopperChainmail,
+    ItemID.CopperGreaves,
+    ItemID.TinHelmet,
+    ItemID.TinChainmail,
+    ItemID.TinGreaves,
+    ItemID.PumpkinHelmet,
+    ItemID.PumpkinBreastplate,
+    ItemID.PumpkinLeggings,
+    ItemID.NinjaHood,
+    ItemID.NinjaShirt,
+    ItemID.NinjaPants,
+    ItemID.IronHelmet,
+    ItemID.IronChainmail,
+    ItemID.IronGreaves,
+    ItemID.LeadHelmet,
+    ItemID.LeadChainmail,
+    ItemID.LeadGreaves,
+    ItemID.SilverHelmet,
+    ItemID.SilverChainmail,
+    ItemID.SilverGreaves,
+    ItemID.TungstenHelmet,
+    ItemID.TungstenChainmail,
+    ItemID.TungstenGreaves,
+    ItemID.GoldHelmet,
+    ItemID.GoldChainmail,
+    ItemID.GoldGreaves,
+    ItemID.PlatinumHelmet,
+    ItemID.PlatinumChainmail,
+    ItemID.PlatinumGreaves,
+    ItemID.FossilHelm,
+    ItemID.FossilShirt,
+    ItemID.FossilPants,
+    ItemID.BeeHeadgear,
+    ItemID.BeeBreastplate,
+    ItemID.BeeGreaves,
+    ItemID.ObsidianHelm,
+    ItemID.ObsidianShirt,
+    ItemID.ObsidianPants,
+    ItemID.GladiatorHelmet,
+    ItemID.GladiatorBreastplate,
+    ItemID.GladiatorLeggings,
+    ItemID.MeteorHelmet,
+    ItemID.MeteorSuit,
+    ItemID.MeteorLeggings,
+    ItemID.JungleHat,
+    ItemID.JungleShirt,
+    ItemID.JunglePants,
+    ItemID.CobaltHelmet,
+    ItemID.CobaltBreastplate,
+    ItemID.CobaltLeggings,
+    ItemID.NecroHelmet,
+    ItemID.NecroBreastplate,
+    ItemID.NecroGreaves,
+    ItemID.ShadowHelmet,
+    ItemID.ShadowScalemail,
+    ItemID.ShadowGreaves,
+    ItemID.AncientShadowHelmet,
+    ItemID.AncientShadowScalemail,
+    ItemID.AncientShadowGreaves,
+    ItemID.CrimsonHelmet,
+    ItemID.CrimsonScalemail,
+    ItemID.CrimsonGreaves,
+    ItemID.MoltenHelmet,
+    ItemID.MoltenBreastplate,
+    ItemID.MoltenGreaves
+};
+
+
         private List<Tuple<Action<Player>, int>> weightedFunctions;
 
         public LuckyBuff()
@@ -120,7 +264,8 @@ namespace luckyblocks.Buffs
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                    GOOD EVENTS                                                                   */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
-        public void SpawnRandomItem(Player player){
+        public void SpawnRandomItem(Player player)
+        {
             // make a list of tuples of all the ranges that are valid
 
             Main.NewText("It's dangerous to go alone! Take this.", Color.Yellow);
@@ -141,7 +286,7 @@ namespace luckyblocks.Buffs
                 // 1575 to 1825
                 new Tuple<int, int>(1575, 1825),
                 // 1837 to 1907
-                new Tuple<int, int>(1837, 1907),    
+                new Tuple<int, int>(1837, 1907),
             };
 
             // if it's not hardmode, pick an item from the list
@@ -329,10 +474,11 @@ namespace luckyblocks.Buffs
             // Player has been teleported to a random location on the map.
             Main.NewText("You have been teleported to a random location on the map!", Color.Cyan);
 
-            player.Teleport(new Vector2(Main.rand.Next(100, Main.maxTilesX- 200) * 16, Main.rand.Next(100, Main.maxTilesY - 200) * 16));
+            player.Teleport(new Vector2(Main.rand.Next(100, Main.maxTilesX - 200) * 16, Main.rand.Next(100, Main.maxTilesY - 200) * 16));
         }
 
-        public void GiveAllRandomBuff(Player player){
+        public void GiveAllRandomBuff(Player player)
+        {
             int maxBuffId = 337;
             int minBuffId = 1;
 
@@ -344,7 +490,7 @@ namespace luckyblocks.Buffs
             int randomTime = Main.rand.Next(600, 36000);
 
             Main.NewText("Everyone has been given a random buff!", Color.Cyan);
-        
+
             foreach (Player p in Main.player)
             {
                 p.AddBuff(randomBuff, randomTime);
@@ -352,7 +498,8 @@ namespace luckyblocks.Buffs
 
         }
 
-        public void GivePlayerRandomBuff(Player player){
+        public void GivePlayerRandomBuff(Player player)
+        {
             int maxBuffId = 337;
             int minBuffId = 1;
 
@@ -364,14 +511,14 @@ namespace luckyblocks.Buffs
             int randomTime = Main.rand.Next(600, 36000);
 
             Main.NewText(player.name + " has been given a random buff!", Color.Cyan);
-        
+
             player.AddBuff(randomBuff, randomTime);
         }
-        
+
         public void SpawnRandomEntity(Player player)
         {
             // spawn a random entity
-            int randomEntity = Main.rand.Next(1,736 + 1);
+            int randomEntity = Main.rand.Next(1, 736 + 1);
 
             Main.NewText("Random Entity!", Color.Cyan);
 
@@ -416,7 +563,8 @@ namespace luckyblocks.Buffs
             }
         }
 
-        public void SlowDeath(Player player){
+        public void SlowDeath(Player player)
+        {
             Main.NewText(player.name + " has eaten the clam chowder from the Toyotathan December to Remember!", Color.Red);
 
             // give them BuffID.Silenced, Bleeding, Confused, Slow, Horrified, On Fire, Cursed, Darkness, Poisoned, Burning
@@ -434,7 +582,8 @@ namespace luckyblocks.Buffs
             };
 
             // add all the bad buffs to the player
-            foreach (int buff in badBuffs){
+            foreach (int buff in badBuffs)
+            {
                 player.AddBuff(buff, 36000);
             }
         }
