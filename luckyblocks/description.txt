@@ -10,6 +10,9 @@ There are currently 100+ different interactions, adding a whole new layer of exc
 
 CHANGELOG:
 
+v0.3.0:
+    - added more events
+    - fixed issue of traveling merchant not selling proper stuff
 v0.2.14:
     - fixed issue where players would be teleported outside of the world
 
