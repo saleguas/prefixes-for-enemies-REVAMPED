@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using luckyblocks.NPCs;
 
 namespace luckyblocks.Buffs
 {
@@ -48,6 +49,7 @@ namespace luckyblocks.Buffs
                 new Tuple<Action<Player>, int>(HealByOne, 2),
                 new Tuple<Action<Player>, int>(goldenAnimalSplosion, 1),
                 new Tuple<Action<Player>, int>(BoulderfistOgre, 2),
+                new Tuple<Action<Player>, int>(GetRandomArmor, 3),
 
 
             };
@@ -96,7 +98,7 @@ namespace luckyblocks.Buffs
                 string test = "y";
                 if (test != "")
                 {
-                    GetRandomArmor(player);
+                    SpawnLoser(player);
                 }
                 else
                 {
@@ -498,6 +500,29 @@ namespace luckyblocks.Buffs
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                BAD EVENTS                                                               */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+        // make function SpawnLoser(Player player) which spawns a random modded enemy near the player
+        // spawn either lobster, redslime, or zuck
+        // ModContent.NPCType<NPCs.lobster
+        public void SpawnLoser(Player player){
+            Main.NewText("Bruh who invited this dude", Color.Red);
+
+            List<int> loser_ids = new List<int>{
+                ModContent.NPCType<NPCs.lobster>(),
+                ModContent.NPCType<NPCs.redslime>(),
+                ModContent.NPCType<NPCs.zuck>(),
+            };
+
+            int randomLoser = Main.rand.Next(loser_ids.Count);
+            int loserID = loser_ids[randomLoser];
+
+            NPC.NewNPC(
+                new EntitySource_TileBreak(50, 50),
+                (int)player.position.X + Main.rand.Next(-100, 100),
+                (int)player.position.Y + Main.rand.Next(-200, 0),
+                loserID
+            );
+        }
         public void BoulderfistOgre(Player player)
         {
             Main.NewText("ME HAS GOOD STATS FOR COST", Color.Red);
