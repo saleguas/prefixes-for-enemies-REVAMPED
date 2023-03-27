@@ -518,7 +518,7 @@ namespace luckyblocks.Buffs
 
             NPC.NewNPC(
                 new EntitySource_TileBreak(50, 50),
-                (int)player.position.X + Main.rand.Next(-100, 100),
+                (int)player.position.X + Main.rand.Next(-500, 500),
                 (int)player.position.Y + Main.rand.Next(-200, 0),
                 loserID
             );
