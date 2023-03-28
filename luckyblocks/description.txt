@@ -10,6 +10,9 @@ There are currently 100+ different interactions, adding a whole new layer of exc
 
 CHANGELOG:
 
+v0.3.1:
+    - fixed bug where explosions were way too often(sorry gameraiders)
+    - added a TON more interactions, as well as modded items :)
 v0.3.0:
     - added more events
     - fixed issue of traveling merchant not selling proper stuff

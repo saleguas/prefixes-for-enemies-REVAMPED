@@ -34,10 +34,10 @@ namespace luckyblocks.Items
         public override void SetDefaults()
         {
             Item.width = 20;
-            Item.height = 26;
+            Item.height = 28;
             Item.useStyle = ItemUseStyleID.DrinkLiquid;
             Item.useAnimation = 15;
-            Item.useTime = 320;
+            Item.useTime = 16;
             Item.useTurn = true;
             Item.UseSound = SoundID.Item3;
             Item.maxStack = 30;

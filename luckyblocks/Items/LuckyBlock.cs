@@ -35,7 +35,7 @@ namespace luckyblocks.Items
         {
             Item.width = 20;
             Item.height = 26;
-            Item.useStyle = ItemUseStyleID.DrinkLiquid;
+            Item.useStyle = ItemUseStyleID.HoldUp;
             Item.useAnimation = 15;
             Item.useTime = 320;
             Item.useTurn = true;
@@ -58,8 +58,15 @@ namespace luckyblocks.Items
         {
             if (player.whoAmI == Main.myPlayer)
             {
-                // apply random buff
-                player.AddBuff(BuffID.Wrath, 600);
+                // If the player using the item is the client
+                // (explicitely excluded serverside here)
+                SoundEngine.PlaySound(SoundID.MaxMana, player.position);
+
+                // spawn a dust
+                Vector2 above_position = new Vector2(player.position.X, player.position.Y - 50f);
+                Dust d = Dust.NewDustPerfect(above_position, ModContent.DustType<LuckySpawn>());
+
+				// apply modbuff LuckyBuff
             }
             return true;
         }

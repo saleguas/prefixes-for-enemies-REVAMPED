@@ -21,6 +21,7 @@ namespace luckyblocks.Buffs
 
         // make function GetRandomArmor that returns a random armor piece
         public void GetLuckyPotion(Player player){
+            Main.NewText("Whoop-dee-doo, a brew for you!", Color.Gold);
             // drop 5-10 LuckyPotion 
             int num = Main.rand.Next(5, 10);
 

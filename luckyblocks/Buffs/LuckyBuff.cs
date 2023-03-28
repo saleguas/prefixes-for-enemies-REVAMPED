@@ -24,7 +24,7 @@ namespace luckyblocks.Buffs
         {
             weightedFunctions = new List<Tuple<Action<Player>, int>>{
                 new Tuple<Action<Player>, int>(eventFunctions.SpawnRichMan, 2),
-                new Tuple<Action<Player>, int>(eventFunctions.HealAllPlayers, 3),
+                new Tuple<Action<Player>, int>(eventFunctions.HealAllPlayers, 1),
                 new Tuple<Action<Player>, int>(eventFunctions.bunnySplosion, 2),
                 new Tuple<Action<Player>, int>(eventFunctions.MoneySpawn, 3),
                 new Tuple<Action<Player>, int>(eventFunctions.MakeItSlimeRain, 2),
@@ -54,6 +54,7 @@ namespace luckyblocks.Buffs
                 new Tuple<Action<Player>, int>(eventFunctions.SpawnLoser, 1),
                 new Tuple<Action<Player>, int>(eventFunctions.ConcotionPackage, 1),
                 new Tuple<Action<Player>, int>(eventFunctions.GetModdedItem, 1),
+                new Tuple<Action<Player>, int>(eventFunctions.GetLuckyPotion, 1),
 
 
             };
@@ -99,7 +100,7 @@ namespace luckyblocks.Buffs
             {
                 timer = 300; // Reset the timer to 300 when the dust is inactive
 
-                string test = "s";
+                string test = "";
                 if (test != "")
                 {
                     eventFunctions.GetLuckyPotion(player);
