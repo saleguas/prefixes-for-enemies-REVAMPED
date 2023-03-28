@@ -22,6 +22,8 @@ Please note that Infernal Mobs makes the game more challenging.
 
 CHANGELOG:
 
+v1.2.0:
+    - the "yeeting" modifier has been moved to hardmode. now it's a skill issue
 v1.1.17:
 - Rebalanced certain modifiers
 
