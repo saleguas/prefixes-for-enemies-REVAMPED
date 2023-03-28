@@ -6,7 +6,11 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using luckyblocks.NPCs;
-
+using luckyblocks.Items.Tokens.tier1;
+using luckyblocks.Items.Tokens.tier2;
+using luckyblocks.Items.Tokens.tier3;
+using luckyblocks.Items.Tokens.tier4;
+using luckyblocks.Items.Tokens.tier5;
 namespace luckyblocks.Buffs
 {
     public class EventFunctions
@@ -16,16 +20,75 @@ namespace luckyblocks.Buffs
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
         // make function GetRandomArmor that returns a random armor piece
-        // following armor sets
-        // misc_armor - all
-        // magic_armor - all
-        // pre_plantera_armor - if any mech boss is defeated
-        // post_plantera_armor - if plantera is defeated
-        // hardmode_ore_wood_armor - if hardmode
-        // pre_hardmode_armor - all
+        public void GetLuckyPotion(Player player){
+            // drop 5-10 LuckyPotion 
+            int num = Main.rand.Next(5, 10);
+
+            for (int i = 0; i < num; i++)
+            {
+                Item.NewItem
+                (
+                    new EntitySource_TileBreak(50, 50),
+                    player.position,
+                    ModContent.ItemType<Items.LuckyPotion>()
+                );
+            }
+        }
+
+        public void GetModdedItem(Player player){
+            Main.NewText("An item just fell out of a rift in space and time!", Color.Gold);
+            // drop based on the following
+            // before skeletron tier1 amethyst token
+            // before wall of flesh tier2 topaz token
+            // before mechanical bosses tier3 sapphire token
+            // before plantera tier4 emerald token
+            // after defeating plantera tier5 diamond token
+            
+            if (NPC.downedPlantBoss){
+                Item.NewItem
+                (
+                    new EntitySource_TileBreak(50, 50),
+                    player.position,
+                    ModContent.ItemType<DiamondToken>()
+                );
+            }
+            else if (NPC.downedMechBossAny){
+                Item.NewItem
+                (
+                    new EntitySource_TileBreak(50, 50),
+                    player.position,
+                    ModContent.ItemType<EmeraldToken>()
+                );
+            }
+            else if (Main.hardMode){
+                Item.NewItem
+                (
+                    new EntitySource_TileBreak(50, 50),
+                    player.position,
+                    ModContent.ItemType<SapphireToken>()
+                );
+            }
+            else if (NPC.downedBoss3){
+                Item.NewItem
+                (
+                    new EntitySource_TileBreak(50, 50),
+                    player.position,
+                    ModContent.ItemType<TopazToken>()
+                );
+            }
+            else{
+                Item.NewItem
+                (
+                    new EntitySource_TileBreak(50, 50),
+                    player.position,
+                    ModContent.ItemType<AmethystToken>()
+                );
+            }
+
+        }
 
 
-        public void concotionPackage(Player player)
+        public void ConcotionPackage(Player player)
         {
             Main.NewText("The alchemist's newest batch! What did you get?", Color.Gold);
 

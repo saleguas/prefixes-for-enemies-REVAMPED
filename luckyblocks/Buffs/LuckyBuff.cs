@@ -52,7 +52,8 @@ namespace luckyblocks.Buffs
                 new Tuple<Action<Player>, int>(eventFunctions.BoulderfistOgre, 2),
                 new Tuple<Action<Player>, int>(eventFunctions.GetRandomArmor, 3),
                 new Tuple<Action<Player>, int>(eventFunctions.SpawnLoser, 1),
-                new Tuple<Action<Player>, int>(eventFunctions.concotionPackage, 1),
+                new Tuple<Action<Player>, int>(eventFunctions.ConcotionPackage, 1),
+                new Tuple<Action<Player>, int>(eventFunctions.GetModdedItem, 1),
 
 
             };
@@ -101,7 +102,7 @@ namespace luckyblocks.Buffs
                 string test = "s";
                 if (test != "")
                 {
-                    eventFunctions.concotionPackage(player);
+                    eventFunctions.GetLuckyPotion(player);
                 }
                 else
                 {

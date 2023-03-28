@@ -10,7 +10,7 @@ using luckyblocks.Buffs;
 
 namespace luckyblocks.Items
 {
-    public class LuckyBlock : ModItem
+    public class LuckyPotion : ModItem
     {
         private int timer = 300; // 300 frames = 5 seconds
         private bool start_timer = false;
@@ -19,7 +19,7 @@ namespace luckyblocks.Items
         {
             // add [c/ffffff:some text] to your tooltip, with #f9f909 being the colours hex code and some text being the text you want coloured 
 
-            Tooltip.SetDefault("[c/f9f909:Try your Luck.]\n[c/FF0000:WARNING: This item can destroy blocks and cause mass destruction!]");
+            Tooltip.SetDefault("[c/f9f909:A lucky potion?.]");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
 
@@ -44,8 +44,6 @@ namespace luckyblocks.Items
             Item.consumable = true;
             Item.rare = ItemRarityID.Yellow;
             Item.value = Item.buyPrice(gold: 1);
-			Item.buffType = ModContent.BuffType<LuckyBuff>(); // Specify an existing buff to be applied when used.
-			Item.buffTime = 600; // The amount of time the buff declared in Item.buffType will last in ticks. 5400 / 60 is 90, so this buff will last 90 seconds.
         }
 
         public override bool CanUseItem(Player player)
@@ -58,8 +56,17 @@ namespace luckyblocks.Items
         {
             if (player.whoAmI == Main.myPlayer)
             {
-                // apply random buff
-                player.AddBuff(BuffID.Wrath, 600);
+                int maxBuffId = 337;
+                int minBuffId = 1;
+
+                // pick a random buff inclusive
+                int randomBuff = Main.rand.Next(minBuffId, maxBuffId + 1);
+
+                // pick a random time for the buff, 1 second to 5 minutes
+
+                int randomTime = Main.rand.Next(600, 36000);
+
+                player.AddBuff(randomBuff, randomTime);
             }
             return true;
         }
