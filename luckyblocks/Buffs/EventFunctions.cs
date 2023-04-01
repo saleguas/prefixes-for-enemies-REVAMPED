@@ -524,6 +524,12 @@ namespace luckyblocks.Buffs
         // make function SpawnLoser(Player player) which spawns a random modded enemy near the player
         // spawn either lobster, redslime, or zuck
         // ModContent.NPCType<NPCs.lobster
+
+        public void GasLight(Player player)
+        {
+            Main.NewText("The air is getting colder around you...", Color.Green);
+        }
+        
         public void SpawnLoser(Player player){
             Main.NewText("Bruh who invited this dude", Color.Red);
 
