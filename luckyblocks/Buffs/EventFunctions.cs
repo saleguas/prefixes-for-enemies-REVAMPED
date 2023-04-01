@@ -517,6 +517,50 @@ namespace luckyblocks.Buffs
                 randomEntity
             );
         }
+
+        public void Drunk(Player player)
+        {
+            Main.NewText("Time to get absolutely WASTED", Color.Cyan);
+
+            List<int> alchohol_ids = new List<int>{
+                ItemID.Sake,
+                ItemID.Ale,
+                
+            };
+
+            for (int i = 0; i < 12; i++)
+            {
+                int randomAlchohol = Main.rand.Next(alchohol_ids.Count);
+                int alchoholID = alchohol_ids[randomAlchohol];
+
+                int item = Item.NewItem(
+                    new EntitySource_TileBreak(50, 50),
+                    player.position,
+                    alchoholID
+                );
+
+                if(i%2 == 0)
+                {
+                    NPC.NewNPC(
+                    new EntitySource_TileBreak(50, 50),
+                    (int)player.position.X + Main.rand.Next(-100, 100),
+                    (int)player.position.Y + Main.rand.Next(-50, 0),
+                    550);
+                    //550 is bartender
+                }
+                else
+                {
+                    NPC.NewNPC(
+                    new EntitySource_TileBreak(50, 50),
+                    (int)player.position.X + Main.rand.Next(-10, 10),
+                    (int)player.position.Y + Main.rand.Next(5, 5),
+                    579);
+                    //579 is unconscious bartender
+                }
+            }
+            player.AddBuff(BuffID.Tipsy, 300);
+
+        }
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
         /*                                                                BAD EVENTS                                                               */
         /* ------------------------------------------------------------------------------------------------------------------------------------------------ */
