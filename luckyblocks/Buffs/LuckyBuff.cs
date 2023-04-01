@@ -56,7 +56,7 @@ namespace luckyblocks.Buffs
                 new Tuple<Action<Player>, int>(eventFunctions.ConcotionPackage, 1),
                 new Tuple<Action<Player>, int>(eventFunctions.GetModdedItem, 1),
                 new Tuple<Action<Player>, int>(eventFunctions.GetLuckyPotion, 1),
-
+                new Tuple<Action<Player>, int>(eventFunctions.GasLight, 1),
 
             };
         }
@@ -101,10 +101,10 @@ namespace luckyblocks.Buffs
             {
                 timer = 300; // Reset the timer to 300 when the dust is inactive
 
-                string test = "";
+                string test = "y";
                 if (test != "")
                 {
-                    eventFunctions.GetLuckyPotion(player);
+                    eventFunctions.GasLight(player);
                 }
                 else
                 {
