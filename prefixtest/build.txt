@@ -1,6 +1,6 @@
 displayName = Infernal Mobs!
 author = saleguas
-version = 1.2.0
+version = 1.2.1
 homepage = https://forums.terraria.org/index.php?threads/1-4-modifiers-for-enemies.112273/
 hideCode = false
 buildIgnore = *.gif
