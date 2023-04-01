@@ -8,6 +8,7 @@ using Terraria.ModLoader;
 using luckyblocks.NPCs;
 using luckyblocks.Buffs;
 
+
 namespace luckyblocks.Buffs
 {
     public class LuckyBuff : ModBuff
