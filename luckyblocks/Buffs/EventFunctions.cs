@@ -529,7 +529,8 @@ namespace luckyblocks.Buffs
         {
             Main.NewText("The air is getting colder around you...", Color.Green);
         }
-        
+        //asdhfakrg
+
         public void SpawnLoser(Player player){
             Main.NewText("Bruh who invited this dude", Color.Red);
 
